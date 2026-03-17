@@ -8,7 +8,7 @@ Celem tego katalogu jest:
 
 ## Tematy
 
-- [DDoS](./DDoS/documentation/README.md)
-- [MiTM](./MiTM/documentation/README.md)
-- [Skany](./Skany/documentation/README.md)
-- [Wireshark](./wireshark/documentation/README.md)
+- [DDoS](./DDoS/documentation)
+- [MiTM](./MiTM/documentation)
+- [Skany](./Skany/documentation)
+- [Wireshark](./wireshark/documentation)
