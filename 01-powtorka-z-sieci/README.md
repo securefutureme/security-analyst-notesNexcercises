@@ -5,6 +5,7 @@ Repozytorium porządkuje zagadnienia związane z analizą ruchu sieciowego, pods
 
 Celem tego katalogu jest:
 - udokumentowanie pracy nad zadaniami domowymi oraz przedstawienie wykonywanych zadań w formie wideo.
+- uporządkowanie notatek z działu
 
 ## Tematy
 
