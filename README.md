@@ -1,52 +1,35 @@
-# Projekt – Zadania domowe Szkoła Security (PRIV)
+# Cybersecurity Notes Repository
 
-Repozytorium służy do segregacji zadań z kursu Szkoła Security oraz dokumentowania pracy wykonanej w ramach poszczególnych ćwiczeń. 
-Każdy dział będzie zawierał osobny opis tematu, materiały pomocnicze oraz odnośniki do nagrań przedstawiających wykonywane ćwiczenia.
+Repozytorium służy do organizacji moich notatek, zadań, powtórek i materiałów pomocniczych z nauki cyberbezpieczeństwa.
 
-Celem repozytorium jest:
-- uporządkowanie wszystkich zadań w jednym miejscu,
-- stworzenie czytelnej dokumentacji do każdego tematu,
-- powiązanie ćwiczeń z materiałami wideo publikowanymi np. na YouTube,
-- budowanie portfolio pokazującego sposób pracy, analizę oraz omawianie wykonanych zadań.
+Obecnie gromadzę tutaj materiały z kursów i ścieżek takich jak:
 
-## Tematy
+- **Szkoła Security**
+- **TryHackMe**
+  - Cybersecurity 101
+  - PreSecurity
+  - SOC Level 1
 
-- [Powtórka z sieci – ćwiczenia](./01-powtorka-z-sieci/README.md)
-- [Kodowanie – ćwiczenia](./02-kodowanie/README.md)
-- [Szyfrowanie – ćwiczenia](./03-szyfrowanie/README.md)
-- [VirusTotal – ćwiczenia](./04-virustotal/README.md)
-- [CyberChef – ćwiczenia](./05-cyberchef/README.md)
-- [SIEM – ćwiczenia](./06-siem/README.md)
-- [Analiza logów CLI – ćwiczenia](./07-analiza-logow-cli/README.md)
-- [Splunk – ćwiczenia](./08-splunk/README.md)
-- [Zeek – ćwiczenia](./09-zeek/README.md)
-- [Phishing – ćwiczenia + GitHub projekt](./10-phishing/README.md)
-- [Analiza malware – ćwiczenia](./11-analiza-malware/README.md)
-- [Incident Response – ćwiczenia](./12-incident-response/README.md)
+## Cel repozytorium
 
-## Status przygotowania
+To repozytorium pomaga mi w:
 
-| Temat | Status |
-|------|--------|
-| Powtórka z sieci – ćwiczenia | w przygotowaniu |
-| Kodowanie – ćwiczenia | w przygotowaniu |
-| Szyfrowanie – ćwiczenia | w przygotowaniu |
-| VirusTotal – ćwiczenia | w przygotowaniu |
-| CyberChef – ćwiczenia | w przygotowaniu |
-| SIEM – ćwiczenia | w przygotowaniu |
-| Analiza logów CLI – ćwiczenia | w przygotowaniu |
-| Splunk – ćwiczenia | w przygotowaniu |
-| Zeek – ćwiczenia | w przygotowaniu |
-| Phishing – ćwiczenia + GitHub projekt | w przygotowaniu |
-| Analiza malware – ćwiczenia | w przygotowaniu |
-| Incident Response – ćwiczenia | w przygotowaniu |
+- porządkowaniu notatek z nauki,
+- przechowywaniu zadań i ćwiczeń,
+- budowaniu własnej bazy wiedzy z cyberbezpieczeństwa,
+- tworzeniu materiałów do powtórek,
+- przygotowaniu do rozmów rekrutacyjnych.
 
-## Założenie projektu
+## Sekcja Szkoła Security - zadania
 
-Każdy temat będzie rozwijany w osobnym katalogu i opisany w dedykowanym pliku `README.md`. Docelowo do każdego ćwiczenia zostaną dodane:
-- krótki opis zadania,
-- cel ćwiczenia,
-- przebieg wykonania,
-- najważniejsze wnioski,
-- link do nagrania wideo przedstawiającego realizację zadania.
-
+| Temat | Link |
+|---|---|---|
+| Powtórka z sieci - Zadania | [`01powtorka-z-sieci`](./courses/szkola-security/siec/01powtorka-z-sieci/) |
+| Kodowanie – Zadania  | [`network-security-monitoring`](./courses/szkola-security/siec/kodowanie/) |
+| Szyfrowanie – Zadania | [`podstawy`](./courses/szkola-security/siec/szyfrowanie) |
+| Virus Total – Zadania | [`podstawy`](./courses/szkola-security/hashowanie/virustotal/) |
+| CyberChef – Zadania | [`podstawy`](./courses/szkola-security/kodowoanie/cyberchef/) |
+| Analiza Logów CLI – Zadania | [`podstawy`](./courses/szkola-security/siec/siem/analiza-logow-cli-zadania/) |
+| Phishing – Zadania | [`podstawy`](./courses/szkola-security/siec/phishing/zadania) |
+| Zeek – Zadania | [`podstawy`](./courses/szkola-security/sieć/network-security-monitoring/zadania) |
+| Analiza Malware - Zadania | 
