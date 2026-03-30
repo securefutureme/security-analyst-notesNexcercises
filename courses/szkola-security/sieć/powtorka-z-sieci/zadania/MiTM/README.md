@@ -1,7 +1,5 @@
 # MiTM
 
-## Opis
-
 MiTM (**Man-in-the-Middle**) to atak, w którym napastnik znajduje się pomiędzy dwiema komunikującymi się stronami i przechwytuje, analizuje lub modyfikuje przesyłane dane. Ofiara często nie jest świadoma, że komunikacja nie przebiega bezpośrednio.
 
 ## Charakterystyka ataku
