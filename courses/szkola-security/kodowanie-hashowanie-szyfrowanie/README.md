@@ -3,7 +3,7 @@
 | Kategoria zadania |  Link do zadania |
 |---|---|
 | Kodowanie | [Enter](./zadania/kodowanie-cwiczenia.md) | 
-| Virustotal | [Enter](./zadania/virustotal-cwiczenia.md) | 
+| Virustotal | [Enter](./zadania/virtustotal-cwiczenia.md) | 
 | Szyfrowanie | [Enter](./zadania/szyfrowanie-cwiczenia.md) | 
 | Cyberchef receptury | [Enter](./zadania/cyberchef-receptury-cwiczenia.md) | 
 
