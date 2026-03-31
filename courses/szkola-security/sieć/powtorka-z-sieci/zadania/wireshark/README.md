@@ -4,7 +4,7 @@ W tym folderze znajduje się pierwsze zadanie z Wiresharka. Plik zawiera wprowad
 
 
 ## Zadanie
-[Enter](courses/szkola-security/sieć/powtorka-z-sieci/zadania/wireshark/wireshark-podstawy/wireshark.pcapng-analysis.md)
+[Enter](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/wireshark/wireshark-podstawy/wireshark.pcapng-analysis.md)
 
 ## Pytania z kursu
 1. Zidentyfikuj 3-way handshake w pakietach TCP
