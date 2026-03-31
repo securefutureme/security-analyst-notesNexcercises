@@ -2,6 +2,10 @@
 
 W tym folderze znajduje się pierwsze zadanie z Wiresharka. Plik zawiera wprowadzenie do Wiresharka, jak i zadanie ze Szkoły Security - Security Analyst - Podstawy z Sieci - wireshark.pcap
 
+
+## Zadanie
+[Enter](courses/szkola-security/sieć/powtorka-z-sieci/zadania/wireshark/wireshark-podstawy/wireshark.pcapng-analysis.md)
+
 ## Pytania z kursu
 1. Zidentyfikuj 3-way handshake w pakietach TCP
 2. Jaki protokół warstwy aplikacyjnej został użyty
