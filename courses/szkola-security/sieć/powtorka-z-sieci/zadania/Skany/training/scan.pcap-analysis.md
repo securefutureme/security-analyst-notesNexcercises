@@ -1,7 +1,5 @@
 # Skanowanie sieci
 
-![alt]()
-
 ## Zadanie 1 - Jaki rodzaj skany został użyty?
 ![alt](image-2.png)Na pierwszy rzut oka od razu jesteśmy w stanie zauważyć (bez nawet żadnych filtrów) że te skany się opierają na 3-way handshake (pełno SYN, RST/ACK). Filtrując po **Destination Port** możemy sprawdzić, że wszystko to się tyczy innych portów (zakres 0-9999)
 ![alt|697](courses/szkola-security/sieć/powtorka-z-sieci/zadania/Skany/training/image.png)
