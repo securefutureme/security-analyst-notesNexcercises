@@ -1,12 +1,17 @@
 # Przegląd zadań ze Szkoły Security
 
-|Kategoria zadania |  Link do zadania |
+| Kategoria zadania |  Link do zadania |
 |---|---|
-| Cyberchef | [Enter](./cyberchef/kodowanie-cwiczenia.md) | | | |
-
+| Kodowanie | [Enter](./zadania/kodowanie-cwiczenia.md) | 
+| Virustotal | [Enter](./zadania/virtustotal-cwiczenia.md) | 
+| Szyfrowanie | [Enter](./zadania/szyfrowanie-cwiczenia.md) | 
+| Cyberchef receptury | [Enter](./zadania/cyberchef-receptury-cwiczenia.md) | 
 
 # Przegląd zadań treningowych z innych źródeł
 
 |Kategoria zadania | Link do zadania |
 |---|---|
-| Cyberchef | | 
+| Kodowanie |  | 
+| Virustotal || 
+| Szyfrowanie | | 
+| Cyberchef receptury | | 
