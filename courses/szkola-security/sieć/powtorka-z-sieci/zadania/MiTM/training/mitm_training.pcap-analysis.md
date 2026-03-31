@@ -51,6 +51,7 @@ Odp. Bazując na analizie z zadania 1 - **jest to protokół ARP**
 **Odfiltrowujemy adres atakującego - eth.src == 00:00:de:ad:be:ef**  
 
 ![alt](image-15.png)
+
 **9985     2022-04-10 06:17:52**
 00:00:de:ad:be:ef           10.0.0.1              00:00:fe:ed:f0:0d            10.0.0.103                        
 ICMP     60                          
@@ -91,6 +92,7 @@ Szukamy ruch http ofiary który podczas ataku przechodził przez atakującego.
 ![alt](image-9.png)
 
 ![alt](image-10.png)
+
 **Odp.** www.uwm.edu.pl
 
 ## Zadanie 7 - Czy strona używała szyfrowanego połączenia?
