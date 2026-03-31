@@ -78,7 +78,7 @@ Bardzo przydatna funkcja to **Follow TCP Stream albo ogólnie Follow Stream**, b
 
 **Enabled Protocols** pozwala sprawdzić, jakie protokoły Wireshark interpretuje i ewentualnie to zmienić. 
 
-![alt](image1.png)
+![alt](./readmeresources/image1.png)
 
 **Expert Information** zbiera ostrzeżenia, nietypowe zdarzenia i rzeczy, które mogą od razu zwrócić uwagę podczas analizy.  
 
