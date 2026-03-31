@@ -1,0 +1,10 @@
+Jaki atak został przeprowadzony?
+Jaki protokól został wykorzystany do przeprowadzenia ataku?
+O której godzinie zaczął się atak?
+O której godzinei skończył się atak?
+Jaki był adres MAC atakującego?
+Jaki był adres MAC ofiary?
+Jaką stronę odwiedziła ofiara?
+Czy strona używała szyfrowanego połączenia?
+Ściągniej wyeksportowaną wersje strony odwiedzonej przez ofiarę z poziomu 
+Co stało się podczas ładowania strony?
