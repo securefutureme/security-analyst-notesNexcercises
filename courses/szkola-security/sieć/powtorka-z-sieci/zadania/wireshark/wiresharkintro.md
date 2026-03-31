@@ -78,7 +78,9 @@ Opcja **Go** w Wireshark służy głównie do szybkiej nawigacji po pakietach w 
 Bardzo przydatna funkcja to **Follow TCP Stream albo ogólnie Follow Stream**, bo pozwala podejrzeć całą rozmowę w ramach jednego strumienia. Dzięki temu łatwiej zobaczyć, „kto z kim rozmawia” i co dokładnie jest przesyłane.
 
 **Enabled Protocols** pozwala sprawdzić, jakie protokoły Wireshark interpretuje i ewentualnie to zmienić. 
-![alt](Pastedimage20260330200232.png)
+
+![alt](image1.png)
+
 **Expert Information** zbiera ostrzeżenia, nietypowe zdarzenia i rzeczy, które mogą od razu zwrócić uwagę podczas analizy.  
 
 **- Chat (niebieski)** Informacje o typowym przebiegu działania, np. pakiet TCP z ustawioną flagą SYN.
