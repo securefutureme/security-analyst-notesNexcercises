@@ -1,11 +1,14 @@
 # Skanowanie sieci
 
 ## Zadanie 1 - Jaki rodzaj skany został użyty?
-![alt](image-2.png)Na pierwszy rzut oka od razu jesteśmy w stanie zauważyć (bez nawet żadnych filtrów) że te skany się opierają na 3-way handshake (pełno SYN, RST/ACK). Filtrując po **Destination Port** możemy sprawdzić, że wszystko to się tyczy innych portów (zakres 0-9999)
-![alt|697](courses/szkola-security/sieć/powtorka-z-sieci/zadania/Skany/training/image.png)
+![alt](image-2.png)
+
+Na pierwszy rzut oka od razu jesteśmy w stanie zauważyć (bez nawet żadnych filtrów) że te skany się opierają na 3-way handshake (pełno SYN, RST/ACK). Filtrując po **Destination Port** możemy sprawdzić, że wszystko to się tyczy innych portów (zakres 0-9999)
+![alt](image.png)
 
 ![alt](image-1.png)
-typowy wzorzec dla **skanu SYN**, (**half-open scan**)
+
+Jest to typowy wzorzec dla **skanu SYN**, (**half-open scan**)
 
 ## Zadanie 2. Podaj IP skanera
 
@@ -33,7 +36,7 @@ NOTE: Metoda pośrednia: Przy skanach, tam gdzie jest otwarty port, możemy zaob
 ## Zadanie 5. Jakie porty były odfiltrowane?
 
 By ustalić które porty były odfiltrowane, sprawdzamy na które próby połączenia host docelowy w ogóle odpowiedział:  
-**Statistics → Conversations → TCP  
+**Statistics → Conversations → TCP**
 
 ![alt](image-6.png)
 
