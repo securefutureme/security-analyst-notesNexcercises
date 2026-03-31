@@ -15,7 +15,7 @@ Mogę zacząć od filtrowania pakietów SYN, na przykład przez **tcp.flags == 0
 
 ![alt](Pastedimage20260330202401.png)
 
-![alt](Pastedimage20260330202405.png])
+![alt](Pastedimage20260330202405.png)
 Tutaj celem jest znalezienie poprawnej sekwencji SYN -> SYN/ACK -> ACK.
 
 **0x02** – SYN**, 0x10** – ACK**, 0x12 (0x10 + 0x02)** – SYN/ACK
