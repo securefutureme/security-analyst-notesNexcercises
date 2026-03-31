@@ -11,7 +11,7 @@
 
 |Kategoria zadania | Nazwa pliku Pcap | Link do zadania |
 |---|---|---|
-| Wireshark | wireshark | |
-| DDoS | ddos_training |  |
-| Skany | scan |  |
-| MiTM | mitm_training | |
+| Wireshark |  | |
+| DDoS |  |  |
+| Skany |  |  |
+| MiTM |  | |
