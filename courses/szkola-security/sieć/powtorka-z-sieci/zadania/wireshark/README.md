@@ -2,6 +2,10 @@
 
 W tym folderze znajduje się pierwsze zadanie z Wiresharka. Plik zawiera wprowadzenie do Wiresharka, jak i zadanie ze Szkoły Security - Security Analyst - Podstawy z Sieci - wireshark.pcap
 
+
+## Zadanie
+[Enter](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/wireshark/wireshark-podstawy/wireshark.pcapng-analysis.md)
+
 ## Pytania z kursu
 1. Zidentyfikuj 3-way handshake w pakietach TCP
 2. Jaki protokół warstwy aplikacyjnej został użyty
@@ -78,7 +82,7 @@ Bardzo przydatna funkcja to **Follow TCP Stream albo ogólnie Follow Stream**, b
 
 **Enabled Protocols** pozwala sprawdzić, jakie protokoły Wireshark interpretuje i ewentualnie to zmienić. 
 
-![alt](image1.png)
+![alt](./readmeresources/image1.png)
 
 **Expert Information** zbiera ostrzeżenia, nietypowe zdarzenia i rzeczy, które mogą od razu zwrócić uwagę podczas analizy.  
 
