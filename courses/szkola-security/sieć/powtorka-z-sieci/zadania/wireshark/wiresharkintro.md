@@ -20,8 +20,7 @@ W Wiresharku kluczowe jest filtrowanie ruchu, bo bez tego analiza większego zrz
 **Druga istotna rzecz to analiza per protokół.** Dzięki temu widać, które warstwy biorą udział w komunikacji, gdzie kończy się jeden etap wymiany i zaczyna następny, a także na którym poziomie pojawia się problem.
 
 **Do tego dochodzi śledzenie całych strumieni i konwersacji.** To pozwala analizować komunikację jako ciąg zależnych od siebie pakietów, a nie zbiór pojedynczych ramek. W praktyce to właśnie tutaj najlepiej widać kontekst sesji, sekwencję żądań i odpowiedzi oraz moment, w którym coś przestaje działać.  
-Jest to oczywiście kropla w morzu funkcjonalności Wiresharka, ale na potrzeby wstępnej analizy ruchu sieciowego już te opcje wystarczają, by zobaczyć, jak dużo informacji można wydobyć z pozornie zwykłego przechwycenia pakietów.  
-**  
+Jest to oczywiście kropla w morzu funkcjonalności Wiresharka, ale na potrzeby wstępnej analizy ruchu sieciowego już te opcje wystarczają, by zobaczyć, jak dużo informacji można wydobyć z pozornie zwykłego przechwycenia pakietów. 
 
 ## **Optymalizacja Wiresharka**
 
@@ -39,12 +38,12 @@ Dostosowuję też kolumny do tego, co analizuję. Przy konkretnych przypadkach w
 - length,  
 - info.  
   
-3. **Opcje Wiresharka
+## Opcje Wiresharka
 
 **a) File**
 
 Z tego menu w praktyce najczęściej przydają się dwie rzeczy:  
-**Export Objects ** - Pozwala wyodrębnić pliki przesyłane w ruchu sieciowym, na przykład przez HTTP, SMB albo FTP. Dzięki temu nie kończymy analizy na samych pakietach — można odzyskać faktycznie przesyłany obiekt, np. dokument albo inny plik.
+**Export Objects** - Pozwala wyodrębnić pliki przesyłane w ruchu sieciowym, na przykład przez HTTP, SMB albo FTP. Dzięki temu nie kończymy analizy na samych pakietach — można odzyskać faktycznie przesyłany obiekt, np. dokument albo inny plik.
 
 **Merge** służy do łączenia kilku plików capture w jeden. To przydaje się wtedy, gdy ruch został zapisany w kilku osobnych plikach, a chcemy analizować go jako całość.
 
@@ -84,8 +83,11 @@ Bardzo przydatna funkcja to **Follow TCP Stream albo ogólnie Follow Stream**, b
 **Expert Information** zbiera ostrzeżenia, nietypowe zdarzenia i rzeczy, które mogą od razu zwrócić uwagę podczas analizy.  
 
 **- Chat (niebieski)** Informacje o typowym przebiegu działania, np. pakiet TCP z ustawioną flagą SYN.
+
 **- Uwaga (cyjan) Istotne** zdarzenia, np. aplikacja zwróciła typowy kod błędu, taki jak HTTP 404.
+
 **- Ostrzeżenie (żółty)** Ostrzeżenia, np. aplikacja zwróciła nietypowy błąd, taki jak problem z - połączeniem.
+
 **- Błąd (czerwony)** Poważne problemy, np. uszkodzone lub nieprawidłowe pakiety.
 
 https://www.wireshark.org/docs/wsug_html_chunked/ChAdvExpert.html
