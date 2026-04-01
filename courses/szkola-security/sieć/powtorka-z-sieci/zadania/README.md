@@ -5,7 +5,7 @@
 | Wireshark         | wireshark        | [Enter](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/wireshark/wireshark-podstawy/wireshark.pcapng-analysis.md) |                     |                     |                     |
 | DDoS              | ddos_training    | [Enter](./DDoS/training/ddos_training.pcap-analysis.md)                                                                  |                     |                     |                     |
 | Skany             | scan             | [Enter](./Skany/training/scan.pcap-analysis.md)                                                                          |                     |                     |                     |
-| MiTM              | mitm_training    | [Enter](./MiTM/training/mitm_training.pcap-analysis.md)                                                                  |                     |                     |                     |
+| MiTM              | mitm_training    | [Enter](./MiTM/training/mitm-training.md)                                                                  |                     |                     |                     |
 
 # Przegląd zadań treningowych z innych źródeł
 
