@@ -74,7 +74,7 @@ ARP       60                         
 
 Szukamy hosta który został „nadpisany” w tablicy ARP i do którego były przekierwoywane odpowiedzi:  
   
-![alt](image-7.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-7.png)
   
 **00:00:fe:ed:f0:0d**
 
@@ -86,11 +86,11 @@ Szukamy ruch http ofiary który podczas ataku przechodził przez atakującego.
 **eth.src == 00:00:fe:ed:f0:0d** – pakiety które wyszły od ofiary  
 **eth.dst == 00:00:de:ad:be:ef** – pakiety przeszły przez atakującego (trafiły do atakującego na poziomie ramki Ethernet)
 
-![alt](image-8.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-8.png)
 
-![alt](image-9.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-9.png)
 
-![alt](image-10.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-10.png)
 **Odp.** www.uwm.edu.pl
 
 ## Zadanie 7 - Czy strona używała szyfrowanego połączenia?
