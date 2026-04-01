@@ -1,11 +1,14 @@
 # Skany
 
 Skany sieciowe to techniki rozpoznawcze wykorzystywane do zbierania informacji o hostach, portach, usługach i systemach operacyjnych. Sam skan nie zawsze oznacza atak, ale bardzo często stanowi **pierwszy etap rozpoznania przed właściwym atakiem**.
-## Zadania
+
+## Zadania ze Szloły Security
 
 | Zadanie | Link |
 |---|---|
 | Scan | [Link](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/Skany/training/scan.pcap-analysis.md) |
+
+## Inne pcapy
 
 
 ## Charakterystyka skanowania
