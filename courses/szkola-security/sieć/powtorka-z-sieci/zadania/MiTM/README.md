@@ -36,7 +36,7 @@ Podstawowe metody ochrony przed MiTM:
 
 | Zadanie | Link |
 |---|---|
-| Training | [Link](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/training.pcap-analysis.md) | 
+| Training | [Link](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/mitn-training.md) | 
 | Zadanie 1 | [Link](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/1.pcap-analysis.md) |
 | Zadanie 2 | [Link](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/2.pcap-analysis.md) |
 | Zadanie 3 | [Link](/courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/3.pcap-analysis.md) |
