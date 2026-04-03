@@ -16,7 +16,7 @@ W ten sposób odfiltrujemy dużo niepotrzebnych w analizie pakietów, i będziem
 
 Na razie nic nie widać – przynajmniej póki nie skupimy się na adresach MAC.  
   
-![alt](image-13.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-13.png)
   
 Tutaj widzimy coś nietypowego – jeden adres IP z dwoma adresami MAC! Widać że większość ruchu HTTP wychodzi do MAC 00:50:56:38:08:36, ale trafia do MAC 00:00:de:ad:be:ef.  
 Zmiana adresu MAC odbywa się w krótkim odstępie czasu, jest to nietypowe zachowanie bo host nie wysyła pakietów do prawidłowego MAC. Może to świadczyć o ataku MiTM.  
@@ -30,7 +30,7 @@ Zmiana adresu MAC odbywa się w krótkim odstępie czasu, jest to nietypowe zach
 Jak widzimy, nasz podejrzany dopiero koło pakietu 9987 „przechwycił komunikację” i zmienił adres MAC na swój. **10.0.0.1 is at 00:00:de:ad:be:ef.  
   
 **Może to świadczyć o ARP Spoofingu. Musimy więc potwierdzić naszą teorię filtrem arp**:  
-![alt](image-14.png) 
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-14.png) 
 
 Dokładnie 9987: wcześniej 10.0.0.103 był 00:00:fe:ed:f0:0d a potem:  
 
@@ -74,7 +74,7 @@ ARP       60                         
 
 Szukamy hosta który został „nadpisany” w tablicy ARP i do którego były przekierwoywane odpowiedzi:  
   
-![alt](image-7.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-7.png)
   
 **00:00:fe:ed:f0:0d**
 
@@ -86,11 +86,11 @@ Szukamy ruch http ofiary który podczas ataku przechodził przez atakującego.
 **eth.src == 00:00:fe:ed:f0:0d** – pakiety które wyszły od ofiary  
 **eth.dst == 00:00:de:ad:be:ef** – pakiety przeszły przez atakującego (trafiły do atakującego na poziomie ramki Ethernet)
 
-![alt](image-8.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-8.png)
 
-![alt](image-9.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-9.png)
 
-![alt](image-10.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-10.png)
 
 **Odp.** www.uwm.edu.pl
 
@@ -100,11 +100,11 @@ Szukamy ruch http ofiary który podczas ataku przechodził przez atakującego.
 
 ## Zadanie 8 -  Ściągnij wyeksportowaną wersje strony odwiedzonej przez ofiarę
 
-![alt](image-11.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-11.png)
 
 **File - > Export Objects -> http -> Text filter: uwm.edu.pl -> Save As**
 ## Zadanie 9 - Co stało się podczas ładowania strony?
 
 Kolejny Rick and Roll 😊
 
-![alt](image-12.png)
+![alt](courses/szkola-security/sieć/powtorka-z-sieci/zadania/MiTM/training/image-12.png)
