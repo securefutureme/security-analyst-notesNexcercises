@@ -3,7 +3,7 @@
 **Initech Corp**, średniej wielkości firma świadcząca usługi finansowe, niedawno wdrożyła nowy **firewall** oraz **system wykrywania włamań (IDS)** do monitorowania perymetru sieci. W ciągu ostatniego miesiąca analitycy bezpieczeństwa zauważyli nietypowe wzorce ruchu, jednak zespół **SOC** był przeciążony i nie przeprowadził dokładniejszej analizy. Jako nowy analityk bezpieczeństwa otrzymałeś zadanie przejrzenia logów perymetru z jednego miesiąca, aby ustalić, **jakie techniki zastosował przeciwnik** oraz **czy udało mu się naruszyć perymetr**.
 
 (tutaj omawiane są pliki z Wirtualnej maszyny w TryHackMe)
-Otrzymałeś trzy zestawy logów z okresu incydentu. Dostępne pliki to :
+Mamy trzy zestawy logów z okresu incydentu. Dostępne pliki to :
 
 **Firewall Logs:** `firewall.log`  
 **WAF Logs:** `ids_alerts.log`  
