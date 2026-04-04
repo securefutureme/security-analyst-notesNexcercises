@@ -5,17 +5,14 @@
 
 ## WSTĘP – NAJWAŻNIEJSZE POJĘCIA I PODSTAWY 
 
-- How do you keep yourself updated with information security? → 
-    
+#### How do you keep yourself updated with information security? →  Jak dbasz o bieżące aktualizowanie wiedzy z zakresu bezpieczeństwa informacji?  
 
-Jak dbasz o bieżące aktualizowanie wiedzy z zakresu bezpieczeństwa informacji?  
 Tutaj możemy mieć kilkanaście opcji do wyboru.  
 “Obserwuję niebezpiecznika na różnych kanałach, w tym na ich stronie, czytał artykuły z HackerNews i HackRead”  
 TIP: Można poczytać kilka artykułów przed rozmową żeby bardziej być w temacie.
 
-- Authentication vs authorization (uwierzytelnianie vs autoryzacja)  
-    Bardzo popularne pytanie na rozmowach (starter)
-    
+#### Authentication vs authorization (uwierzytelnianie vs autoryzacja)
+_**Bardzo popularne pytanie na rozmowach (starter)**_
 
 Uwierzytelnienie - wtedy, kiedy udowadniamy, że my to my. W skrócie - proces weryfikacji tożsamości przed przyznaniem dostępu.  
 Uwierzytelnianie ma trzy czynniki - to co wiemy (hasło, PIN), to co mamy (token, karta) i to czym jesteś (biometria, rozpoznanie twarzy). Mogą być jedno, dwu albo kilkuskładnikowe (MFA).  
@@ -23,64 +20,42 @@ Uwierzytelnianie ma trzy czynniki - to co wiemy (hasło, PIN), to co mamy (token
 Autoryzacja - czyli - do czego masz konkretnie dostęp?. W skrócie - określenie poziomu dostępu użytkownika.  
 Przykład: admin zwykle ma dostęp do wszystkiego, HR ma tylko dostęp do folderu grupy HR, ale już nie ma do Sales, uczeń może zobaczyć swoje oceny, ale nie innych uczniów, jako klient banku masz dostęp do swojego konta, ale np. nie możesz zmienić już software którego bank używa itp.
 
-  
-  
-  
-
-- What are Black Hat, White Hat and Gray Hat Hackers? → 
-    
-
-Kim są hakerzy typu black hat, white hat i gray hat?  
+#### What are Black Hat, White Hat and Gray Hat Hackers? → Kim są hakerzy typu black hat, white hat i gray hat?  
 Hakerzy black hat to zwykle hakerzy, którzy się włamują do systemów nielegalnie, bez pozwolenia, wykorzystując znane podatności lub zero-daye. Zwykle są tymi “złymi” hakerami, włamując się do systemów dla swojego zysku.
 
 Hakerzy white hat to hakerzy, którzy pracują legalnie i włamują się do systemów za pozwoleniem firmy, by potem robić z tego raporty, które będą miały na celu poprawę bezpieczeństwa serwerów/stron/aplikacji. Zwykle są certyfikowani - znani też jako etyczni hakerzy.  
   
 Gray hat to hakerzy, którzy są mieszanką czarnych i białych - włamują się do systemów nielegalnie, ale nie robią tego ze złych zamiarów - nie są wynajęci, ale włamują się do systemów, by potem przekazywać te informacje do firm (za drobną opłatą) by załatać podatność (coś jak Bounty Hunter).
 
-- Do you know any programming language? →  
-    Czy znasz jakiś język programowania?  
-    Tutaj lepiej nie zmyślać, powiedzieć że w szkole miałem C++ i podstawy pythona (lata temu). Obecnie bez praktyki.  
-      
-    
-- How can you define Blue Team and Red Team basically? →  
-    Jak w podstawowy sposób zdefiniujesz Blue Team i Red Team?  
-    Blue Team to drużyna “broniąca” a Red Team “atakująca” systemy informatyczne.  
-      
-    
-- Explain Vulnerability, Risk and Threat →  
-    Wyjaśnij różnicę między: podatnością (vulnerability), ryzykiem (risk) i zagrożeniem (threat).
-    
+#### Do you know any programming language? →  Czy znasz jakiś język programowania?    
+**TIP:** przy tym pytaniu lepiej odpowiedzieć zgodnie z obecnym stanem znajomości języków programowania.
 
+#### How can you define Blue Team and Red Team basically? →  Jak w podstawowy sposób zdefiniujesz Blue Team i Red Team?  
+
+Blue Team to drużyna “broniąca” a Red Team “atakująca” systemy informatyczne.  
+
+#### Explain Vulnerability, Risk and Threat →  Wyjaśnij różnicę między: podatnością (vulnerability), ryzykiem (risk) i zagrożeniem (threat).
+    
 Podatność to “słabość” czy też “luka” w systemie, w ich procedurach, w kontrolach zarządczych czy też w implementacji - która może być wykorzystana i wyeksploatowana przez hakerów.  
 Ryzyko to duże będa skutki, jeśli zagrożenie będzie realne (wpływ na biznes/operacje) oraz jak bardzo jest prawdopodobne, że do tego dojdzie  
 Zagrożenie to każda sytuacja, która może realnie zaszkodzić organizacji czy ludziom bo ktoś wykorzystał system w niewłaściwy sposób (uzyska dostęp do uprawnień których nie powinien mieć, zniszczy dane itp.)
 
-- What is compliance?  
-    Czym jest compliance (zgodność z wymaganiami/standardami)?  
-    Compliance jak sama nazwa wskazuje, jest to działanie w wymaganiami, które obowiązują w danej firmie albo gdy narzuca je regulacja czy rząd. Są to polityki, procedury i kontrole które muszą wdrożone.  
-      
-    
+#### What is compliance? - Czym jest compliance (zgodność z wymaganiami/standardami)?  
 
-  
+Compliance jak sama nazwa wskazuje, jest to działanie w wymaganiami, które obowiązują w danej firmie albo gdy narzuca je regulacja czy rząd. Są to polityki, procedury i kontrole które muszą wdrożone.  
 
-- What is MITRE ATT&CK?  
-    Czym jest MITRE ATT&CK?  
-    Jest to globalne knowledge base która opisuje jak atakujący operują w praktyce - jakie mają cele/taktyki i jakie mają techniki, są one oparte na rzeczywistych obserwacjach kampanii atakujących. W SOC używamy je jako język do modelowania zagrożeń, mapowania detekcji, opisu incydentów czy też analizy luk w kontrolach/detekcjach.  
+#### What is MITRE ATT&CK? -> Czym jest MITRE ATT&CK?  
+Jest to globalne knowledge base która opisuje jak atakujący operują w praktyce - jakie mają cele/taktyki i jakie mają techniki, są one oparte na rzeczywistych obserwacjach kampanii atakujących. W SOC używamy je jako język do modelowania zagrożeń, mapowania detekcji, opisu incydentów czy też analizy luk w kontrolach/detekcjach.  
       
-    
-- Do you have any project that we can look at? →  
-    Czy masz projekt, który możemy obejrzeć / przeanalizować?  
-    Obecnie (na 14.01) posiadam jeden projekt na GitHubie, w którym analizowałem maile phishingowe.  
+#### Do you have any project that we can look at? →  Czy masz projekt, który możemy obejrzeć / przeanalizować?  
+TIP: najlepiej wymienić te projekty, które mają jakieś odzwierciedlenie dla pozycji na którą startujesz.
+
+#### Could you share some general endpoint security product categories? → Podaj podstawowe kategorie produktów do ochrony endpointów.  
+Antiwirus, EDR (Endpoint Detection and Response), XDR(Extended Detection and Response) , DLP (Data Loss Prevention), ale też Firewall czy MDM.  
       
-    
-- Could you share some general endpoint security product categories? →  
-    Podaj podstawowe kategorie produktów do ochrony endpointów.  
-    Antiwirus, EDR (Endpoint Detection and Response), XDR(Extended Detection and Response) , DLP (Data Loss Prevention), ale też Firewall czy MDM.  
-      
-    
-- What is CIA triad? →  
-    Czym jest triada CIA?  
-    Jest to podstawowy model w cybersecurity, używanych przy dla ochrony systemów i informacji.  
+#### What is CIA triad? →  Czym jest triada CIA?  
+
+Jest to podstawowy model w cybersecurity, używanych przy dla ochrony systemów i informacji.  
     C to confidentiality, czyli dostęp do danych mają określone osoby;  
     I to Integrity czyli że dane są poprawne i nie zostały zmienione w sposób nieautoryzowany;  
     A to Availability czyli dane i usługi są dostępne wtedy, kiedy są potrzebne dla uprawnionych użytkowników;  
