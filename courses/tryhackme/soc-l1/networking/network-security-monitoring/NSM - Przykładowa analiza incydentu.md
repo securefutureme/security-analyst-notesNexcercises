@@ -436,23 +436,37 @@ Ten filtr nam pokazuje czas, nazwę użytkownika, źródłowy adres IP i przypis
 
 **Odp. assigned_ip jako pierwsze pokazuje 10.8.0.23
 
-`Który port został użyty do prób ruchu bocznego przez SMB?`
+Który port został użyty do prób ruchu bocznego przez SMB?`
 
-**Odp. 
+SMB – używane porty sieciowe
+- TCP 445 – wykorzystywany przez nowsze wersje SMB (SMBv2/v3) do komunikacji „Direct Host”, czyli bezpośrednio przez TCP/IP, bez NetBIOS.
+- TCP 139 – używany przez starsze SMB (SMBv1), działające w oparciu o NetBIOS over TCP/IP (NBT).
+- UDP 137 i UDP 138 – obsługują odpowiednio rozwiązywanie nazw NetBIOS oraz usługi datagramowe.
+- UDP 443 – wykorzystywany przez nowoczesne wdrożenia SMB over QUIC w nowszych wersjach Windows Server.
+
+<img width="1971" height="1471" alt="image" src="https://github.com/user-attachments/assets/34a549cb-4f49-43d6-b94f-01bb6e530985" />
+
+**Odp. 445**
 
 
 W logach IDS, który host wysyłał beacony do serwera C2?
 
+Szukamy alertu "ET TROJAN Possible C2 Beaconing" w logach IDS, następnie patrzymy na "scr_ip":
 
-**Odp. **
+<img width="2458" height="1548" alt="image" src="https://github.com/user-attachments/assets/867a5899-3f12-43f5-ac2d-25d3287f4a41" />
 
+**Odp. 10.0.0.60**
 
 Jaki adres IP został podczas analizy powiązany z infrastrukturą C2?
 
-**Odp. **
+Tak jak wyżej - sprawdzamy "dst_ip"
 
+**Odp. 198.51.100.77**
 
 Który host wykazywał próby eksfiltracji danych?
 
+Szukamy tutaj "alertów" z informacją "ET INFO Possible HTTP POST Large Upload".
 
-**Odp. 
+<img width="2030" height="1376" alt="image" src="https://github.com/user-attachments/assets/0b4d4f2e-bc2d-4134-90b9-10659d2dfca6" />
+
+**Odp. 10.0.0.51**
