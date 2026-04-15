@@ -3,7 +3,7 @@
 
 ### TCP/IP vs OSI (Open System Interconnection model)
 
-**W modelu OSI zapamiętaj:**  
+##### **W modelu OSI zapamiętaj:**  
 
 **Polski: APSTSŁF** 
 
@@ -36,7 +36,7 @@ np. **Anka Trzepie Nienagannie Niebieskie Irysy**
 
 **IPv4 / IPv6 są w 3 warstwie (2 warstwa TCP)- sieciowej/internetowej**  
 
-**Warstwa 1 - Fizyczna (Dostępu Do Sieci)  
+### **Warstwa 1 - Fizyczna (Dostępu Do Sieci)  
 
 **Warstwa fizyczna** odpowiada za przesyłanie sygnałów w sieci. Jej zadaniem jest zamiana bitów informacji na sygnały, które mogą zostać przesłane przez dane medium transmisyjne, takie jak **kable, światłowody czy sieci bezprzewodowe**.
 
@@ -51,11 +51,11 @@ Po przejściu przez medium transmisyjne sygnały są **odczytywane i zamieniane 
 
 https://kaser.zsl.gda.pl/PSK%202/6.%20Model%20OSI%20-%20warstwa%20fizyczna.pdf
   
-**Warstwa 2 - Łącza danych (Dostępu Do Sieci)**  
+### **Warstwa 2 - Łącza danych (Dostępu Do Sieci)**  
 
 Głównym celem jest detekcja błędów, które się pojawiły w warstwie pierwszej oraz kontrola/ustalanie reguł przepływu danych przez warstwę fizyczną.” 
   
-MAC (Media Access Control):
+##### **MAC (Media Access Control):**
 
 [https://pl.wikipedia.org/wiki/Adres_MAC](https://pl.wikipedia.org/wiki/Adres_MAC)
 
@@ -69,9 +69,8 @@ MAC (Media Access Control):
 - 8c:30:0f:f8:27:69  
 - pierwsze 6 oktetów pozwala identyfikować producenta karty sieciowej  
 - Można je zmieniać (spoofować) z poziomu systemu operacyjnego  
-  
 
-**Warstwa 3 - Internetowa**  
+### **Warstwa 3 - Internetowa**  
 
 Umożliwia komunikację między urządzeniami, które nie są bezpośrednio połączone fizycznie.
 
@@ -85,16 +84,15 @@ IP:
 
 [https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges  
   
-](https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges)
+(https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges)
 
 **Do zapamiętania:**
 
 - Adresy IP można spoofować (podrabiać)
 - Podzielona na prywatne vs publiczne. Prywatne mogą się powtarzać ale nie są routowalne. Publiczne są unikalne i routowalne  
 - jest logicznym adresem interfejsu sieciowego urządzenia pracującego w sieci  
-  
 
-Maski podsieci:
+#### Maski podsieci:
 
 [https://avinetworks.com/glossary/subnet-mask/](https://avinetworks.com/glossary/subnet-mask/)
 
@@ -114,11 +112,9 @@ Maski podsieci:
 - Liczba po ukośniku to liczba jedynek w masce (np. /24 ma 24 bity sieci).
 - W IPv6 używamy wyłącznie prefiksu CIDR (np. /64); zasada „część sieci + część hosta” pozostaje ta sama.
 - „Ostatni adres w podsieci” to broadcast – trafia do wszystkich urządzeń w tej podsieci. (Przykład dla IPv4.)
-- Maska dotyczy adresów IP; adresy MAC nie używają masek (to identyfikatory warstwy sprzętowej). [](https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/?utm_source=chatgpt.com)
+- Maska dotyczy adresów IP; adresy MAC nie używają masek (to identyfikatory warstwy sprzętowej). [](https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/?utm_source=chatgpt.com) 
 
-  
-
-**Address Broadcast:**
+##### **Address Broadcast:**
 
 [https://www.omnisecu.com/tcpip/broadcast-mac-address.php](https://www.omnisecu.com/tcpip/broadcast-mac-address.php)
 
@@ -127,7 +123,6 @@ Maski podsieci:
 [https://en.wikipedia.org/wiki/Broadcast_address](https://en.wikipedia.org/wiki/Broadcast_address)
 
 [https://www.pcmag.com/encyclopedia/term/broadcast-address](https://www.pcmag.com/encyclopedia/term/broadcast-address)
-
 
 **Do zapamiętania:**  
 
@@ -157,7 +152,7 @@ Maski podsieci:
 - ARP działa tylko w obrębie tej samej podsieci/VLAN (nie przechodzi przez routery).
 - Słaby punkt: ARP spoofing/poisoning (fałszywe odpowiedzi); obrona to m.in. Dynamic ARP Inspection + DHCP Snooping na przełącznikach.
 
-**Switch vs router:**
+##### **Switch vs router:**
 
 [https://blog.router-switch.com/2021/10/difference-between-router-and-switch/](https://blog.router-switch.com/2021/10/difference-between-router-and-switch/)
 
@@ -170,8 +165,7 @@ Maski podsieci:
 - Switch - warstwy 2 ; router - warstwa 3
 - Switch łączy urządzenia w jednej podsieci na podstawie adresów MAC
 - Router łączy podsieci i routuje pakiety między nimi na podstawie adresu IP, stanowi granicę domeny broadcastowej (broadcast’y nie wychodzą poza podsieći
-  
-**Warstwa 4 - Transportowa** 
+### **Warstwa 4 - Transportowa** 
 
 Zarządza przesyłaniem danych między aplikacjami. Odpowiada za dzielenie danych na segmenty, numerowanie, retransmisję i kontrolę błędów.  
   
@@ -186,8 +180,7 @@ Zarządza przesyłaniem danych między aplikacjami. Odpowiada za dzielenie danyc
 - TCP - powolny, UDP - szybki (mają pakiet dropy)
 - TCP - upewnia się że dane zostały przesłane oraz w odpowiedniej kolejności
 - UDP - po prostu wysyła dane, nieuporządkowane
-
-**3-way handshake:**
+##### **3-way handshake:**
 
 [https://www.guru99.com/tcp-3-way-handshake.html](https://www.guru99.com/tcp-3-way-handshake.html)
 
