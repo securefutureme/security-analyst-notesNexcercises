@@ -95,3 +95,54 @@ Możemy zrobić to komendą **cut -d ","** **-f1 | uniq -c**
 **Jaki zewnętrzny adres IP wykonuje zewnętrzną aktywność skanującą?**
 
 ![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/image-18.png)
+
+
+# Horyzontalne skanowanie kontra wertykalne
+
+Gdy atakujący wiedzą już, jakie hosty znajdują się w sieci, często chcą ustalić, **które porty są otwarte** na tych hostach. Nazywa się to **skanowaniem portów (port scan)**. Rozróżniamy różne formy.
+### Skanowanie horyzontalne
+
+Czasami atakujący skanuje **ten sam port** na wielu różnych docelowych adresach IP. Taki typ skanowania nazywa się **skanowaniem horyzontalnym**. Skanowania horyzontalne są wykonywane po to, aby ustalić, **które hosty udostępniają konkretny port**. Atakujący może wykonać taki skan, jeśli planuje wykorzystać usługę działającą właśnie na tym porcie.
+
+Przykładem może być ransomware **WannaCry**, które rozprzestrzeniało się po sieci z użyciem podatności **SMBv1** i skanowało maszyny, na których był otwarty **port 445** (wykorzystywany przez **SMB**).
+
+Możemy wykryć skanowanie horyzontalne w logach, jeśli widzimy:
+
+- ten sam **źródłowy adres IP**
+- jeden **docelowy port**
+- ale wiele różnych **docelowych adresów IP**
+- w wielu zdarzeniach
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/image-19.png)
+### Skanowanie wertykalne
+
+**Skanowanie wertykalne** występuje wtedy, gdy **jeden adres IP hosta** jest skanowany na wielu różnych portach. Atakujący wykonują skanowanie wertykalne, aby **zmapować pojedynczy host** i zidentyfikować jego wystawione usługi. Tego typu aktywność może mieć miejsce wtedy, gdy atakujący koncentruje się na znalezieniu podatności na jednej konkretnej maszynie, ponieważ uznaje ją za **wartościowy cel**.
+
+Na przykład, jeśli organizacja wystawia do Internetu tylko **jeden serwer**, każdy atakujący chcący przełamać zabezpieczenia tej organizacji najpierw przeprowadzi **skanowanie wertykalne** tego serwera, aby zidentyfikować otwarte porty i zrozumieć, jakie usługi na nim działają.
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/image-21.png)
+
+Możemy wykryć skanowanie wertykalne w logach, jeśli obserwujemy:
+
+- ten sam **źródłowy adres IP**
+- ten sam **docelowy adres IP**
+- ale wiele różnych **docelowych portów**
+- w wielu zdarzeniach
+
+Czasami atakujący wykonują **mieszane skanowanie horyzontalne i wertykalne**, aby wykorzystać zalety obu technik.
+
+**Zadania:**
+
+Jeden z plików logów zawiera ślady skanowania horyzontalnego. Który zakres adresów IP został przeskanowany? Format: X.X.X.X/X
+
+**cat log-session-2.csv | cut -d "," -f5**
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/image-22.png)
+
+Odp. 203.0.113.0/24
+
+W tym samym pliku logów znajduje się jeden adres IP, wobec którego przeprowadzono skanowanie wertykalne. Jaki to adres IP?
+
+_**.**_._**.**_
+
+Na jednym z adresów IP przeskanowano tylko kilka portów odpowiadających popularnym usługom. Jakie porty zostały przeskanowane na tym adresie IP? Format: port1, port2, port3 w kolejności rosnącej.
