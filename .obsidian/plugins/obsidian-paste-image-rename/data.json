@@ -1,8 +1,8 @@
 {
   "imageNamePattern": "image",
-  "dupNumberAtStart": false,
+  "dupNumberAtStart": true,
   "dupNumberDelimiter": "-",
-  "dupNumberAlways": false,
+  "dupNumberAlways": true,
   "autoRename": true,
   "handleAllAttachments": false,
   "excludeExtensionPattern": "",

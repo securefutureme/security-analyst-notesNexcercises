@@ -38,7 +38,7 @@ i tak dalej...
 https://base64.guru/learn/base64-characters
 
 Z racji kompleksywności tego kodowania, najlepiej to odkodować CyberChefem bezpośrednio. 
-![alt](Pastedimage20260403144514.png)
+![alt](image-11111.png)
 
 **Odp. Mooncake{Nie_wszystko_base_co_ma_padding!}**
 

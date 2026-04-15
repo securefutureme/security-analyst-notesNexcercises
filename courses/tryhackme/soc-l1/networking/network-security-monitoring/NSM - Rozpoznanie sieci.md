@@ -139,10 +139,15 @@ Jeden z plików logów zawiera ślady skanowania horyzontalnego. Który zakres a
 
 ![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/image-22.png)
 
-Odp. 203.0.113.0/24
+**Odp. 203.0.113.0/24**
 
 W tym samym pliku logów znajduje się jeden adres IP, wobec którego przeprowadzono skanowanie wertykalne. Jaki to adres IP?
 
-_**.**_._**.**_
+Używamy trochę zmodyfikowanej komendy: **cut -d’,’ -f3,4,5,6 log-session-2.csv > csv2.txt**
+Skan wertykalny polega na skanowaniu portów od góry do dołu. Ta komenda pokaże nam obraz skanowania trochę lepiej:
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/1-image.png)
+
+**Odp. 192.168.230.145**
 
 Na jednym z adresów IP przeskanowano tylko kilka portów odpowiadających popularnym usługom. Jakie porty zostały przeskanowane na tym adresie IP? Format: port1, port2, port3 w kolejności rosnącej.

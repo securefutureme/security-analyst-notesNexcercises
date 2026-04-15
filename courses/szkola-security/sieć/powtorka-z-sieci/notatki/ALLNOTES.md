@@ -1,4 +1,3 @@
-
 # WSTĘP - SIEĆ / WIRESHARK
 
 ### TCP/IP vs OSI (Open System Interconnection model)
@@ -204,6 +203,87 @@ Zarządza przesyłaniem danych między aplikacjami. Odpowiada za dzielenie danyc
 ![alt](/courses/szkola-security/sieć/powtorka-z-sieci/notatki/Attachments/image.png)
 ![alt](/courses/szkola-security/sieć/powtorka-z-sieci/notatki/Attachments/image-1.png)
 
+### **Warstwa 5 - Sesji (Aplikacji)**
+
+**Warstwa sesji** odpowiada za **nawiązywanie, utrzymywanie i kończenie sesji komunikacyjnej** między aplikacjami. Kontroluje przebieg dialogu pomiędzy urządzeniami, dba o synchronizację wymiany danych i może wyznaczać **punkty kontrolne**, dzięki którym po przerwaniu połączenia transmisję można wznowić od ostatniego zapisanego miejsca, a nie od początku. W praktyce modelu TCP/IP funkcje tej warstwy często nie występują jako osobna warstwa, lecz są realizowane razem z mechanizmami wyższych poziomów.
+
+Aby zapewnić poprawną komunikację, warstwa sesji:
+
+- **zestawia, utrzymuje i zamyka sesję**,
+- **synchronizuje** wymianę danych między aplikacjami,
+- umożliwia stosowanie **checkpointów** (punktów kontrolnych),
+- wspiera **wznawianie połączenia** po błędzie lub zerwaniu transmisji.
+
+**Do zapamiętania:**
+
+- odpowiada za **dialog między aplikacjami**,
+- pilnuje początku, trwania i zakończenia sesji,
+- umożliwia wznowienie transmisji od ostatniego punktu kontrolnego,
+- jest szczególnie ważna tam, gdzie trzeba utrzymać ciągłość komunikacji.
+
+https://kaser.zsl.gda.pl/PSK%202/2.%20Model%20OSI%20-%20warstwa%20aplikacji%20prezentacji%20i%20sesji.pdf
+
+##### NetBios
+
+https://pl.wikipedia.org/wiki/NetBIOS
+
+https://users.pja.edu.pl/~s3452/prezentacja/html/netbios_netbeui.html
+### **Warstwa 6 - Prezentacji (Aplikacji)**
+
+**Warstwa prezentacji** odpowiada za sposób przedstawienia danych tak, aby aplikacja po stronie odbiorcy mogła je poprawnie odczytać. Jej zadaniem jest **tłumaczenie formatów danych**, **kodowanie i dekodowanie**, **kompresja** oraz **szyfrowanie i deszyfrowanie** informacji. Dzięki temu dwa różne systemy mogą wymieniać dane mimo różnic w sposobie ich zapisu i reprezentacji.
+
+Do podstawowych zadań warstwy prezentacji należą:
+
+- **konwersja formatów danych**,
+- **kodowanie i dekodowanie** zestawów znaków,
+- **kompresja i dekompresja** danych,
+- **szyfrowanie i deszyfrowanie** informacji.
+
+Przykłady standardów i mechanizmów związanych z tą warstwą:
+
+- **SSL/TLS**,
+- **JPEG**,
+- **MPEG**.
+
+**Do zapamiętania:**
+
+- dba o **format danych**,
+- „tłumaczy” dane między różnymi systemami,
+- odpowiada za **szyfrowanie** i **kompresję**,
+- sprawia, że dane są zrozumiałe dla aplikacji odbiorcy.
+
+https://jchost.pl/blog/tls/
+
+### **Warstwa 7 - Aplikacji**
+
+**Warstwa aplikacji** jest najwyższą warstwą modelu OSI i znajduje się **najbliżej użytkownika**. Zapewnia programom użytkowym dostęp do usług sieciowych, czyli umożliwia korzystanie z takich usług jak **strony WWW, poczta elektroniczna, przesyłanie plików czy rozwiązywanie nazw domen**. To właśnie tutaj działają protokoły, z których korzystają przeglądarki internetowe, klienci poczty i inne aplikacje sieciowe.
+
+Warstwa aplikacji realizuje między innymi:
+
+- udostępnianie **usług sieciowych** aplikacjom użytkownika,
+- inicjowanie komunikacji użytkownika z siecią,
+- obsługę **żądań i odpowiedzi** między aplikacjami,
+- wymianę danych w usługach WWW, poczty i transferu plików.
+
+Przykładowe protokoły tej warstwy:
+
+- **HTTP / HTTPS** – obsługa stron internetowych,
+- **SMTP** – wysyłanie poczty elektronicznej,
+- **DNS** – tłumaczenie nazw domen na adresy IP,
+- **FTP** – przesyłanie plików.
+
+**Do zapamiętania:**
+
+- to warstwa **najbliższa użytkownikowi**,
+- nie jest samą aplikacją, tylko warstwą dostarczającą jej usługi sieciowe,
+- korzystają z niej np. **przeglądarki, klienci poczty i programy FTP**,
+- typowe protokoły: **HTTP, SMTP, DNS, FTP**.
+
+https://www.cloudflare.com/learning/ddos/what-is-layer-7/
+
+https://www.geeksforgeeks.org/computer-networks/protocols-application-layer/
+
+https://pl.wikipedia.org/wiki/Domain_Name_System
 ### RODZAJE ATAKÓW SIECIOWYCH
 
 ##### DDoS - Distributed Denial of Service 
