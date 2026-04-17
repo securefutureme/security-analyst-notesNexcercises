@@ -52,7 +52,8 @@ Passphrase max lenght: 22
 **c) przykład 3.**
 **[Recipe 43 - Magento skimmer deobfuscation](## Recipe 43 - Magento skimmer deobfuscation)**
 
-Dobry przykład do szybkiego wyciągania najważniejszych wskaźników kompromitacji z zaciemnionego JavaScriptu, nie wykonując pełnej ręcznej analizy od początku - np. jeżeli mamy JavaScript z wieloma ciągami np. `\x68\x74\x74\x70...` to przez tą receptę szybko możemy wyciągnąć:
+Dobry przykład do szybkiego wyciągania najważniejszych wskaźników kompromitacji z 
+"zaciemnionego" JavaScriptu nie wykonując pełnej ręcznej analizy od początku - np. jeżeli mamy JavaScript z wieloma ciągami np. `\x68\x74\x74\x70...` to przez tą receptę szybko możemy wyciągnąć:
 
 - domeny
 - nazwy pliku JS
