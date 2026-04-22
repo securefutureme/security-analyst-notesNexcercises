@@ -1,4 +1,4 @@
-#### What is Firewall? → 
+#### What is Firewall? 
 Czym jest firewall (zapora sieciowa)?  
 
 Firewall jest urządzeniem bądź programem które zawiera zbiór reguł, blokujących lub pozwalających na określony ruch sieciowy.
@@ -8,53 +8,49 @@ Czym jest model OSI? Omów każdą warstwę.
 
 Model OSI jest modelem opisowym - w jaki sposób dane przechodzą przez sieć. Każda posiada swoje informacje, czyli nagłówki. Zmiana zerów i jedynek w solidne dane nazywamy enkapsulacją. I odwrotnie, rozbijanie danych na zera i jedynki to dekapsulacja. Dzieli się na 7 warstw:  
   
-7. Aplikacji - w tej warstwie jest wszystko to co my widzimy na ekranie, czyli co widzi aplikacja - przeglądarka itp. - mamy tutaj protokoły jak HTTP, SMTP etc.Są tu dane aplikacyjne (data), które występują we wszystkich 3 warstwach od góry.  
+- (7) Aplikacji - w tej warstwie jest wszystko to co my widzimy na ekranie, czyli co widzi aplikacja - przeglądarka itp. - mamy tutaj protokoły jak HTTP, SMTP etc.Są tu dane aplikacyjne (data), które występują we wszystkich 3 warstwach od góry.  
   
-8. Prezentacji  - tutaj zachodzi wszystkie procesy standaryzacji, żeby było zrozumiane dla wszystkich aplikacji i systemów. Czyli procesy szyfrowania danych, kodowanie, kompresja itp.  
-9. Sesji - przy każdym połączeniu musi być i sesja, w tej warstwie jest utrzymywane połączenie logiczne  
+- (6) Prezentacji  - tutaj zachodzi wszystkie procesy standaryzacji, żeby było zrozumiane dla wszystkich aplikacji i systemów. Czyli procesy szyfrowania danych, kodowanie, kompresja itp.  
   
-10. Transportowa - odpowiada za to, jak dane są przesyłane między dwoma urządzeniami, czyli czy chcemy je mieć dokładne i wolne, lub niedokładne i szybkie, mówimy tu o protokołach TCP i UDP, czyli np. TCP będzie wybrane przy pobieraniu danych (i przy TCP mamy wybór odpowiednich portów, HTTP, SMTP), a UDP np. w streamowaniu wideo, gdzie jak pojedyncze piksele nie dotrą, to nic wielkiego się nie stanie. W TCP mamy część danych nazywanych segmentami a w UDP datagramy.  
+- (5) Sesji - przy każdym połączeniu musi być i sesja, w tej warstwie jest utrzymywane połączenie logiczne  
   
-11. Sieciowa - w tej warstwie decyduje się, jaką drogą pakiety dotrą do celu oraz jakie dane są przesyłane pomiędzy sieciami. Komunikacja odbywa się na poziomie adresów IP. Czyli cały routing odbywa się tutaj. Ta warstwa decyduje o wysyłaniu pakietów z adresu źródłowego do adresu docelowego w miarę najkrótszym czasie. Równiez tutaj się odbywa adresacja IP.  
+- (4) Transportowa - odpowiada za to, jak dane są przesyłane między dwoma urządzeniami, czyli czy chcemy je mieć dokładne i wolne, lub niedokładne i szybkie, mówimy tu o protokołach TCP i UDP, czyli np. TCP będzie wybrane przy pobieraniu danych (i przy TCP mamy wybór odpowiednich portów, HTTP, SMTP), a UDP np. w streamowaniu wideo, gdzie jak pojedyncze piksele nie dotrą, to nic wielkiego się nie stanie. W TCP mamy część danych nazywanych segmentami a w UDP datagramy.  
   
-12. Łącza danych - tutaj zachodzi komunikacja w tej samej sieci LAN, switche, adresy MAC itp. Jest dodana ramka (frame) z fizycznymi adresami MAC, żeby dane widziały gdzie iść. 
+- (3) Sieciowa - w tej warstwie decyduje się, jaką drogą pakiety dotrą do celu oraz jakie dane są przesyłane pomiędzy sieciami. Komunikacja odbywa się na poziomie adresów IP. Czyli cały routing odbywa się tutaj. Ta warstwa decyduje o wysyłaniu pakietów z adresu źródłowego do adresu docelowego w miarę najkrótszym czasie. Równiez tutaj się odbywa adresacja IP.  
+  
+- (2) Łącza danych - tutaj zachodzi komunikacja w tej samej sieci LAN, switche, adresy MAC itp. Jest dodana ramka (frame) z fizycznymi adresami MAC, żeby dane widziały gdzie iść. 
 
-13. Fizyczna - w tej warstwie zachodzi bezpośrednia komunikacja pomiędzy urządzeniami, poprzez kable itp, czyli wymiana bitów pomiędzy urządzeniami.
+- (1) Fizyczna - w tej warstwie zachodzi bezpośrednia komunikacja pomiędzy urządzeniami, poprzez kable itp, czyli wymiana bitów pomiędzy urządzeniami.
 
-  
-  
-  
-  
-
-- What is Three-Way Handshake? →
-    
-
+#### What is Three-Way Handshake?
 Czym jest trzyetapowy handshake (TCP three-way handshake)?
 
 Three-Way handshake to metoda która opisuje wymianę komunikacji pomiędzy hostami, które używają TCP. Three-way, bo ma trzy “segmenty” - klient wysyła segment z flagą SYN (oraz ze swoim numerem ISN), że chce się połączyć, dostaje zwrotkę od hosta B SYN+ACK acknowledge - “przyjęliśmy Twoją prośbe i odsyłamy swój ISN”, a klient odsyła ACK, z potwierdzeniem ISN serwera.Przez to też TCP jest wolniejszy ale bardziej niezawodny, co szybki i stratny UDP. Mniej znane flagi - RST - resetuje połączenie, PSH - push, wymusza przesyłanie pakietu.  
   
 
-- What is TCP/IP Model? Explain the difference between OSI and TCP/IP model. → Czym jest model TCP/IP? Wyjaśnij różnice między modelem OSI a TCP/IP.
-    
+#### What is TCP/IP Model? Explain the difference between OSI and TCP/IP model. 
+Czym jest model TCP/IP? Wyjaśnij różnice między modelem OSI a TCP/IP.
 
-Model TCP/IP jest modelem praktycznym, który w przeciwieństwie do OSI (modelu referencyjnego), ma realne przełożenie jak dane są przesyłane w Internecie. Przede wszystkim jest zorientowany na zestaw protokołów i stanowi podstawę Internetu. Model OSI pozwala na zrozumienie funkcji - ma charakter dydaktyczny. Przedstawiany jest w czterech warstwach,  
-(4)Aplikacyjna - udostępnia użytkownikom możliwość korzystania z usług sieciowych (HTTPS, IMAP, POP3, DNS, SSH)  
-(3) Transportowa - której głównym zadaniem jest sprawna obsługa komunikacji pomiędzy urządzeniami,  
-(2) Sieciowa - której głównym zadaniem jest znalezienie najkrótszej i najszybszej drogi do urządzenia docelowego przez sieć rozległą,  
-(1 ) Dostępu do sieci - kodowanie danych na jezyk maszynowy, przekazywanie do medium transmisyjnego, adresacja (MAC).  
-Jakbyśmy mieli porównać modele, OSI rozdziela warstwę aplikacyjną modelu TCP/IP na trzy (aplikacyjną, sesji i prezentacji). Tak samo jak rozdziela dostępu do sieci na dwa - na fizyczną i łącza danych.  
-  
+**Model TCP/IP jest modelem praktycznym, który w przeciwieństwie do OSI (modelu referencyjnego), ma realne przełożenie jak dane są przesyłane w Internecie.** 
 
-- What is ARP? 
-    
+Przede wszystkim jest zorientowany na zestaw protokołów i stanowi podstawę Internetu. Model OSI pozwala na zrozumienie funkcji - **ma charakter dydaktyczny.** 
 
+Przedstawiany jest w czterech warstwach,  
+- (4)Aplikacyjna - udostępnia użytkownikom możliwość korzystania z usług sieciowych (HTTPS, IMAP, POP3, DNS, SSH)  
+- (3) Transportowa - której głównym zadaniem jest sprawna obsługa komunikacji pomiędzy urządzeniami,  
+- (2) Sieciowa - której głównym zadaniem jest znalezienie najkrótszej i najszybszej drogi do urządzenia docelowego przez sieć rozległą,  
+- (1 ) Dostępu do sieci - kodowanie danych na jezyk maszynowy, przekazywanie do medium transmisyjnego, adresacja (MAC).  
+
+Jakbyśmy mieli porównać modele, **OSI rozdziela warstwę aplikacyjną modelu TCP/IP na trzy (aplikacyjną, sesji i prezentacji)**. Tak samo jak rozdziela dostępu do sieci na dwa - na fizyczną i łącza danych.  
+#### What is ARP? 
 Czym jest ARP (Address Resolution Protocol)?  
+
 ARP to protokół (łącza danych - data link layer) który powiązuje adresy MAC i IP w jedną całość. Mamy tak zwane ARP cache, jakby “notes wewnętrzny” w którym urządzenie zapisuje które IP odpowiada danemu adresowi MAC. Zwykle działa na zasadzie ARP request (zapytanie) i ARP Reply (odpowiedź).  
 W skrócie: urządzenie, żeby wysłać dane do danego IP musi znać adres MAC. Sprawdza swoją tablicę ARP, jeżeli nic tam nie znajduje, wysyła ARP request w broadcascie (do wszystkich urządzeń w sieci lokalnej). Każde urzadzenie otrzymuje zapytanie, ale tylko te właściwe odpowiada ARP Reply. Ta informacja trafia do ARP cache.  
   
-
-- What is DHCP?  
-    Czym jest DHCP ?  
+#### What is APIPA address and what it can suggest?
+#### What is DHCP?  
+Czym jest DHCP ?  
     Dynamic Host Configuration Protocol, jest to protokół warstwy aplikacji, odpowiedzialny za dynamiczne przydzielanie adresów IP do hosta. Wyobraźmy sobie, że musimy za każdym razem przydzielać adresy IP naszym kartom sieciowym. DHCP przydziela też maski podsieci, bramę domyślną, serwer DNS itp.  
     Reguła DORA - czyli jak działa DHCP - Discover, Offer, Request, Ack, czyli klient najpierw pyta o serwer DHCP w sieci, potem serwer proponuje adresację, potem klient prosi o przydzielenie tej adresacji, i na koniec dostaje zatwierdzenie od serwera. DHCP przydziela adres na określony czas i host go odnawia  
     W SOC możemy się spotkać z Rogue DHCP (fałszywy serwer może przekierować ruch przez złośliwą bramę).  
@@ -102,3 +98,5 @@ Ma duży wpływ na bezpieczeństwo, np. ogranicza ruch boczny (nawet jak atak na
     
 
   
+### Explain why exposing port 3389 to the internet is a fireable offense.
+Wyjaśnij, dlaczego udostępnianie portu 3389 w internecie jest podstawą do zwolnienia.

@@ -217,3 +217,28 @@ Na końcu można użyć kontrolek dostępnych przy każdej wartości, aby:
 - albo wykluczyć to pole z wyników
 
 ![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/6-image.png)
+
+##### **Zadania**
+**Który źródłowy adres IP wykonuje atak typu ping sweep na całą podsieć?**
+
+Ping sweep - czyli ICMP protocol. Filtrujemy network.protocol -> ICMP
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/8-image.png)
+
+**Odp. 192.168.230.127**
+
+**Wartość zeek.conn.conn_state pokazuje stan połączenia. Korzystając z informacji dostarczanej przez tę wartość, określ typ skanowania wykonywanego przez 203.0.113.25 przeciwko 192.168.230.145.**
+
+Jak wcześniej: Skaner wysyła żądanie **SYN** do odbiorcy. Jeśli otrzyma odpowiedź **SYN-ACK**, oznacza to, że host jest online, a port, do którego wysłano żądanie SYN, jest otwarty. Tutaj widzimy użyty protokół, który nam jasno mówi jaki to był skan.
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/9-image.png)
+
+**Odp.TCP SYN Scan**
+
+**Czy w logach występuje jakakolwiek próba skanowania UDP? Y/N**
+
+Filtrujemy po network.protocol -> UDP
+
+![alt](/courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/10-image.png)
+
+**Odp. Nie**
