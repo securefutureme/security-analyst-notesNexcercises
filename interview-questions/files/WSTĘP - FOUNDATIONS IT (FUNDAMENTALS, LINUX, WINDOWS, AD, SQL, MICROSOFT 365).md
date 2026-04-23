@@ -35,218 +35,308 @@ Przykład:
   
 ### FUNDAMENTALS
 
-1. Jakie podstawy sieci są przydatne na takim stanowisku?
+##### Jakie podstawy sieci są przydatne na takim stanowisku?
    
-SOC
+- SOC
+
+-  **L1**
+Na takim stanowisku najbardziej przydają się podstawy sieci, które pomagają szybko zrozumieć, gdzie może leżeć problem użytkownika. Mam na myśli przede wszystkim znajomość działania adresacji IP, różnicy między adresem IP publicznym i prywatnym, podstaw DNS i DHCP, bo bardzo często problemy z logowaniem, dostępem do zasobów albo działaniem aplikacji wynikają właśnie z tych obszarów.
+
+Ważna jest też dla mnie umiejętność sprawdzenia podstawowej łączności, czyli czy urządzenie widzi sieć, czy ma poprawny adres IP, czy działa internet, VPN albo połączenie z zasobami firmowymi. Przydaje się też rozumienie, czym są porty, firewall i podstawowe zasady bezpieczeństwa, żeby umieć odróżnić problem użytkownika od blokady po stronie sieci lub polityk bezpieczeństwa.
+
+Na pewno warto rozumieć, jak działa komunikacja między urządzeniem użytkownika, usługami Microsoft 365, Active Directory czy Entra ID. Dzięki temu można szybciej diagnozować incydenty, dobrze opisać zgłoszenie w systemie i w razie potrzeby sensownie przekazać je do 2nd line.
+
+- L2
+
+##### Czy możesz wymienić kilka najnowszych procesorów komputerowych?
+Możemy wymienić tutaj **Intel Core Ultra 9 285K**, 24 rdzeniowy, dobry na sockety 1651, **AMD Ryzen 7 9800X3D** pod gaming (4.7 GHz pod AM5), możemy wymienić budżetowy **Ryzen 5 7600X** (4.7 Ghz pod AM5), albo inne z rodziny Ultra (Intel) takie jak Ultra 7 265KF (5.5ghz pod LGA 1851) albo  **i5-14600KF**.
+##### Jakich narzędzi używasz/używałeś do identyfikowania i rozwiązywania problemów użytkowników?
+Do identyfikowania i rozwiązywania problemów użytkowników najczęściej używałem Jira oraz ServiceNow, bo tam rejestrowałem zgłoszenia, sprawdzałem ich historię, priorytet i status. Przy problemach z kontami i dostępami korzystałem z Active Directory oraz Entra ID, żeby weryfikować użytkowników, grupy i uprawnienia. W przypadku tematów związanych z Microsoft 365 pracowałem też na portalach administracyjnych (admin center) Microsoft 365, żeby sprawdzić licencje, skrzynki, dostęp do usług i podstawową konfigurację. Dodatkowo korzystałem z bazy wiedzy w firmie jeżeli jest dostępna (KB) i dokumentacji technicznej dostępnej w internecie, żeby szybciej diagnozować powtarzające się problemy i trzymać się standardów zespołu.
+##### Jaka jest idealna długość przeciętnej rozmowy z klientem?
+Dla mnie idealna długość rozmowy z klientem to taka, która pozwala sprawnie zrozumieć problem i jasno powiedzieć, co dalej. Przy prostych zgłoszeniach zwykle jest to około 5–10 minut, ale nie skupiam się na samej długości rozmowy, tylko na skuteczności, jakości obsługi i dotrzymaniu SLA. Lepiej poświęcić minutę więcej i dobrze poprowadzić użytkownika, niż zakończyć rozmowę za szybko i zostawić problem nierozwiązany.
+##### Wymień trzy kroki, które możesz podjąć, aby rozwiązać problem klienta związany z internetem.
+
+Najpierw sprawdziłbym podstawy, czyli czy użytkownik ma aktywne połączenie z siecią, czy problem dotyczy tylko jednej osoby czy większej liczby użytkowników, i czy urządzenie jest poprawnie podłączone do Wi-Fi albo sieci LAN.
+
+Drugi krok to wykonanie podstawowej diagnostyki, na przykład sprawdzenie adresacji IP poleceniem ipconfig, sprawdzenie czy DNS działa komendą nslookup, test połączenia z internetem i z zasobami wewnętrznymi komendą ping oraz bardziej radykalne rozwiązanie jak restart karty sieciowej albo urządzenia. Oczywiście są jeszcze takie komendy jak ipconfig /release | renew do zwolnienia i pobrania nowego agresu IP z routera, które też czasem rozwiązuje problem. Albo też flushdns - czyli wyczyszczenie pamięci podręcznej DNS.
+
+Jeśli problem nadal występuje, sprawdziłbym zgłoszenia i ewentualne awarie po stronie infrastruktury, a w razie potrzeby przekazałbym sprawę do 2nd line z opisem wykonanych działań.
+##### Jak podchodzisz do bezpieczeństwa IT w codziennej pracy supportowej (L1/L2)?
+
+**L1**
+W codziennej pracy supportowej podchodzę do bezpieczeństwa IT bardzo praktycznie i procesowo. Przede wszystkim dbam o to, żeby zawsze weryfikować tożsamość użytkownika przed wykonaniem wrażliwych działań, na przykład resetem hasła, nadaniem dostępu czy zmianą uprawnień. Trzymam się zasady minimalnych uprawnień i nie wykonuję działań poza procedurą. Zwracam też uwagę na podejrzane zgłoszenia, nietypowe zachowania użytkowników, phishing i wszelkie oznaki możliwego incydentu. Jeśli coś budzi wątpliwości, od razu eskaluję temat do odpowiedniego zespołu. Ważne jest dla mnie również poprawne rejestrowanie zgłoszeń w systemie, praca zgodnie z ITIL i dbanie o to, żeby nie udostępniać wrażliwych informacji osobom nieuprawnionym. Krótko mówiąc: bezpieczeństwo traktuję jako element każdej czynności supportowej, a nie osobny temat.
+
+**L2**
+##### Użytkownik mówi: „nie działa mi konto”. Od czego zaczynasz (L1/L2)?
+
 L1
+Zacząłbym od doprecyzowania, co dokładnie znaczy, że konto nie działa. Najpierw sprawdziłbym, czy problem dotyczy logowania do stacji roboczej, poczty, Microsoft 365, VPN czy innej aplikacji. Następnie zweryfikowałbym tożsamość użytkownika i sprawdził podstawowe rzeczy: czy login jest poprawny, czy konto nie jest zablokowane, wyłączone albo czy hasło nie wygasło. W kolejnym kroku sprawdziłbym konto w Active Directory lub Entra ID, na przykład status konta, blokady, ostatnie logowanie i ewentualne błędy synchronizacji. Jeśli problem dotyczy dostępu do konkretnych zasobów, sprawdziłbym też przypisane grupy i uprawnienia. Równolegle upewniłbym się, czy nie ma szerszego incydentu lub awarii wpływającej na więcej użytkowników.
+
 L2
+##### Co sprawdzasz wpierw, kiedy użytkownik zgłasza problemy z dźwiękiem?
+Najpierw sprawdzam podstawowe rzeczy: czy dźwięk nie jest wyciszony? Czy klawisze funkcyjne nie zmutowały dźwięku? (czasami lapka na klawiszu może się nie palić). Czy głośniki są włączone i podłączone (jeżeli to stacjonarny)? Sprawdzam ustawienia odtwarzania dźwięku. Przy sprawdzeniu wszystkich podstawowych możliwości przechodzę do sprawdzenia/reinstalowania sterowników.
+##### Co sprawdzasz, gdy reset hasła „się udał”, ale użytkownik nadal nie może się zalogować (L1/L2)?
 
-1. Jak podchodzisz do bezpieczeństwa IT w codziennej pracy supportowej (L1/L2)?
-   
-2. Użytkownik mówi: „nie działa mi konto”. Od czego zaczynasz (L1/L2)?
-   
-3. Co sprawdzasz, gdy reset hasła „się udał”, ale użytkownik nadal nie może się zalogować (L1/L2)?
-   
-4. Co dzieje się po uruchomieniu komputera — od przycisku power do ekranu logowania?
+Mapa myśli: **Brak logowania po resecie hasła**, → **czy wpisuje dobre hasło**  → Caps Lock / Num Lock / układ klawiatury  → **jakie konto**  → lokalne / domenowe / Microsoft / VPN / Azure AD  
+→ **stan konta**  → zablokowane / wyłączone / wygasłe / wymuszona zmiana hasła  → **synchronizacja**  
+→ AD / Azure AD / opóźnienie replikacji  → **gdzie próbuje się logować**  → komputer lokalny / domena / RDP / aplikacja / VPN  → **cache / stare poświadczenia**  → zapisane dane logowania / Credential Manager / sesja  → **problem nie z hasłem, tylko z dostępem**  → brak sieci, brak połączenia z domeną, MFA, polityka logowania
 
-5. Co to jest **swap/pagefile** i po co się go używa?
-   
-6. Czym różni się **NTFS** od **FAT32**?
-   
-7. Co to jest **system plików**? 
-   
-8. Co oznacza, że system jest **64-bitowy**?
-   
-9. Co to jest **zmienna środowiskowa PATH**?
-   
-10. Czym różni się **proces** od **wątku**?
+Zdania klucze:
+- Najpierw sprawdzam, czy problem na pewno dotyczy **hasła**, a nie np. konta, domeny lub połączenia.
+- Weryfikuję **Caps Lock, Num Lock i układ klawiatury**.
+- Sprawdzam, czy użytkownik loguje się do **właściwego konta i właściwej domeny**.
+- Potwierdzam, czy konto nie jest **zablokowane, wyłączone albo wygasłe**.
+- Sprawdzam, czy hasło zostało poprawnie **zsynchronizowane**, np. między AD i Azure AD.
+- Weryfikuję, czy urządzenie ma połączenie z **siecią / domeną / VPN**.
+- Sprawdzam zapisane **stare poświadczenia** i cache logowania.
+- Patrzę, czy nie ma wymuszenia typu **change password at next logon** albo problemu z MFA.
+- Rozróżniam: problem z logowaniem do **Windows**, do **VPN**, do **maila** albo do **konkretnej aplikacji**.
+  
+###### Wersja interview 45–60 sekund
+Jeśli reset hasła zakończył się sukcesem, a użytkownik nadal nie może się zalogować, zaczynam od podstaw. Najpierw sprawdzam, czy wpisuje właściwe hasło i czy nie ma problemu z Caps Lockiem, Num Lockiem albo układem klawiatury.  
+Następnie weryfikuję, czy loguje się do poprawnego konta — na przykład lokalnego zamiast domenowego albo odwrotnie — i czy wybrana jest właściwa domena. Potem sprawdzam stan konta: czy nie jest zablokowane, wyłączone, wygasłe albo czy nie ma wymuszonej zmiany hasła przy następnym logowaniu.  
+Jeśli środowisko jest domenowe lub hybrydowe, sprawdzam też synchronizację hasła między AD i Azure AD oraz to, czy komputer ma połączenie z siecią, domeną lub VPN. Na końcu weryfikuję zapisane stare poświadczenia, cache logowania albo to, czy problem nie dotyczy MFA lub konkretnej aplikacji, a nie samego konta Windows.
+##### Co dzieje się po uruchomieniu komputera — od przycisku power do ekranu logowania?
+Mapa myśli: Power On -> UEFI/BIOS -> POST -> Boot Device Selection -> Bootloader -> Ekran logowania OS
+Zdania klucze: prąd do płyty głównej, pierwsza instrukcja procesora, stała pamięć flash, interfejs pomiędzy OS a hardware, sprawdzanie komponentów (jeżeli błąd=beep code), szukanie urządzeń rozruchowych, program ładujący, ładowanie jądra systemu (kernel) do RAM, inicjacja sterowników i usług.
+##### Co to jest **swap/pagefile** i po co się go używa?
+Mapa mysli: wydzielona partycja->swap->linux, ukryty plik->Windows-> pagefile.sys, technika, pamięć wirtualna, rozszerzenie RAM,  przestrzeń na HDD/SSD
 
-11. Co to jest **kernel** i za co odpowiada?
+Zdania klucze: efektywniejsza praca RAM, stabilność systemu, obsługa hibernacji, swapping in/out, lepiej nie wyłączać, brak może prowadzić do nagłych zamknięć aplikacji lub niestabilności.
 
-12. Co to jest **backup** i czym różni się od **archiwum**?
+##### Czym różni się **NTFS** od **FAT32**?
 
-13. Dlaczego backup, którego nie da się odtworzyć, praktycznie nie istnieje?
+**System plików**  → **FAT32**  → starszy, prostszy  → bardzo szeroka kompatybilność  → limit pliku **4 GB**  
+→ mniej funkcji bezpieczeństwa
 
-14. Co to jest **RAID**? Wymień jego typy.
+**System plików**  → **NTFS**  → nowszy, domyślny w Windows  → obsługa dużych plików i partycji  → uprawnienia, szyfrowanie, journaling  → większa niezawodność i bezpieczeństwo
 
-15. Dlaczego po zmianie w systemie czasem „trzeba wyczyścić cache”?
+W praktyce supportowej powiedziałbym że jeśli liczy się kompatybilność, na przykład z telewizorem, BIOS-em albo starszym urządzeniem, FAT32 może być wygodny. Jeśli jednak komputer działa na Windows i potrzebujemy bezpieczeństwa, uprawnień, większej stabilności i obsługi dużych plików, lepszym wyborem jest NTFS.
+##### Co to jest **system plików**? 
+**Dysk / partycja**  → trzeba zorganizować dane  → **system plików**  → zasady zapisu i odczytu  
+→ nazwy plików, foldery, metadane  → prawa dostępu, wolne miejsce, lokalizacja danych
 
-16. Czym różni się **maszyna wirtualna** od **kontenera**?
+**Zdania klucze:** System plików to sposób organizowania danych na dysku. - Dzięki niemu system operacyjny wie, gdzie plik jest zapisany i jak go odczytać. - Zarządza plikami, folderami, nazwami, uprawnieniami i wolnym miejscem. - Bez systemu plików dysk byłby tylko surową przestrzenią danych. - Przykłady: NTFS, FAT32, exFAT, ext4.
 
-17. Co to jest **snapshot** i czy zastępuje backup?
+Wersja interview 30–45 sekund
+System plików to struktura, która organizuje dane na nośniku, takim jak dysk HDD, SSD albo pendrive. Określa, jak pliki są zapisywane, nazywane, odczytywane i usuwane. Zarządza też folderami, metadanymi, wolnym miejscem i czasem uprawnieniami.  
+Innymi słowy, bez systemu plików system operacyjny nie wiedziałby, gdzie znajduje się konkretny plik i jak go poprawnie otworzyć.
 
-18. Dlaczego restart czasem „naprawia” problem?
+Z perspektywy IT Support system plików ma znaczenie praktyczne, bo wpływa na kompatybilność, limity rozmiaru plików, bezpieczeństwo i możliwość odzyskiwania danych po błędach. Dlatego przy diagnozie problemów z dyskiem albo kopiowaniem plików warto sprawdzić, jaki system plików jest używany.
+##### Co oznacza, że system jest **64-bitowy**?
+**Mapa myśli :** Architektura systemu → 64-bit → procesor przetwarza 64 bity naraz → większa przestrzeń adresowa → obsługa większej ilości RAM → możliwość uruchamiania aplikacji 64-bit → lepsza wydajność w nowszych systemach
 
-19. Co może oznaczać, że problem występuje tylko na jednym urządzeniu?
+**Zdania klucze:**  64-bit oznacza typ architektury procesora i systemu.  System może przetwarzać dane w blokach 64-bitowych.  Może obsłużyć więcej pamięci RAM niż 32-bit.  Lepiej współpracuje z nowoczesnymi aplikacjami.  Do działania wymaga procesora zgodnego z 64-bit.
 
-20. Jak odróżnić problem użytkownika od problemu systemowego(L1/L2)?
+**Wersja interview 30–45 sekund**  
+System 64-bitowy oznacza, że procesor i system operacyjny są zaprojektowane do pracy na danych 64-bitowych. W praktyce najważniejsze jest to, że taki system może obsługiwać znacznie więcej pamięci RAM niż system 32-bitowy. Dzięki temu lepiej nadaje się do nowoczesnych komputerów i aplikacji. System 64-bitowy pozwala też uruchamiać programy 64-bitowe, które często są wydajniejsze i lepiej wykorzystują zasoby sprzętowe.
 
-21. Co sprawdzasz jako pierwsze, gdy „nic nie działa”(L1/L2)?
+**Wersja „na plus” pod L1/L2**  
+Z perspektywy IT Support sprawdziłbym zgodność między procesorem, systemem i aplikacją. Jeśli komputer ma dużo RAM, system 64-bitowy jest praktycznie konieczny, żeby tę pamięć wykorzystać. W troubleshootingu ma to znaczenie przy instalacji sterowników, zgodności programów i wyborze właściwej wersji aplikacji.
 
-22. Jak zawęzisz problem, jeśli objawy są ogólne?
+**Hak pamięciowy**  
+**64-bit = więcej RAM + nowocześniejsze aplikacje**
+##### Co to jest **zmienna środowiskowa PATH**?
+**Mapa myśli :** Zmienne środowiskowe → PATH → lista folderów systemowych → szukanie plików wykonywalnych → uruchamianie komend bez pełnej ścieżki → cmd / terminal / PowerShell → ułatwienie pracy systemu i użytkownika
 
-23. Co oznacza „problem nie jest reprodukowalny”?
+**Zdania klucze:**  PATH to zmienna środowiskowa systemu.  Zawiera listę folderów z programami.  
+System szuka tam plików wykonywalnych.  Dzięki temu nie trzeba podawać pełnej ścieżki.  Ma znaczenie w CMD, PowerShell i terminalu.
 
-24. Dlaczego warto pytać: **od kiedy**, **u kogo**, **po jakiej zmianie**?
+**Wersja interview 30–45 sekund**  
+PATH to zmienna środowiskowa, która zawiera listę katalogów, w których system szuka plików wykonywalnych. Dzięki temu użytkownik może uruchomić program lub komendę po samej nazwie, bez wpisywania pełnej ścieżki do pliku. Na przykład jeśli folder programu jest dodany do PATH, można uruchomić go bez przechodzenia do jego lokalizacji. To jest bardzo przydatne w wierszu poleceń, PowerShellu i przy narzędziach administracyjnych.
 
-25. Co jest ważniejsze: szybka odpowiedź czy poprawna diagnoza?
+**Wersja „na plus” pod L1/L2**  
+W supportcie PATH jest ważny, bo błędna konfiguracja może powodować, że komenda nie działa mimo poprawnej instalacji programu. Jeśli użytkownik dostaje komunikat, że polecenie nie jest rozpoznawane, sprawdziłbym, czy lokalizacja programu została dodana do PATH. To częsty problem przy Pythonie, Javie, Git czy narzędziach administracyjnych.
 
-26. Kiedy problem należy eskalować(SOC/L1)?
+**Hak pamięciowy**  
+**PATH = gdzie system szuka programów**
+##### Czym różni się **proces** od **wątku**?
 
-27. Jak opisać problem techniczny tak, żeby druga osoba mogła go zrozumieć i odtworzyć?
+##### Co to jest **kernel** i za co odpowiada?
 
-28. Dlaczego „u mnie działa” nie jest dobrą odpowiedzią?
-29. Co zrobić, gdy nie znasz odpowiedzi, ale musisz profesjonalnie poprowadzić zgłoszenie?\
-30. Internet działa, ale Outlook nie — co to może oznaczać?
-31. Użytkownik mówi, że „nie działa komputer” — jakie pytania zadasz najpierw?
-32. Czy brak internetu zawsze oznacza problem z routerem?
-33. Czy ping do IP wystarczy, żeby powiedzieć, że „sieć działa”?
-34. Czy wyłączenie MFA poprawia bezpieczeństwo czy wygodę?
-35. Czy administrator powinien mieć dostęp do wszystkiego?
-36. Czy chmura automatycznie rozwiązuje problem backupów?
-37. Czy antywirus gwarantuje bezpieczeństwo?
-38. Czy szybkie zamknięcie ticketu oznacza dobrą obsługę?
-39. Czy restart jest rozwiązaniem, czy tylko obejściem?
-40. Czy użytkownik zawsze poprawnie opisuje źródło problemu?
-41. Co jest groźniejsze: brak dokumentacji czy zła dokumentacja?
-42. Czy więcej uprawnień zawsze pomaga szybciej rozwiązywać problemy?
-43. Co jest lepsze: obejście problemu czy trwałe rozwiązanie?
-44. Czy brak błędu oznacza, że problem nie istnieje?
-45. Co to jest **cache** i po co się go stosuje?
-46. Co robisz, gdy użytkownik zgłasza, że zaginął plik?
+##### Co to jest **backup** i czym różni się od **archiwum**?
+
+##### Dlaczego backup, którego nie da się odtworzyć, praktycznie nie istnieje?
+
+##### Co to jest **RAID**? Wymień jego typy.
+
+##### Dlaczego po zmianie w systemie czasem „trzeba wyczyścić cache”?
+
+##### Czym różni się **maszyna wirtualna** od **kontenera**?
+
+##### Co to jest **snapshot** i czy zastępuje backup?
+
+##### Dlaczego restart czasem „naprawia” problem?
+
+##### Co może oznaczać, że problem występuje tylko na jednym urządzeniu?
+
+##### Jak odróżnić problem użytkownika od problemu systemowego(L1/L2)?
+
+##### Co sprawdzasz jako pierwsze, gdy „nic nie działa”(L1/L2)?
+
+##### Jak zawęzisz problem, jeśli objawy są ogólne?
+
+##### Co oznacza „problem nie jest reprodukowalny”?
+
+##### Dlaczego warto pytać: **od kiedy**, **u kogo**, **po jakiej zmianie**?
+
+##### Co jest ważniejsze: szybka odpowiedź czy poprawna diagnoza?
+
+##### Kiedy problem należy eskalować(SOC/L1)?
+
+##### Jak opisać problem techniczny tak, żeby druga osoba mogła go zrozumieć i odtworzyć?
+##### Dlaczego „u mnie działa” nie jest dobrą odpowiedzią?
+#####  Co zrobić, gdy nie znasz odpowiedzi, ale musisz profesjonalnie poprowadzić zgłoszenie?\
+##### Internet działa, ale Outlook nie — co to może oznaczać?
+##### Użytkownik mówi, że „nie działa komputer” — jakie pytania zadasz najpierw?
+##### Czy brak internetu zawsze oznacza problem z routerem?
+##### Czy ping do IP wystarczy, żeby powiedzieć, że „sieć działa”?
+##### Czy wyłączenie MFA poprawia bezpieczeństwo czy wygodę?
+##### Czy administrator powinien mieć dostęp do wszystkiego?
+##### Czy chmura automatycznie rozwiązuje problem backupów?
+##### Czy antywirus gwarantuje bezpieczeństwo?
+##### Czy szybkie zamknięcie ticketu oznacza dobrą obsługę?
+##### Czy restart jest rozwiązaniem, czy tylko obejściem?
+#####  Czy użytkownik zawsze poprawnie opisuje źródło problemu?
+##### Co jest groźniejsze: brak dokumentacji czy zła dokumentacja?
+##### Czy więcej uprawnień zawsze pomaga szybciej rozwiązywać problemy?
+##### Co jest lepsze: obejście problemu czy trwałe rozwiązanie?
+#####  Czy brak błędu oznacza, że problem nie istnieje?
+##### Co to jest **cache** i po co się go stosuje?
+#####  Co robisz, gdy użytkownik zgłasza, że zaginął plik?
 ### LINUX
 
-1. Jak sprawdzić użycie dysku?
-2. Jak zrestartować usługę w Linuxie?
-3. Co oznaczają uprawnienia `755`?
-4. Jaka jest rola `sudo`?
-5. Jak sprawdzić logi usługi?
-6. Jak sprawdzić adres IP?
-7. Jak sprawdzić, czy port jest otwarty?
-8. Co zrobisz przy błędzie `Permission denied`?
-9. Jak podejdziesz do diagnozy niedziałającej usługi?
-10. Czym różni się Linux od Windows z perspektywy administratora lub supportu?
-11. Co to jest dystrybucja Linuxa? Jakie znasz przykłady?
-12. Jaka jest różnica między katalogiem `/home`, `/root`, `/etc`, `/var`, `/tmp`?
-13. Co oznacza, że „wszystko w Linuksie jest plikiem”?
-14. Jak sprawdzić, w jakim katalogu aktualnie się znajdujesz?
-15. Jak wyświetlić pliki w katalogu, także ukryte?
-16. Jak przejść do innego katalogu?
-17. Jak utworzyć, skopiować, przenieść i usunąć plik lub katalog?
-18. Jak sprawdzić uprawnienia do pliku?
-19. Co oznacza zapis typu `rwxr-xr--`?
-20. Jaka jest różnica między właścicielem, grupą i innymi użytkownikami?
-21. Do czego służy `chmod`?
-22. Do czego służy `chown`?
-23. Jaka jest różnica między kontem zwykłego użytkownika a rootem?
-24. Do czego służy `sudo`?
-25. Jak dodać użytkownika do grupy?
-26. Dlaczego zasada najmniejszych uprawnień jest ważna także w Linuxie?
-27. Jak sprawdzić, jakie procesy aktualnie działają?
-28. Jaka jest różnica między `ps` a `top`?
-29. Jak zakończyć proces?
-30. Co zrobić, gdy proces nie odpowiada?
-31. Co to jest PID?
-32. Jak sprawdzić status usługi w systemie?
-33. Do czego służy `systemctl`?
-34. Jak uruchomić, zatrzymać i zrestartować usługę?
-35. Co zrobisz, gdy usługa nie startuje po restarcie?
-36. Gdzie w Linuxie zwykle szuka się logów?
-37. Jak podejść do analizy problemu z niedziałającą usługą?
-38. Do czego służy `journalctl`?
-39. Jak sprawdzić ostatnie wpisy w logu?
-40. Jak śledzić log „na żywo”?
-41. Co robisz, gdy użytkownik mówi, że „serwer działa wolno”?
-42. Jak sprawdzisz, czy problem dotyczy CPU, RAM, dysku czy sieci?
-43. Jak sprawdzić adres IP maszyny?
-44. Jak sprawdzić, czy host ma połączenie z siecią?
-45. Do czego służy `ping`?
-46. Do czego służy `traceroute` albo `tracepath`?
-47. Jak sprawdzić, czy DNS działa poprawnie?
-48. Jak sprawdzić, czy dany port nasłuchuje?
-49. Co oznacza, że usługa jest dostępna lokalnie, ale nie z innego hosta?
-50. Jakie mogą być przyczyny problemu z SSH?
-51. Co sprawdzisz, gdy serwer „nie widzi internetu”?
-52. Jak sprawdzić ilość wolnego miejsca na dysku?
-53. Jaka jest różnica między `df` a `du`?
-54. Co zrobisz, gdy kończy się miejsce na partycji?
-55. Jak sprawdzisz największe katalogi lub pliki?
-56. Co to jest montowanie systemu plików?
-57. Co oznacza, że system plików jest zamontowany tylko do odczytu?
-58. Jak zainstalować pakiet w Debianie/Ubuntu?
-59. Jak zainstalować pakiet w RHEL/CentOS/Alma/Rocky?
-60. Jaka jest różnica między `apt` i `yum`/`dnf`?
-61. Jak sprawdzić, czy dany pakiet jest zainstalowany?
-62. Co zrobisz, gdy instalacja pakietu kończy się błędem zależności?
-63. Do czego służy SSH?
-64. Jak połączyć się zdalnie z serwerem Linux?
-65. Jaka jest różnica między logowaniem hasłem a kluczem SSH?
-66. Co sprawdzisz, gdy nie możesz zalogować się po SSH?
-67. Dlaczego wyłączenie logowania rootem przez SSH bywa dobrą praktyką?
-68. Użytkownik mówi, że aplikacja nie działa. Od czego zaczynasz diagnostykę na serwerze Linux?
-69. Serwis www nie odpowiada — jakie są Twoje pierwsze 5 kroków?
-70. Serwer działa bardzo wolno — jak zawężysz problem?
-71. Nie działa DNS name resolution — co sprawdzisz?
-72. Skończyło się miejsce na dysku w `/var` — co robisz?
-73. Po restarcie usługa nie podniosła się automatycznie — jak to sprawdzisz?
-74. Masz błąd „Permission denied” — jakie są możliwe przyczyny?
-75. Aplikacja działa lokalnie, ale użytkownik nie może się z nią połączyć zdalnie — co sprawdzisz?
+##### Jak sprawdzić użycie dysku?
+#####  Jak zrestartować usługę w Linuxie?
+##### Co oznaczają uprawnienia `755`?
+#####  Jaka jest rola `sudo`?
+#####  Jak sprawdzić logi usługi?
+#####  Jak sprawdzić adres IP?
+##### Jak sprawdzić, czy port jest otwarty?
+##### Co zrobisz przy błędzie `Permission denied`?
+##### Jak podejdziesz do diagnozy niedziałającej usługi?
+##### Czym różni się Linux od Windows z perspektywy administratora lub supportu?
+##### Co to jest dystrybucja Linuxa? Jakie znasz przykłady?
+##### Jaka jest różnica między katalogiem `/home`, `/root`, `/etc`, `/var`, `/tmp`?
+#####  Co oznacza, że „wszystko w Linuksie jest plikiem”?
+##### Jak sprawdzić, w jakim katalogu aktualnie się znajdujesz?
+##### Jak wyświetlić pliki w katalogu, także ukryte?
+#####  Jak przejść do innego katalogu?
+##### Jak utworzyć, skopiować, przenieść i usunąć plik lub katalog?
+##### Jak sprawdzić uprawnienia do pliku?
+##### Co oznacza zapis typu `rwxr-xr--`?
+#####  Jaka jest różnica między właścicielem, grupą i innymi użytkownikami?
+##### Do czego służy `chmod`?
+#####  Do czego służy `chown`?
+##### Jaka jest różnica między kontem zwykłego użytkownika a rootem?
+#####  Do czego służy `sudo`?
+##### Jak dodać użytkownika do grupy?
+##### Dlaczego zasada najmniejszych uprawnień jest ważna także w Linuxie?
+#####  Jak sprawdzić, jakie procesy aktualnie działają?
+##### Jaka jest różnica między `ps` a `top`?
+#####  Jak zakończyć proces?
+##### Co zrobić, gdy proces nie odpowiada?
+##### Co to jest PID?
+##### Jak sprawdzić status usługi w systemie?
+##### Do czego służy `systemctl`?
+##### Jak uruchomić, zatrzymać i zrestartować usługę?
+#####  Co zrobisz, gdy usługa nie startuje po restarcie?
+##### Gdzie w Linuxie zwykle szuka się logów?
+##### Jak podejść do analizy problemu z niedziałającą usługą?
+##### Do czego służy `journalctl`?
+##### Jak sprawdzić ostatnie wpisy w logu?
+#####  Jak śledzić log „na żywo”?
+##### Co robisz, gdy użytkownik mówi, że „serwer działa wolno”?
+#####  Jak sprawdzisz, czy problem dotyczy CPU, RAM, dysku czy sieci?
+##### Jak sprawdzić adres IP maszyny?
+##### Jak sprawdzić, czy host ma połączenie z siecią?
+##### Do czego służy `ping`?
+##### Do czego służy `traceroute` albo `tracepath`?
+#####  Jak sprawdzić, czy DNS działa poprawnie?
+##### Jak sprawdzić, czy dany port nasłuchuje?
+##### Co oznacza, że usługa jest dostępna lokalnie, ale nie z innego hosta?
+#####  Jakie mogą być przyczyny problemu z SSH?
+##### Co sprawdzisz, gdy serwer „nie widzi internetu”?
+#####  Jak sprawdzić ilość wolnego miejsca na dysku?
+##### Jaka jest różnica między `df` a `du`?
+#####  Co zrobisz, gdy kończy się miejsce na partycji?
+##### Jak sprawdzisz największe katalogi lub pliki?
+##### Co to jest montowanie systemu plików?
+##### Co oznacza, że system plików jest zamontowany tylko do odczytu?
+##### Jak zainstalować pakiet w Debianie/Ubuntu?
+#####  Jak zainstalować pakiet w RHEL/CentOS/Alma/Rocky?
+##### Jaka jest różnica między `apt` i `yum`/`dnf`?
+#####  Jak sprawdzić, czy dany pakiet jest zainstalowany?
+#####  Co zrobisz, gdy instalacja pakietu kończy się błędem zależności?
+##### Do czego służy SSH?
+#####  Jak połączyć się zdalnie z serwerem Linux?
+#####  Jaka jest różnica między logowaniem hasłem a kluczem SSH?
+##### Co sprawdzisz, gdy nie możesz zalogować się po SSH?
+##### Dlaczego wyłączenie logowania rootem przez SSH bywa dobrą praktyką?
+#####  Użytkownik mówi, że aplikacja nie działa. Od czego zaczynasz diagnostykę na serwerze Linux?
+#####  Serwis www nie odpowiada — jakie są Twoje pierwsze 5 kroków?
+##### Serwer działa bardzo wolno — jak zawężysz problem?
+##### Nie działa DNS name resolution — co sprawdzisz?
+##### Skończyło się miejsce na dysku w `/var` — co robisz?
+##### Po restarcie usługa nie podniosła się automatycznie — jak to sprawdzisz?
+##### Masz błąd „Permission denied” — jakie są możliwe przyczyny?
+##### Aplikacja działa lokalnie, ale użytkownik nie może się z nią połączyć zdalnie — co sprawdzisz?
 ### WINDOWS
 
 https://www.adaface.com/blog/windows-helpdesk-interview-questions/
 
-1. Co sprawdzasz, gdy komputer z Windows działa bardzo wolno?
-2. Jakie są najczęstsze przyczyny problemów z logowaniem do Windows?
-3. Co zrobisz, jeśli użytkownik widzi komunikat, że jego konto zostało zablokowane?
-4. Jak odróżnisz problem systemowy od problemu sprzętowego?
-5. Jakie podstawowe narzędzia w Windows wykorzystujesz do diagnostyki problemów?
-6. Do czego służy Event Viewer i kiedy go używasz?
-7. Do czego służy Task Manager i jakie informacje można tam szybko sprawdzić?
-8. Co sprawdzasz, gdy aplikacja w Windows się nie uruchamia?
-9. Jak postąpisz, gdy użytkownik zgłasza, że komputer zawiesza się kilka razy dziennie?
-10. Jakie są podstawowe kroki przy diagnozie problemu po aktualizacji Windows?
-11. Co zrobisz, jeśli użytkownik nie może zalogować się do komputera domenowego?
-12. Jaka jest różnica między kontem lokalnym a domenowym?
-13. Co to jest profil użytkownika w Windows?
-14. Jakie objawy mogą wskazywać na uszkodzony profil użytkownika?
-15. Jak sprawdzić, czy problem z logowaniem wynika z hasła, sieci czy polityk?
-16. Jakie mogą być przyczyny komunikatu „The trust relationship between this workstation and the primary domain failed”?
-17. Co to jest UAC i po co jest używane?
-18. Jak postąpisz, gdy użytkownik potrzebuje uprawnień administratora lokalnego?
-19. Jak bezpiecznie zweryfikujesz tożsamość użytkownika przed resetem hasła lub zmianą dostępu?
-20. Jakie polecenia sieciowe w Windows znasz i do czego służą?
-21. Kiedy użyjesz ipconfig, ping, nslookup i gpupdate?
-22. Co sprawdzisz, gdy komputer ma internet, ale nie otwiera zasobów firmowych?
-23. Jakie mogą być objawy problemu z DNS w Windows?
-24. Co zrobisz, gdy użytkownik nie łączy się z VPN w Windowsie?
-25. Jak sprawdzisz, czy problem dotyczy Wi-Fi, adaptera sieciowego czy systemu?
-26. Jakie są najczęstsze przyczyny, że komputer „nie widzi sieci” w systemem Windows?
-27. Co sprawdzasz, gdy Outlook w Windows nie synchronizuje poczty?
-28. Jak postąpisz, gdy Teams nie chce się uruchomić na komputerze użytkownika?
-29. Jakie kroki wykonasz, gdy OneDrive nie synchronizuje plików?
-30. Co zrobisz, jeśli użytkownik ma Outlooka, ale nie widzi nowo nadanej skrzynki współdzielonej?
-31. Jak odróżnisz problem aplikacji lokalnej od problemu po stronie usługi Microsoft 365?
-32. Jakie podstawowe kroki wykonasz przy problemach z cache Outlooka lub Teams?
-33. Co sprawdzasz, gdy po aktualizacji Windows przestała działać drukarka?
-34. Gdzie w Windows sprawdzisz problem ze sterownikiem?
-35. Co to jest Device Manager i kiedy go używasz?
-36. Jak rozpoznać, że problem dotyczy sterownika, a nie samego urządzenia?
-37. Jakie mogą być przyczyny, że użytkownik nie może drukować?
-38. Co sprawdzisz, gdy laptop nie wykrywa drugiego monitora?
-39. Jakie podstawowe kroki wykonasz przy problemach z docking station?
-40. Jakie podstawowe działania bezpieczeństwa są ważne na stanowisku 1st line w Windows?
-41. Jak rozpoznać możliwą infekcję lub niepożądane zachowanie systemu w Windowsie?
-42. Co sprawdzisz, gdy Windows Defender zgłasza zagrożenie?
-43. Do czego służy CMD, a do czego PowerShell?
-44. Jakie proste komendy Windows warto znać na 1st line?
-45. Co to jest services.msc i kiedy możesz z niego skorzystać?
-46. Jak sprawdzisz, czy konkretna usługa systemowa działa poprawnie?
-47. Jakie narzędzia w Windows wykorzystasz do sprawdzenia miejsca na dysku?
-48. Co zrobisz, gdy użytkownik ma pełny dysk systemowy?
-49. Jakie mogą być skutki braku miejsca na dysku dla działania Windows i aplikacji?
-50. Kiedy warto użyć restartu usługi, a kiedy restartu całego komputera?
-51. Czym jest profil systemu Windows? Kiedy warto go usunąć i co zostanie usunięte?
-52. Użytkownik mówi: „Windows ciągle prosi mnie o hasło do służbowego konta” — jakie mogą być przyczyny?
+##### Co sprawdzasz, gdy komputer z Windows działa bardzo wolno?
+##### Jakie są najczęstsze przyczyny problemów z logowaniem do Windows?
+#####  Co zrobisz, jeśli użytkownik widzi komunikat, że jego konto zostało zablokowane?
+#####  Jak odróżnisz problem systemowy od problemu sprzętowego?
+##### Jakie podstawowe narzędzia w Windows wykorzystujesz do diagnostyki problemów?
+##### Do czego służy Event Viewer i kiedy go używasz?
+##### Do czego służy Task Manager i jakie informacje można tam szybko sprawdzić?
+##### Co sprawdzasz, gdy aplikacja w Windows się nie uruchamia?
+##### Jak postąpisz, gdy użytkownik zgłasza, że komputer zawiesza się kilka razy dziennie?
+##### Jakie są podstawowe kroki przy diagnozie problemu po aktualizacji Windows?
+##### Co zrobisz, jeśli użytkownik nie może zalogować się do komputera domenowego?
+##### Jaka jest różnica między kontem lokalnym a domenowym?
+##### Co to jest profil użytkownika w Windows?
+#####  Jakie objawy mogą wskazywać na uszkodzony profil użytkownika?
+#####  Jak sprawdzić, czy problem z logowaniem wynika z hasła, sieci czy polityk?
+##### Jakie mogą być przyczyny komunikatu „The trust relationship between this workstation and the primary domain failed”?
+#####  Co to jest UAC i po co jest używane?
+##### Jak postąpisz, gdy użytkownik potrzebuje uprawnień administratora lokalnego?
+##### Jak bezpiecznie zweryfikujesz tożsamość użytkownika przed resetem hasła lub zmianą dostępu?
+##### Jakie polecenia sieciowe w Windows znasz i do czego służą?
+##### Kiedy użyjesz ipconfig, ping, nslookup i gpupdate?
+##### Co sprawdzisz, gdy komputer ma internet, ale nie otwiera zasobów firmowych?
+##### Jakie mogą być objawy problemu z DNS w Windows?
+##### Co zrobisz, gdy użytkownik nie łączy się z VPN w Windowsie?
+##### Jak sprawdzisz, czy problem dotyczy Wi-Fi, adaptera sieciowego czy systemu?
+##### Jakie są najczęstsze przyczyny, że komputer „nie widzi sieci” w systemem Windows?
+##### Co sprawdzasz, gdy Outlook w Windows nie synchronizuje poczty?
+##### Jak postąpisz, gdy Teams nie chce się uruchomić na komputerze użytkownika?
+#####  Jakie kroki wykonasz, gdy OneDrive nie synchronizuje plików?
+#####  Co zrobisz, jeśli użytkownik ma Outlooka, ale nie widzi nowo nadanej skrzynki współdzielonej?
+##### Jak odróżnisz problem aplikacji lokalnej od problemu po stronie usługi Microsoft 365?
+##### Jakie podstawowe kroki wykonasz przy problemach z cache Outlooka lub Teams?
+##### Co sprawdzasz, gdy po aktualizacji Windows przestała działać drukarka?
+#####  Gdzie w Windows sprawdzisz problem ze sterownikiem?
+#####  Co to jest Device Manager i kiedy go używasz?
+##### Jak rozpoznać, że problem dotyczy sterownika, a nie samego urządzenia?
+#####  Jakie mogą być przyczyny, że użytkownik nie może drukować?
+##### Co sprawdzisz, gdy laptop nie wykrywa drugiego monitora?
+##### Jakie podstawowe kroki wykonasz przy problemach z docking station?
+##### akie podstawowe działania bezpieczeństwa są ważne na stanowisku 1st line w Windows?
+#####  Jak rozpoznać możliwą infekcję lub niepożądane zachowanie systemu w Windowsie?
+##### Co sprawdzisz, gdy Windows Defender zgłasza zagrożenie?
+##### Do czego służy CMD, a do czego PowerShell?
+##### Jakie proste komendy Windows warto znać na 1st line?
+##### Co to jest services.msc i kiedy możesz z niego skorzystać?
+##### Jak sprawdzisz, czy konkretna usługa systemowa działa poprawnie?
+##### Jakie narzędzia w Windows wykorzystasz do sprawdzenia miejsca na dysku?
+##### Co zrobisz, gdy użytkownik ma pełny dysk systemowy?
+##### Jakie mogą być skutki braku miejsca na dysku dla działania Windows i aplikacji?
+##### Kiedy warto użyć restartu usługi, a kiedy restartu całego komputera?
+#####  Czym jest profil systemu Windows? Kiedy warto go usunąć i co zostanie usunięte?
+#####  Użytkownik mówi: „Windows ciągle prosi mnie o hasło do służbowego konta” — jakie mogą być przyczyny?
 
 ### ACTIVE DIRECTORY
 
@@ -314,63 +404,71 @@ https://www.adaface.com/blog/windows-helpdesk-interview-questions/
 
 [ITIL Explained Fast](https://www.youtube.com/watch?v=AAQOJqBHz9w-)
 
-1. Czym różni się incident od service request?
-2. Jak ustalasz priorytet zgłoszenia?
-3. Kiedy eskalujesz zgłoszenie do 2nd line?
-4. Jakie informacje powinny znaleźć się w dobrze opisanym tickecie?
-5. Co wiesz o SLA?
-6. Czym różni się bug, incident, problem i change?
-7. -Jak postępujesz z wieloma podobnymi zgłoszeniami od użytkowników?**
-8. Co robisz, gdy użytkownik naciska na wyższy priorytet?
-9. Jak zamykasz ticket, żeby było to zgodne z procesem i czytelne dla audytu?
-10. Jakie są najważniejsze elementy poprawnie obsłużonego incydentu zgodnie z ITIL?
-11. Jak odróżnisz incident od service request na praktycznych przykładach?
-12. Co oznacza priorytetyzacja zgłoszeń i jakie dane są do niej potrzebne?
-13. Jaka jest różnica między impact a urgency?
-14. Jak wyznaczasz priority na podstawie impact i urgency?
-15. Co to jest SLA i jak wpływa na pracę 1st line?
-16. Co robisz, gdy widzisz, że zgłoszenie może nie zmieścić się w SLA?
-17. Na czym polega ownership zgłoszenia w pracy service desk?
-18. Kiedy zgłoszenie powinno być eskalowane do 2nd line?
-19. Jakie informacje musisz przekazać przy eskalacji, żeby była jakościowa?
-20. Jaka jest różnica między escalation functional a hierarchical?
-21. Co to jest major incident i czym różni się od zwykłego incydentu?
-22. Jak rozpoznasz, że kilka zgłoszeń może dotyczyć jednego większego incydentu?
-23. Co to jest problem management i czym różni się od incident management?
-24. Dlaczego dokumentacja i baza wiedzy są ważne w środowisku ITIL?
-25. Jak powinno wyglądać poprawne zamknięcie zgłoszenia?
-26. Jakie błędy najczęściej popełnia 1st line przy pracy w modelu ITIL?
-27. Co to jest service request fulfillment i jakie zgłoszenia zwykle tam wpadają?
-28. Jak postępujesz, gdy użytkownik naciska na zmianę priorytetu, ale biznesowo nie jest ona uzasadniona?
-29. Jak pogodzisz szybkie zamykanie ticketów z jakością obsługi użytkownika?
-30. Wymień kilka modeli opartych na ITIL, które zostały wdrożone w organizacjach.
-31. Jakie informacje powinien zawierać dobrze opisany ticket w Jira?
-32. Jak kategoryzujesz zgłoszenie w systemie ticketowym?
-33. Na czym polega poprawne ustawienie typu zgłoszenia w Jira?
-34. Jakie pola w tickecie są najważniejsze z punktu widzenia 1st line?
-35. Jak aktualizujesz ticket w trakcie pracy, aby był czytelny dla innych zespołów?
-36. Jak dokumentujesz wykonane kroki troubleshootingowe w Jira?
-37. Co robisz, gdy ticket został źle przypisany lub źle sklasyfikowany?
-38. Jak odróżnić ticket, który można rozwiązać od razu, od ticketu wymagającego eskalacji?
-39. Jak korzystasz z komentarzy wewnętrznych i publicznych w systemie ticketowym?
-40. Jakie błędy w opisie ticketów najbardziej utrudniają pracę 2nd line?
-41. Jak pilnujesz SLA i terminów w systemie typu Jira?
-42. Jak postępujesz z duplikatami zgłoszeń?
-43. Jak połączysz kilka podobnych zgłoszeń w jedną logiczną obsługę incydentu?
-44. Co robisz, gdy użytkownik nie odpowiada, a ticket pozostaje otwarty?
-45. Jakie statusy ticketu najczęściej występują i co powinny oznaczać?
-46. Kiedy zmieniasz assignee, a kiedy tylko dodajesz komentarz lub mention?
-47. Jak opisać ticket tak, żeby inna osoba mogła od razu przejąć sprawę bez straty czasu?
-48. Jak wykorzystujesz bazę wiedzy lub linked articles podczas pracy w Jira?
-49. Jak raportować powtarzające się zgłoszenia, które mogą wskazywać na szerszy problem?
-50. Jak wygląda dla Ciebie wzorcowy ticket od momentu rejestracji do zamknięcia?
-51. Masz 10 nowych ticketów i 2 zbliżają się do naruszenia SLA — co robisz?
-52. Użytkownik zgłasza brak dostępu, ale opis jest bardzo ogólny — jak poprowadzisz zgłoszenie?**
-53. Widzisz 5 podobnych ticketów z różnych lokalizacji — jak zareagujesz?**
-54. 2d line odrzuciło ticket z adnotacją “insufficient information” — co poprawiasz?**
-55. Ticket został zamknięty, ale użytkownik wraca z tym samym problemem następnego dnia — jak to traktujesz?
-56. Użytkownik twierdzi, że jego sprawa jest krytyczna, ale wpływ dotyczy tylko jednej osoby — jak odpowiadasz?
-57. Nie możesz rozwiązać zgłoszenia, ale SLA się kończy — jakie działania podejmujesz?
+#### **Sytuacyjne**
+
+1. 10 pracowników zajmujących się wprowadzaniem danych zgłasza, że nie może się zalogować, recepcjonistka zapomniała laptopa i potrzebuje urządzenia zastępczego, a dyrektor generalny nie może otworzyć prezentacji na spotkanie, które rozpocznie się za 15 minut. Komu pomożesz w pierwszej kolejności?
+   
+   W pierwszej kolejności obsłużyłbym dziesięciu pracowników zajmujących się wprowadzaniem danych. To właśnie oni mają największy wpływ na działalność firmy, mimo że to dyrektor generalny jest osobą na najwyższym stanowisku
+   
+#### Czym różni się incident od service request?
+#### Jak ustalasz priorytet zgłoszenia?
+#### Kiedy eskalujesz zgłoszenie do 2nd line?
+#### Jakie informacje powinny znaleźć się w dobrze opisanym tickecie?
+#### Co wiesz o SLA?
+#### Czym różni się bug, incident, problem i change?
+#### Jak postępujesz z wieloma podobnymi zgłoszeniami od użytkowników?**
+#### Co robisz, gdy użytkownik naciska na wyższy priorytet?
+#### Jak zamykasz ticket, żeby było to zgodne z procesem i czytelne dla audytu?
+#### Jakie są najważniejsze elementy poprawnie obsłużonego incydentu zgodnie z ITIL?
+#### Jak odróżnisz incident od service request na praktycznych przykładach?
+#### Co oznacza priorytetyzacja zgłoszeń i jakie dane są do niej potrzebne?
+#### Jaka jest różnica między impact a urgency?
+#### Jak wyznaczasz priority na podstawie impact i urgency?
+#### Co to jest SLA i jak wpływa na pracę 1st line?
+#### Co robisz, gdy widzisz, że zgłoszenie może nie zmieścić się w SLA?
+#### Na czym polega ownership zgłoszenia w pracy service desk?
+#### Kiedy zgłoszenie powinno być eskalowane do 2nd line?
+#### Jakie informacje musisz przekazać przy eskalacji, żeby była jakościowa?
+#### Jaka jest różnica między escalation functional a hierarchical?
+#### Co to jest major incident i czym różni się od zwykłego incydentu?
+#### Jak rozpoznasz, że kilka zgłoszeń może dotyczyć jednego większego incydentu?
+#### Co to jest problem management i czym różni się od incident management?
+#### Dlaczego dokumentacja i baza wiedzy są ważne w środowisku ITIL?
+#### Jak powinno wyglądać poprawne zamknięcie zgłoszenia?
+
+1. Jakie błędy najczęściej popełnia 1st line przy pracy w modelu ITIL?
+2. Co to jest service request fulfillment i jakie zgłoszenia zwykle tam wpadają?
+3. Jak postępujesz, gdy użytkownik naciska na zmianę priorytetu, ale biznesowo nie jest ona uzasadniona?
+4. Jak pogodzisz szybkie zamykanie ticketów z jakością obsługi użytkownika?
+5. Wymień kilka modeli opartych na ITIL, które zostały wdrożone w organizacjach.
+6. Jakie informacje powinien zawierać dobrze opisany ticket w Jira?
+7. Jak kategoryzujesz zgłoszenie w systemie ticketowym?
+8. Na czym polega poprawne ustawienie typu zgłoszenia w Jira?
+9. Jakie pola w tickecie są najważniejsze z punktu widzenia 1st line?
+10. Jak aktualizujesz ticket w trakcie pracy, aby był czytelny dla innych zespołów?
+11. Jak dokumentujesz wykonane kroki troubleshootingowe w Jira?
+12. Co robisz, gdy ticket został źle przypisany lub źle sklasyfikowany?
+13. Jak odróżnić ticket, który można rozwiązać od razu, od ticketu wymagającego eskalacji?
+14. Jak korzystasz z komentarzy wewnętrznych i publicznych w systemie ticketowym?
+15. Jakie błędy w opisie ticketów najbardziej utrudniają pracę 2nd line?
+16. Jak pilnujesz SLA i terminów w systemie typu Jira?
+17. Jak postępujesz z duplikatami zgłoszeń?
+18. Jak połączysz kilka podobnych zgłoszeń w jedną logiczną obsługę incydentu?
+19. Co robisz, gdy użytkownik nie odpowiada, a ticket pozostaje otwarty?
+20. Jakie statusy ticketu najczęściej występują i co powinny oznaczać?
+21. Kiedy zmieniasz assignee, a kiedy tylko dodajesz komentarz lub mention?
+22. Jak opisać ticket tak, żeby inna osoba mogła od razu przejąć sprawę bez straty czasu?
+23. Jak wykorzystujesz bazę wiedzy lub linked articles podczas pracy w Jira?
+24. Jak raportować powtarzające się zgłoszenia, które mogą wskazywać na szerszy problem?
+25. Jak wygląda dla Ciebie wzorcowy ticket od momentu rejestracji do zamknięcia?
+26. Masz 10 nowych ticketów i 2 zbliżają się do naruszenia SLA — co robisz?
+27. Użytkownik zgłasza brak dostępu, ale opis jest bardzo ogólny — jak poprowadzisz zgłoszenie?**
+28. Widzisz 5 podobnych ticketów z różnych lokalizacji — jak zareagujesz?**
+29. 2d line odrzuciło ticket z adnotacją “insufficient information” — co poprawiasz?**
+30. Ticket został zamknięty, ale użytkownik wraca z tym samym problemem następnego dnia — jak to traktujesz?
+31. Użytkownik twierdzi, że jego sprawa jest krytyczna, ale wpływ dotyczy tylko jednej osoby — jak odpowiadasz?
+32. Nie możesz rozwiązać zgłoszenia, ale SLA się kończy — jakie działania podejmujesz?
+
 ### MICROSOFT 365 / ENTRA / OUTLOOK / TEAMS
 
 1) Co robisz, gdy użytkownik nie może zalogować się do Microsoft 365?
@@ -433,9 +531,11 @@ https://www.adaface.com/blog/windows-helpdesk-interview-questions/
 58. Jakie kroki wykonujesz zawsze przed eskalacją?
 59. Jak komunikujesz użytkownikowi, że problem wymaga dalszej analizy?
 60. Co powinno znaleźć się w tickecie po zgłoszeniu dotyczącym Outlooka lub Teams?
-### CHMURA I WIRTUALIZACJA
+### CHMURA / BACKUP / WIRTUALIZACJA
 
 1. Co to jest **hypervisor**?
+   - BYOD configuration issues?
+1. Jak odzyskasz utracone pliki zgłoszone przez użytkownika?
 2. Co to znaczy **on-premises** vs **cloud**?
 3. Czym różni się **SaaS**, **PaaS** i **IaaS**?
 4. Czy chmura oznacza, że „nie trzeba znać infrastruktury”?
