@@ -340,54 +340,54 @@ https://www.adaface.com/blog/windows-helpdesk-interview-questions/
 
 ### ACTIVE DIRECTORY
 
-1. Czym jest Active Directory i do czego służy?
-2. Jaka jest różnica między użytkownikiem, grupą i komputerem w AD?
-3. Co to jest domena w Active Directory?
-4. Czym różni się Active Directory od Entra ID?
-5. Co to jest OU (Organizational Unit) i do czego się jej używa?
-6. Po co tworzy się grupy w AD?
-7. Jaka jest różnica między grupą security a distribution?
-8. Co oznacza, że konto użytkownika jest zablokowane, wyłączone albo wygasłe?
-9. Jakie są najczęstsze przyczyny problemów z logowaniem użytkownika w AD?
-10. Jak wygląda bezpieczny proces resetu hasła użytkownikowi?
-11. Jak sprawdziłbyś, czy użytkownik należy do właściwej grupy?
-12. Co sprawdzasz, gdy użytkownik nie ma dostępu do folderu sieciowego?
-13. Jak odróżniasz problem z hasłem od problemu z uprawnieniami?
-14. Co to jest członkostwo w grupach i jak wpływa na dostęp?
-15. Jakie informacje sprawdzisz w AD, gdy nowe konto użytkownika nie działa poprawnie?
-16. Jakie mogą być skutki przeniesienia użytkownika do innego OU?
-17. Co to jest GPO i do czego służy?
-18. Jakie przykłady polityk mogą być ustawiane przez GPO?
-19. Dlaczego ważne jest poprawne nazewnictwo i porządek w AD?
-20. Jakie dane powinny znaleźć się w tickecie dotyczącym problemu z kontem AD?
-21. Użytkownik mówi, że rano logował się normalnie, a teraz nie może. Jak podchodzisz do diagnozy?
-22. Użytkownik twierdzi, że ma dostęp do aplikacji, ale nie do folderu współdzielonego. Co sprawdzasz?
-23. Nowy pracownik nie może zalogować się pierwszego dnia pracy. Jakie kroki wykonasz?
-24. Użytkownik po resecie hasła nadal nie może się zalogować. Co robisz dalej?
-25. Konto zostało odblokowane, ale problem nadal występuje. Jakie mogą być przyczyny?
-26. Użytkownik zgłasza brak dostępu po zmianie działu. Co sprawdzasz w AD?
-27. Jak rozpoznasz, że problem może dotyczyć synchronizacji między AD a Entra ID?
-28. Kiedy taki ticket rozwiążesz sam, a kiedy eskalujesz do 2nd line?
-29. Jak wyjaśnisz użytkownikowi w prosty sposób, czym jest blokada konta?
-30. Jakie ryzyka bezpieczeństwa widzisz przy pracy z kontami i hasłami użytkowników?
-31. Co to jest Domain Controller?
-32. Dlaczego replika danych w AD jest ważna?
-33. Co może się stać, jeśli zmiana w AD nie jest od razu widoczna wszędzie?
-34. Na czym polega zasada least privilege w kontekście AD?
-35. Dlaczego nie powinno się nadawać uprawnień bezpośrednio użytkownikowi, jeśli można użyć grupy?
-36. Jakie są różnice między środowiskiem on-prem AD a hybrydowym?
-37. Dlaczego dokumentacja zmian w AD jest ważna?
-38. Jakie typowe błędy popełnia 1st line przy zgłoszeniach dotyczących AD?
-39. Jakie informacje powinieneś zebrać przed eskalacją problemu z AD?
-40. Jak opisałbyś swoją rolę 1st line w pracy z Active Directory?
-41. Jak sprawdzisz, czy komputer jest poprawnie dołączony do domeny?
-42. Co to jest Group Policy i jaki ma wpływ na użytkownika lub komputer?
-43. Jakie problemy użytkownik może odczuwać przez błędnie zastosowaną politykę GPO?
-44. Jakim poleceniem możesz odświeżyć polityki grupowe?
-45. Co sprawdzasz, gdy dyski sieciowe albo drukarki mapowane przez GPO się nie pojawiają?
-46. Jakie mogą być przyczyny, że komputer nie widzi kontrolera domeny?
-47. Jak sprawdzisz, na jakim koncie pracuje użytkownik i do jakich grup należy?
-48. Kiedy problem z Windows należy eskalować do administratora AD/GPO?
+#####  Czym jest Active Directory i do czego służy?
+1. Jaka jest różnica między użytkownikiem, grupą i komputerem w AD?
+2. Co to jest domena w Active Directory?
+3. Czym różni się Active Directory od Entra ID?
+4. Co to jest OU (Organizational Unit) i do czego się jej używa?
+5. Po co tworzy się grupy w AD?
+6. Jaka jest różnica między grupą security a distribution?
+7. Co oznacza, że konto użytkownika jest zablokowane, wyłączone albo wygasłe?
+8. Jakie są najczęstsze przyczyny problemów z logowaniem użytkownika w AD?
+9. Jak wygląda bezpieczny proces resetu hasła użytkownikowi?
+10. Jak sprawdziłbyś, czy użytkownik należy do właściwej grupy?
+11. Co sprawdzasz, gdy użytkownik nie ma dostępu do folderu sieciowego?
+12. Jak odróżniasz problem z hasłem od problemu z uprawnieniami?
+13. Co to jest członkostwo w grupach i jak wpływa na dostęp?
+14. Jakie informacje sprawdzisz w AD, gdy nowe konto użytkownika nie działa poprawnie?
+15. Jakie mogą być skutki przeniesienia użytkownika do innego OU?
+16. Co to jest GPO i do czego służy?
+17. Jakie przykłady polityk mogą być ustawiane przez GPO?
+18. Dlaczego ważne jest poprawne nazewnictwo i porządek w AD?
+19. Jakie dane powinny znaleźć się w tickecie dotyczącym problemu z kontem AD?
+20. Użytkownik mówi, że rano logował się normalnie, a teraz nie może. Jak podchodzisz do diagnozy?
+21. Użytkownik twierdzi, że ma dostęp do aplikacji, ale nie do folderu współdzielonego. Co sprawdzasz?
+22. Nowy pracownik nie może zalogować się pierwszego dnia pracy. Jakie kroki wykonasz?
+23. Użytkownik po resecie hasła nadal nie może się zalogować. Co robisz dalej?
+24. Konto zostało odblokowane, ale problem nadal występuje. Jakie mogą być przyczyny?
+25. Użytkownik zgłasza brak dostępu po zmianie działu. Co sprawdzasz w AD?
+26. Jak rozpoznasz, że problem może dotyczyć synchronizacji między AD a Entra ID?
+27. Kiedy taki ticket rozwiążesz sam, a kiedy eskalujesz do 2nd line?
+28. Jak wyjaśnisz użytkownikowi w prosty sposób, czym jest blokada konta?
+29. Jakie ryzyka bezpieczeństwa widzisz przy pracy z kontami i hasłami użytkowników?
+30. Co to jest Domain Controller?
+31. Dlaczego replika danych w AD jest ważna?
+32. Co może się stać, jeśli zmiana w AD nie jest od razu widoczna wszędzie?
+33. Na czym polega zasada least privilege w kontekście AD?
+34. Dlaczego nie powinno się nadawać uprawnień bezpośrednio użytkownikowi, jeśli można użyć grupy?
+35. Jakie są różnice między środowiskiem on-prem AD a hybrydowym?
+36. Dlaczego dokumentacja zmian w AD jest ważna?
+37. Jakie typowe błędy popełnia 1st line przy zgłoszeniach dotyczących AD?
+38. Jakie informacje powinieneś zebrać przed eskalacją problemu z AD?
+39. Jak opisałbyś swoją rolę 1st line w pracy z Active Directory?
+40. Jak sprawdzisz, czy komputer jest poprawnie dołączony do domeny?
+41. Co to jest Group Policy i jaki ma wpływ na użytkownika lub komputer?
+42. Jakie problemy użytkownik może odczuwać przez błędnie zastosowaną politykę GPO?
+43. Jakim poleceniem możesz odświeżyć polityki grupowe?
+44. Co sprawdzasz, gdy dyski sieciowe albo drukarki mapowane przez GPO się nie pojawiają?
+45. Jakie mogą być przyczyny, że komputer nie widzi kontrolera domeny?
+46. Jak sprawdzisz, na jakim koncie pracuje użytkownik i do jakich grup należy?
+47. Kiedy problem z Windows należy eskalować do administratora AD/GPO?
 ### SQL
 
 1. Czym różni się **baza danych** od zwykłego pliku Excel?
