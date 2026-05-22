@@ -419,12 +419,7 @@ Następnie kliknij prawym przyciskiem na pakiet i wybierz:
 ![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/26-image.png)
 
 To pozwala obejrzeć zawartość strumienia TCP i lepiej zrozumieć, jakie dane były przesyłane.
-
-Można także szukać podejrzanych plików, filtrując po rozszerzeniach, takich jak:
-
-- **PDF**
-- **csv**
-- **TXT**
+Można także szukać podejrzanych plików, filtrując po rozszerzeniach, takich jak: **PDF, csv, TXT**
 
 Przykład filtra dla plików CSV:
 
@@ -446,4 +441,23 @@ Należy sprawdzić ruch o większej długości, używając filtra:
 Następnie należy sprawdzić zawartość w **TCP Stream**.
 
 Wygląda na to, że dokument zawierający **wrażliwe informacje** był przesyłany do zewnętrznego adresu IP. Warto przeanalizować także inne strumienie, aby znaleźć więcej wskaźników świadczących o eksfiltracji wrażliwych dokumentów przez **protokół HTTP**.
->>>>>>> Stashed changes
+
+Zadania
+
+Ile połączeń było zaobserwowanych z konta gościa?
+
+**ftp contains "guest"**
+
+Zastosuj filtr; jaka jest nazwa pliku związanego z klientami, który został wyeksfiltrowany z konta root?
+
+**ftp && frame.len > 90** -> Szukamy po FTP -> STOR -> nazwa pliku
+
+Który wewnętrzny adres IP został wykryty jako wysyłający największy ładunek danych do zewnętrznego adresu IP?
+
+**ftp && frame.len > 90** -> szukamy najwiekszej długości pakietu
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/30-image.png)
+
+Jaka flaga jest ukryta w strumieniu FTP przesyłającym plik CSV do podejrzanego adresu IP?
+
+**ftp contains "STOR" -> Szukamy po FTP -> DATA** 

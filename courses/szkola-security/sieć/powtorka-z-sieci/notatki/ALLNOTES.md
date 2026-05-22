@@ -57,9 +57,7 @@ Głównym celem jest detekcja błędów, które się pojawiły w warstwie pierws
 ##### **MAC (Media Access Control):**
 
 [https://pl.wikipedia.org/wiki/Adres_MAC](https://pl.wikipedia.org/wiki/Adres_MAC)
-
 [https://bluecatnetworks.com/blog/mac-address-vs-ip-address-whats-the-difference/](https://bluecatnetworks.com/blog/mac-address-vs-ip-address-whats-the-difference/)
-
 [https://whatismyipaddress.com/mac-address](https://whatismyipaddress.com/mac-address)”  
   
 **Do zapamiętania:**  
@@ -76,13 +74,9 @@ Umożliwia komunikację między urządzeniami, które nie są bezpośrednio poł
 IP:
 
 [https://www.cloudflare.com/learning/network-layer/internet-protocol/](https://www.cloudflare.com/learning/network-layer/internet-protocol/)
-
 [https://en.wikipedia.org/wiki/Internet_Protocol](https://en.wikipedia.org/wiki/Internet_Protocol)
-
 [https://www.avast.com/c-ip-address-public-vs-private](https://www.avast.com/c-ip-address-public-vs-private)
-
 [https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges  
-  
 (https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges)
 
 **Do zapamiętania:**
@@ -94,13 +88,9 @@ IP:
 #### Maski podsieci:
 
 [https://avinetworks.com/glossary/subnet-mask/](https://avinetworks.com/glossary/subnet-mask/)
-
 [https://en.wikipedia.org/wiki/Subnetwork](https://en.wikipedia.org/wiki/Subnetwork)
-
 [https://www.cloudaccess.net/cloud-control-panel-ccp/157-dns-management/322-subnet-masks-reference-table.html](https://www.cloudaccess.net/cloud-control-panel-ccp/157-dns-management/322-subnet-masks-reference-table.html)
-
 [https://dnsmadeeasy.com/support/subnet](https://dnsmadeeasy.com/support/subnet)
-
 [https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting](https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting)
 
 
@@ -116,11 +106,8 @@ IP:
 ##### **Address Broadcast:**
 
 [https://www.omnisecu.com/tcpip/broadcast-mac-address.php](https://www.omnisecu.com/tcpip/broadcast-mac-address.php)
-
 [https://www.ionos.com/digitalguide/server/know-how/broadcast-address/](https://www.ionos.com/digitalguide/server/know-how/broadcast-address/)
-
 [https://en.wikipedia.org/wiki/Broadcast_address](https://en.wikipedia.org/wiki/Broadcast_address)
-
 [https://www.pcmag.com/encyclopedia/term/broadcast-address](https://www.pcmag.com/encyclopedia/term/broadcast-address)
 
 **Do zapamiętania:**  
@@ -134,11 +121,8 @@ IP:
 **ARP (Address Resolution Protocol):**
 
 [https://en.wikipedia.org/wiki/Address_Resolution_Protocol](https://en.wikipedia.org/wiki/Address_Resolution_Protocol)
-
 [https://www.techtarget.com/searchnetworking/definition/Address-Resolution-Protocol-ARP](https://www.techtarget.com/searchnetworking/definition/Address-Resolution-Protocol-ARP)
-
 [https://www.geeksforgeeks.org/how-address-resolution-protocol-arp-works/](https://www.geeksforgeeks.org/how-address-resolution-protocol-arp-works/)
-
 [https://www.omnisecu.com/tcpip/address-resolution-protocol-arp.php](https://www.omnisecu.com/tcpip/address-resolution-protocol-arp.php)
 
 
@@ -154,9 +138,7 @@ IP:
 ##### **Switch vs router:**
 
 [https://blog.router-switch.com/2021/10/difference-between-router-and-switch/](https://blog.router-switch.com/2021/10/difference-between-router-and-switch/)
-
 [https://www.guru99.com/router-vs-switch-difference.html](https://www.guru99.com/router-vs-switch-difference.html)
-
 [https://www.javatpoint.com/switch-vs-router](https://www.javatpoint.com/switch-vs-router)
 
 **Do zapamiętania:**
@@ -171,9 +153,7 @@ Zarządza przesyłaniem danych między aplikacjami. Odpowiada za dzielenie danyc
 **TCP vs UDP:**
 
 [https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html](https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html)
-
 [https://www.freecodecamp.org/news/tcp-vs-udp/](https://www.freecodecamp.org/news/tcp-vs-udp/)
-
 [https://www.diffen.com/difference/TCP_vs_UDP](https://www.diffen.com/difference/TCP_vs_UDP)
 
 - TCP - powolny, UDP - szybki (mają pakiet dropy)
@@ -182,15 +162,10 @@ Zarządza przesyłaniem danych między aplikacjami. Odpowiada za dzielenie danyc
 ##### **3-way handshake:**
 
 [https://www.guru99.com/tcp-3-way-handshake.html](https://www.guru99.com/tcp-3-way-handshake.html)
-
 [https://www.sciencedirect.com/topics/computer-science/three-way-handshake](https://www.sciencedirect.com/topics/computer-science/three-way-handshake)
-
 [https://afteracademy.com/blog/what-is-a-tcp-3-way-handshake-process](https://afteracademy.com/blog/what-is-a-tcp-3-way-handshake-process)
-
 [https://pl.wikipedia.org/wiki/Protok%C3%B3%C5%82_sterowania_transmisj%C4%85](https://pl.wikipedia.org/wiki/Protok%C3%B3%C5%82_sterowania_transmisj%C4%85)
-
 [https://users.cs.northwestern.edu/~agupta/cs340/project2/TCPIP_State_Transition_Diagram.pdf  
-  
 (https://users.cs.northwestern.edu/~agupta/cs340/project2/TCPIP_State_Transition_Diagram.pdf)
 
 **Do zapamiętania:**
@@ -226,7 +201,6 @@ https://kaser.zsl.gda.pl/PSK%202/2.%20Model%20OSI%20-%20warstwa%20aplikacji%20pr
 ##### NetBios
 
 https://pl.wikipedia.org/wiki/NetBIOS
-
 https://users.pja.edu.pl/~s3452/prezentacja/html/netbios_netbeui.html
 ### **Warstwa 6 - Prezentacji (Aplikacji)**
 

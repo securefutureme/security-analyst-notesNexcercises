@@ -237,7 +237,7 @@ cat 3access.log | grep 'cmd=' | cut -d'"' -f2 | cut -d'=' -f3 | cut -d' ' -f1
 
 Trzeba jeszcze odkodować w CyberChefie:
 
-![alt](29-image.png)
+![alt](courses/szkola-security/siem/analiza-logow-cli-zadania-szkola/cwiczenia-kurs-po/Attachments/29-image.png)
 
 **Odp.** 
 - cat /etc/passwd

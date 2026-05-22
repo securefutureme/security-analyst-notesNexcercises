@@ -6,6 +6,8 @@ Uwierzytelnianie ma trzy czynniki - to co wiemy (hasło, PIN), to co mamy (token
   
 **Autoryzacja** - czyli - do czego masz konkretnie dostęp?. W skrócie - określenie poziomu dostępu użytkownika.  
 Przykład: admin zwykle ma dostęp do wszystkiego, HR ma tylko dostęp do folderu grupy HR, ale już nie ma do Sales, uczeń może zobaczyć swoje oceny, ale nie innych uczniów, jako klient banku masz dostęp do swojego konta, ale np. nie możesz zmienić już software którego bank używa itd.
+
+
 #### How do you keep yourself updated with information security? →  Jak dbasz o bieżące aktualizowanie wiedzy z zakresu bezpieczeństwa informacji?  
 
 Tutaj możemy mieć kilkanaście opcji do wyboru.  
