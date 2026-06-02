@@ -1,3 +1,45 @@
+## Analiza accesslog
+
+1. **Jak duży jest plik logów?** 
+
+Sprawdzamy to standardową komendą ls -lrth.
+
+![alt](courses/szkola-security/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/14-image.png)
+
+Odp. 12 Kb
+
+2. Jaki zakres czasu jest zawarty w logach?
+
+Łączymy dwie komendy, tail i head by sprawdzić pierwszy i ostatni zapis w logu.
+
+![alt](courses/szkola-security/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/15-image.png)
+
+**Odp. 24/May/2022:09:42:42 +0200 UTC do 24/May/2022:09:52:03 +0200 UTC**
+
+3. **W jakim formacie jest plik logów oraz, którego pliku jest kopią?** 
+
+Odp. Tak jak w screenshootach powyżej, można zaobserwować, że są to logi w formacie **combined log format**. Jest kopią **other_vhost_access.log** - bo widać hosta wirtualnego na początku logów. 
+
+(**"%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"".**)
+
+4. Ułożenie timeline ataku z datami i godzinami z pliku accesslog.zip
+
+  a)  **pierwszy kontakt z serwerem atakującego**
+
+Użyjmy najpierw **cat access.log | cut -d" " -f2 | sort | uniq -c** do przefiltrowania sobie wszystkich adresów IP z access.log.
+
+![alt](courses/szkola-security/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/16-image.png)
+
+Odp. 24/May/2022:09:42:42 +0200 UTC
+
+  b) **wejście atakującego na serwer**
+  
+Jako że to jest bardzo okrojony log, prawdopodobnie wycinek. Można odpowiedzieć - jak wyżej. 
+
+  c) **IP atakującego**
+
+**Odp. 30.13.3.7**
+
 
 **Przydatne komendy:**
 
@@ -39,15 +81,5 @@
   
 **cat copyofaccess.log | cut -d'"' -f6 | sort -u** – skrótowo: wyciąga User-Agenty i od razu zwraca posortowaną listę unikalnych.  
 
-## Analiza accesslog
-
-1. **Jak duży jest plik logów?** 
-2. Jaki zakres czasu jest zawarty w logach?** 
-3. **W jakim forcie jest plik logów oraz, którego pliku jest kopią?** 
-
-4. Ułożenie timeline ataku z datami i godzinami z pliku accesslog2.zip
-  a)  **pierwszy kontakt z serwerem atakującego**
-  b) **wejście atakującego na serwer**
-  c) **IP atakującego**
 
   
