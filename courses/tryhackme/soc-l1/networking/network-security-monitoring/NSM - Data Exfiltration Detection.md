@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ## Eksfiltracja danych
 Eksfiltracja danych to nieautoryzowane przesyłanie danych z organizacji do zewnętrznego miejsca kontrolowanego przez przeciwnika. Może być działaniem celowym (insider) albo skutkiem działania malware lub przejętych poświadczeń.
 
@@ -461,3 +460,158 @@ Który wewnętrzny adres IP został wykryty jako wysyłający największy ładun
 Jaka flaga jest ukryta w strumieniu FTP przesyłającym plik CSV do podejrzanego adresu IP?
 
 **ftp contains "STOR" -> Szukamy po FTP -> DATA** 
+
+
+# Eksfiltracja danych przez HTTP
+
+**Eksfiltracja danych przez HTTP** polega na tym, że atakujący wyprowadza wrażliwe dane z sieci ofiary, używając **HTTP** jako kanału transportowego. HTTP jest często nadużywany, ponieważ **wtapia się w normalny ruch webowy**, może przechodzić przez **firewalle i proxy**, a dodatkowo może być **ukrywany** poprzez kodowanie, szyfrowanie lub tunelowanie.
+
+To zadanie detekcyjne ma nauczyć analityków **SOC**, jak rozpoznawać oznaki eksfiltracji opartej na HTTP w:
+
+- przechwyceniach pakietów (**Wireshark**)
+- logach (**Splunk**)
+
+oraz jak używać praktycznych zapytań i kroków dochodzeniowych.
+
+## Dlaczego to jest ważne
+
+- HTTP jest bardzo powszechny, więc atakujący ukrywają eksfiltrację w szumie legalnego ruchu webowego.
+- Skuteczna detekcja pozwala zatrzymać wyciek danych i odtworzyć działania atakującego po kompromitacji.
+- Organizacje muszą wykrywać i obsługiwać takie incydenty, aby chronić wrażliwe dane i spełniać wymagania compliance.
+
+## Jak przeciwnicy wykorzystują HTTP do eksfiltracji danych
+
+**POST uploads do zewnętrznych serwerów**  
+Duże ilości danych są wysyłane do hostów kontrolowanych przez atakującego albo do pamięci chmurowych w treści żądań **POST**.
+
+**GET requests z zakodowanymi danymi**  
+Atakujący umieszcza małe fragmenty danych w **query stringach** albo segmentach ścieżki URL, co jest przydatne przy powolnej eksfiltracji typu **low-and-slow**.
+
+**Wykorzystanie popularnych usług / CDN**  
+Eksfiltracja jest ukrywana jako upload do popularnych usług albo do subdomen kontrolowanych przez atakującego pod wiarygodnie wyglądającymi domenami.
+
+**Custom headers**  
+Dane są umieszczane w nagłówkach, np. `X-Data: <base64>`, co może ominąć niektóre mechanizmy DLP oparte wyłącznie na prostym dopasowaniu ciągów znaków.
+
+**Chunked transfer / multipart**  
+Duże payloady są dzielone na wiele żądań, aby nie przekroczyć progów wykrywania opartych na rozmiarze.
+
+**HTTPS/TLS tunneling**  
+Szyfrowany kanał ukrywa właściwy payload. Wykrycie wymaga inspekcji TLS, analizy **SNI** albo detekcji opartej na metadanych.
+
+**Staging przez usługi chmurowe**  
+Atakujący wysyła dane np. do **Dropbox, GitHub, Gist**, a następnie pobiera je z zewnątrz.
+
+**Przeciwnicy się dostosowują**  
+Stosują podejście **low-and-slow**, szyfrowanie, kodowanie i legalne usługi, aby utrudnić wykrycie.
+
+---
+## Wskaźniki ataku (_IoAs_)
+
+**Typowe wskaźniki sieciowe:**
+
+- nietypowo duże żądania **HTTP POST** do zewnętrznych lub nieoczekiwanych hostów
+- żądania HTTP do domen o **niskiej reputacji** albo rzadko spotykanych w normalnym ruchu
+- częste małe żądania (_beaconing_) do tego samego hosta, po których następują duże uploady
+- transfery **chunked** albo **multipart**, gdzie wiele żądań razem tworzy większy plik
+### Analiza logów w Splunku
+
+Aby rozpocząć, użyj następującego zapytania i upewnij się, że zakres czasu ustawiony jest na **All Time**
+
+```
+index="data_exfil" sourcetype="http_logs"
+```
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/31-image.png)
+
+To zapytanie pokaże logi typu `http_logs`. Ponieważ eksfiltracja może być realizowana przez metodę **POST**, zawężamy wyniki:
+
+```
+index="data_exfil" sourcetype="http_logs" method=POST
+```
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/32-image.png)
+
+
+Aby sprawdzić średnią, maksymalną i minimalną liczbę bajtów wysyłanych do poszczególnych domen, użyj:
+
+```
+index="data_exfil" sourcetype="http_logs" method=POST | stats count avg(bytes_sent) max(bytes_sent) min(bytes_sent) by domain | sort - count
+```
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/33-image.png)
+
+To pomaga zidentyfikować domeny, do których wysyłane są **duże ilości danych**.
+
+**Odfiltrowanie legalnego ruchu i izolacja dużych payloadów POST**
+
+Aby wyświetlić tylko żądania POST z większym payloadem, użyj:
+
+```
+index="data_exfil" sourcetype="http_logs" method=POST bytes_sent > 600 | table _time src_ip uri domain dst_ip bytes_sent | sort - bytes_sent
+```
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/34-image.png)
+
+Dotychczasowa analiza wskazuje na **jeden podejrzany wpis**, w którym duży fragment danych został wysłany do zewnętrznego źródła. Następnie należy skorelować to z plikiem PCAP.
+
+### Analiza ruchu sieciowego - Filtrowanie ruchu HTTP
+
+Najpierw zastosuj filtr na cały ruch HTTP:
+
+| Notes                                                                                                   | Wireshark Filter |
+| ------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Filtrowanie całego ruchu HTTP** – pokazuje wszystkie żądania i odpowiedzi HTTP w przechwyconym ruchu. | `http`           |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/35-image.png)
+
+W wynikach widoczny jest ruch HTTP zawierający zarówno żądania **GET**, jak i **POST**.
+### Filtrowanie żądań POST
+
+Aby wyświetlić tylko żądania POST, użyj:
+
+| Notes                                                                                               | Wireshark Filter                |
+| --------------------------------------------------------------------------------------------------- | ------------------------------- |
+| **Filtrowanie żądań POST** – pomaga skupić się na transferach, które mogą zawierać przesyłane dane. | `http.request.method == "POST"` |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/36-image.png)
+
+### Filtrowanie żądań POST o większej długości ramki
+
+Aby zawęzić wyniki do większych transferów, użyj:
+
+| Notes                                                                                             | Wireshark Filter                                    |
+| ------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| **POST z długością ramki większą niż 500** – pomaga ograniczyć liczbę wyników do większych żądań. | `http.request.method == "POST" and frame.len > 500` |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/37-image.png)
+
+Nadal może być widoczny spory szum, więc warto zwiększyć próg.
+### Dalsze zawężenie do dużych ramek
+
+Zastosuj bardziej restrykcyjny filtr:
+
+| Notes                                                                                                  | Wireshark Filter                                    |
+| ------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
+| **POST z długością ramki większą niż 750** – pozwala wyłapać najbardziej podejrzane duże żądania HTTP. | `http.request.method == "POST" and frame.len > 750` |
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/38-image.png)
+
+Ten filtr pokazuje już tylko **jeden wpis**, który wygląda tak samo jak ten znaleziony wcześniej w Splunku.
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/39-image.png)
+
+Następnie należy przejść do **HTTP Stream**, aby zobaczyć zawartość przesyłanego pliku.
+
+**Zadania:**
+
+**Który wewnętrzny, skompromitowany host został użyty do eksfiltracji tych wrażliwych danych?**
+
+Do sprawdzenia tego musimy udać się do Wiresharka i zaaplikować "http.request.method == "POST" and frame.len > 750".
+
+Odp. 192.168.1.103
+
+**Jaka flaga jest ukryta w wyeksfiltrowanych danych?**
+
+Follow -> HTTP Stream
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/40-image.png)
+
+**Odp. THM{http_raw_3xf1ltr4t10n_succ3ss}**

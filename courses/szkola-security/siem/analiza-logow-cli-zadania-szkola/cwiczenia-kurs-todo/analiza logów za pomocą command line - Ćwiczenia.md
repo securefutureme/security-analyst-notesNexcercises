@@ -233,7 +233,7 @@ Odp. **nie da się dokłądnie określiść - nazwa narzędzia została prawdopo
 **Użyjemy zmodyfikowanego grepa:** 
 cat 3access.log | grep 'cmd=' | cut -d'"' -f2 | cut -d'=' -f3 | cut -d' ' -f1
 
-![alt](31-image.png)
+![alt](courses/szkola-security/siem/analiza-logow-cli-zadania-szkola/cwiczenia-kurs-todo/Attachments/31-image.png)
 
 Trzeba jeszcze odkodować w CyberChefie:
 
