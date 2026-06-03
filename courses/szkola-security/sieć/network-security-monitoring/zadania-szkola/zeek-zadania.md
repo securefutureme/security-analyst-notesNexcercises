@@ -84,12 +84,13 @@ cat http.log | grep "absolutnie_nie_hakierzy"
 
 Możemy tutaj zobserwować jak atakujący otwiera webshella, który już jest na serwerze (/wp-content/uploads/2022/01/absolutnie_nie_webshell.php?cmd=pwd).
 
-Następnie widzimy kilka komend:
+**Następnie widzimy kilka komend:**
 - cmd=pwd - sprawdza obecny katalog
 - cmd=ip a - sprawdza adresy i interfejsy
 - cmd=ip neigh -  oraz sąsiadów
 - cmd=nc -w 1 -v 10.0.0.20 1-100 2>&1 | grep -v refused - tutaj sprawdza porty na wykrytych adresach ip
 
 Dalej widzimy ruch boczny na 10.0.0.20 (cmd=printf+"open+10.0.0.20) i wbicie się hasłami (które prawdobnie wykradł/miał). 
+
 Potem już są komendy jak buszuje po systemie w poszukiwaniu konkretnego pliku.
 Jest to atak z wykorzystaaniem **Remote Code Execution**, oraz atak **command injection** (webshell)- 

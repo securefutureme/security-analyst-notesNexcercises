@@ -615,3 +615,92 @@ Follow -> HTTP Stream
 ![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/40-image.png)
 
 **Odp. THM{http_raw_3xf1ltr4t10n_succ3ss}**
+
+# Eksfiltracja danych przez ICMP
+
+**ICMP** to protokół warstwy sieciowej używany do diagnostyki i kontroli, np. przez **ping** lub komunikaty **TTL exceeded**. Ponieważ jest on często dozwolony przez firewalle i zwykle sprawdzany mniej rygorystycznie niż **TCP/UDP**, atakujący czasami wykorzystują go do **tunelowania** i **eksfiltracji danych**. Złośliwi aktorzy kodują dane w **payloadach ICMP** (np. echo request/reply, timestamp, info) i wysyłają je do zdalnego odbiorcy, którego kontrolują.
+
+### Jak przeciwnicy wykorzystują ICMP do eksfiltracji
+
+#### Najczęstsze techniki
+
+**Tunelowanie w ICMP echo (type 8) / reply (type 0)**  
+Atakujący umieszczają zakodowane fragmenty plików, np. w formacie **base64** albo **hex**, wewnątrz payloadu ICMP. Zdalny serwer zbiera te fragmenty i je dekoduje.
+
+**Własne typy i kody ICMP**  
+Wykorzystywane są niestandardowe typy ICMP lub niestandardowe kody, aby ominąć detekcję opartą na sygnaturach.
+
+**Fragmentacja i składanie pakietów**  
+Duże payloady są dzielone na wiele pakietów.
+
+**Szyfrowanie i zaciemnianie**  
+Payload może być szyfrowany albo kodowany, np. przy użyciu **base64**, żeby wyglądał jak losowe dane.
+### Oznaki, że coś może być złośliwe
+
+- utrzymujące się sesje ICMP do zewnętrznego hosta, który nie jest używany do legalnego monitoringu
+- nietypowo duże payloady ICMP albo częsty ruch ICMP z payloadem większym niż typowy rozmiar pingu
+- payloady ICMP zawierające dane o wysokiej entropii albo wzorce przypominające **base64** lub **hex**
+- serie pakietów ICMP, po których nie następuje żaden inny legalny ruch aplikacyjny z tego samego hosta
+### Wskaźniki ataku w Wiresharku
+
+Podczas analizy pliku **pcap** w Wiresharku należy zwracać uwagę na:
+
+**Wolumen ruchu ICMP**  
+Jeden host wysyła dużą liczbę pakietów **ICMP echo request** do zewnętrznego adresu IP.
+
+**Duży `frame.len` albo duży payload ICMP**  
+Pingi z payloadem znacznie większym niż typowy, np. **powyżej 64 bajtów**.
+
+**Nietypowe wartości `type/code`**  
+Np. nietypowe użycie komunikatów **timestamp (13/14)** albo niestandardowych kodów.
+
+**Regularność czasowa (periodyczność)**  
+Pakiety ICMP wysyłane w równych odstępach czasu, z payloadem o podobnym rozmiarze.
+
+**Fragmenty z ponownym składaniem**  
+Wiele fragmentów ICMP pomiędzy tą samą parą adresów źródłowego i docelowego.
+
+### Analiza ruchu
+
+#### Filtrowanie całego ruchu ICMP
+
+Poniższy filtr pokazuje wszystkie pakiety ICMP. Należy zwracać uwagę na **nietypowo częste** albo **duże** pakiety **ICMP Echo Request/Reply**.
+
+**Filter:** `icmp`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/41-image.png)
+
+#### Izolowanie Echo Request
+
+Następnie należy odfiltrować tylko pakiety **ICMP Echo Request**:
+
+**Filter:** `icmp.type == 8`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/42-image.png)
+
+#### Analiza dużych pakietów ICMP
+
+Teraz należy zawęzić wyniki do żądań ICMP o długości ramki większej niż 100:
+
+**Filter:** `icmp.type == 8 and frame.len > 100`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/43-image.png)
+
+To pozwala oznaczyć pakiety z nietypowo dużym payloadem.  
+Normalne pakiety **ping** mają zwykle około **74 bajtów** łącznie. Wszystko powyżej **100 bajtów** jest podejrzane.
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/44-image.png)
+
+To właściwie wystarcza.
+
+ICMP jest prosty, dlatego każdą anomalię można stosunkowo łatwo wykryć przez analizę **rozmiaru ramki** i sprawdzenie, czy payload jest **większy niż zazwyczaj**.
+
+Zadania:
+
+Jaka flaga może być znaleziona w esfitrowanych danych ICMP?
+
+**Filter**: `icmp.type == 8 and frame.len > 100`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/45-image.png)
+
+**Odp. THM{1cmp_3ch0_3xf1ltr4t10n_succ3ss}** 
