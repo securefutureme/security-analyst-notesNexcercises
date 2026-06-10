@@ -249,3 +249,242 @@ Odp. 14 - sprawdzamy to szukając duplikatów mapowań IP-MAC.
 `arp.duplicate-address-detected || arp.duplicate-address-frame`
 
 ![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/60-image.png)
+# Odkrywając DNS Spoofing
+
+Najpierw warto zrozumieć, czym jest **DNS**. Można o nim myśleć jak o **liście kontaktów w telefonie**. Nie pamiętasz numerów swoich znajomych — po prostu klikasz ich imię. Podobnie DNS tłumaczy **przyjazne dla człowieka nazwy stron internetowych** (np. `www.google.com`) na **adresy IP**, które rozumie komputer.
+## Czym jest DNS Spoofing
+
+**DNS spoofing** (nazywany też **DNS cache poisoning**) polega na tym, że atakujący **psuje ten mechanizm** i podaje komputerowi **zły „numer telefonu”** dla strony, którą ofiara próbuje odwiedzić.
+To bardzo skuteczna technika do przeprowadzenia ataku **Man-in-the-Middle (MITM)**.
+### Jak to działa
+
+1. Ofiara próbuje wejść na stronę banku, np. `my-real-bank.com`.
+2. Atakujący, który znajduje się już w sieci lokalnej (np. dzięki **ARP spoofingowi**), przechwytuje zapytanie DNS ofiary.
+3. Następuje **spoofing** — atakujący szybko wysyła fałszywą odpowiedź DNS, która mówi:  
+   `my-real-bank.com` znajduje się pod moim adresem IP: `ATTACKER_IP`.
+4. Komputer ofiary ufa tej odpowiedzi i zapisuje ją w **cache DNS**.
+5. Gdy ofiara próbuje połączyć się z bankiem, w rzeczywistości łączy się z serwerem atakującego, który może hostować **idealną kopię prawdziwej strony bankowej**.
+6. Atakujący znajduje się teraz „pośrodku” i może przechwytywać wszystko, co wpisuje ofiara, w tym **login** i **hasło**.
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/61-image.png)
+### Wskaźniki ataku
+
+Podczas analizy logów albo ruchu sieciowego pod kątem możliwego ataku **MITM z użyciem DNS spoofing** należy zwracać uwagę na:
+
+- **wiele odpowiedzi DNS dla tego samego zapytania**  
+  Legalny resolver i sfałszowany host odpowiadają na to samo zapytanie. To **najbardziej wiarygodny wskaźnik**.
+- **odpowiedź DNS z nieoczekiwanego źródła**  
+  Odpowiedź DNS przychodzi z adresu IP, który nie odpowiada żadnemu skonfigurowanemu resolverowi, np. nie jest to `8.8.8.8` ani wewnętrzny serwer DNS.
+- **podejrzanie niski TTL (Time-To-Live)**  
+  Atakujący mogą używać bardzo niskich wartości TTL (**1–30 s**), aby zatrute wpisy były krótkotrwałe i łatwe do ponownego nadpisania.
+- **niezamówione odpowiedzi DNS**  
+  Odpowiedź DNS pojawia się bez odpowiadającego jej zapytania DNS od ofiary.
+## Analiza ruchu sieciowego
+
+#### Zawężenie do ruchu DNS
+
+Ponieważ interesuje nas protokół **DNS**, należy najpierw odfiltrować cały ruch DNS.
+
+| Notes                                                                                                               | Wireshark Filter |
+| ------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Cały ruch DNS** – pokazuje wszystkie zapytania i odpowiedzi DNS, co pozwala zauważyć nietypowe wzorce i anomalie. | `dns`            |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/62-image.png)
+W wynikach będą widoczne zarówno **zapytania DNS**, jak i odpowiadające im **odpowiedzi DNS**.
+
+#### Filtrowanie legalnego ruchu
+
+Legalne serwery DNS, np. **Google DNS `8.8.8.8`**, odpowiadają z dobrze znanego zewnętrznego adresu IP. Filtrując odpowiedzi z tego adresu, można zobaczyć, jak wygląda **normalny ruch DNS** do porównania.
+
+| Notes                                                                                               | Wireshark Filter                               |
+| --------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **Odpowiedzi z legalnego serwera DNS** – pokazują prawidłowe odpowiedzi DNS pochodzące z `8.8.8.8`. | `dns.flags.response == 1 && ip.src == 8.8.8.8` |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/63-image.png)
+Wynik pokazuje poprawne odpowiedzi DNS z prawidłowego serwera.
+
+#### Analiza wszystkich odpowiedzi DNS
+
+Następnie warto przeanalizować wszystkie odpowiedzi DNS.
+
+|Notes|Wireshark Filter|
+|---|---|
+|**Wszystkie odpowiedzi DNS** – pozwalają wyszukać odpowiedzi pochodzące z nietypowych adresów IP.|`dns.flags.response==1`|
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/64-image.png)
+
+W wynikach należy szukać odpowiedzi pochodzących z adresów innych niż typowy serwer DNS. Po dokładnym sprawdzeniu można zauważyć **jedną odpowiedź DNS pochodzącą z IP innego niż `8.8.8.8`**. To bardzo interesujący ślad i potencjalny dowód **DNS spoofingu**.
+
+#### Odpowiedzi od serwera DNS
+
+Dla porównania można jeszcze raz zawęzić widok tylko do odpowiedzi od prawidłowego serwera DNS.
+
+| Notes                                                                            | Wireshark Filter                               |
+| -------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **Odpowiedzi z serwera DNS** – pokazują tylko odpowiedzi pochodzące z `8.8.8.8`. | `dns.flags.response == 1 && ip.src == 8.8.8.8` |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/65-image.png)
+#### Ruch DNS dla interesującej nas domeny
+
+Teraz należy przeanalizować ruch DNS związany z interesującą domeną:
+
+`corp-login.acme-corp.local`
+
+|Notes|Wireshark Filter|
+|---|---|
+|**Cały ruch DNS dla wskazanej domeny** – pokazuje wszystkie zapytania i odpowiedzi związane z `corp-login.acme-corp.local`.|`dns && dns.qry.name == "corp-login.acme-corp.local"`|
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/66-image.png)
+#### Odpowiedzi dla domeny pochodzące od prawidłowego DNS
+
+Następnie warto sprawdzić odpowiedzi DNS dla tej domeny, ale tylko te pochodzące od prawidłowego serwera `8.8.8.8`.
+
+| Notes                                                                                                                              | Wireshark Filter                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Prawidłowe odpowiedzi DNS dla domeny** – pokazują odpowiedzi dla `corp-login.acme-corp.local` pochodzące od legalnego resolvera. | `dns.flags.response == 1 && ip.src == 8.8.8.8 && dns.qry.name == "corp-login.acme-corp.local"` |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/67-image.png)
+
+Wynik wygląda normalnie, zgodnie z oczekiwaniami.
+
+#### Odpowiedzi dla domeny pochodzące z innych źródeł niż DNS server
+
+Najważniejszy krok to sprawdzenie, czy odpowiedzi dla tej samej domeny pochodzą także z innych adresów niż prawidłowy serwer DNS.
+
+| Notes                                                                                                                            | Wireshark Filter                                                                               |
+| -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Podejrzane odpowiedzi DNS dla domeny** – pokazują odpowiedzi dla `corp-login.acme-corp.local`, które nie pochodzą z `8.8.8.8`. | `dns.flags.response == 1 && ip.src != 8.8.8.8 && dns.qry.name == "corp-login.acme-corp.local"` |
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/68-image.png)
+To właśnie tak wygląda **DNS spoofing**. Wynik pokazuje, że **jeden z systemów wewnątrz sieci działa jak fałszywy serwer DNS** i wysyła spreparowane odpowiedzi DNS.
+
+Reasumując - analiza z dwóch poprzednich zadań pokazuje:
+
+- doszło do **udanego, wieloetapowego ataku MITM**
+- atakujący najpierw zatruł mapowanie **ARP** dla bramy `192.168.10.1`
+- następnie wysłał **sfałszowane odpowiedzi DNS** dla `corp-login.acme-corp.local`
+- w efekcie ofiara została przekierowana na **adres IP atakującego**
+
+Kolejnym krokiem jest zrozumienie, **dlaczego stosuje się SSL stripping** oraz znalezienie dowodów na to, że właśnie ta technika doprowadziła do kradzieży danych ofiary.
+
+### Zadania
+
+**Ile odpowiedzi DNS zostało odkrytch w domenie corp-login.acme-corp.local?**
+
+- Musimy odfiltrować wyniki według nazwy zapytania i ustawić flagę odpowiedzi na 1. 
+  `dns.flags.response == 1 && dns.qry.name == "corp-login.acme-corp.local"`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/69-image.png)
+
+**Odp. 211**
+
+**Ile odpowiedzi DNS zostało odkrytch z innych adresów IP niż 8.8.8.8?**
+
+**dns.flags.response == 1 && ip.src != 8.8.8.8 && dns.qry.name == "corp-login.acme-corp.local**
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/70-image.png)
+
+**Odp. 2**
+
+**Jaki adres IP zwróciła sfałszowana odpowiedź DNS atakującego dla tej domeny?**
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/71-image.png)
+**Odp. 192.168.10.55b**
+
+# Wyłapywanie SSL Stripping w logach
+
+**SSL stripping** to technika **Man-in-the-Middle**, w której atakujący przechwytuje i modyfikuje ruch tak, aby usunąć albo uniemożliwić użycie szyfrowania **TLS** pomiędzy klientem a serwerem. W efekcie klient komunikuje się przez **HTTP** zamiast **HTTPS**. Atakujący utrzymuje bezpieczną sesję **HTTPS** z prawdziwym serwerem, a jednocześnie przekazuje ofierze zwykły **HTTP**, co pozwala mu podsłuchiwać ruch i przechwytywać poświadczenia.
+
+---
+## Jak to działa
+
+1. Ofiara inicjuje połączenie **HTTPS** ze stroną internetową.
+2. Atakujący przechwytuje to żądanie, np. przy użyciu **ARP spoofingu** albo fałszywego punktu dostępowego.
+3. Atakujący łączy się z prawdziwą stroną przez **HTTPS**, ale odpowiedź przekazuje ofierze już przez **HTTP**.
+4. Ofiara nieświadomie korzysta z **HTTP**, przez co wrażliwe dane są przesyłane **jawnym tekstem**.
+
+---
+## Wskaźniki SSL stripping
+
+Podczas analizy należy zwracać uwagę na następujące oznaki:
+
+**Początkowe żądanie vs. dalsza komunikacja**  
+Użytkownik może początkowo próbować połączyć się przez **HTTPS** na porcie **443**, ale kolejne pakiety nagle przechodzą na **nieszyfrowany HTTP** na porcie **80** dla tej samej domeny.
+
+**Redirecty / przepisywanie linków**  
+Należy monitorować przekierowania (**HTTP status code 301, 302**), które uporczywie kierują żądanie HTTPS do zasobu HTTP.
+
+**Błędy certyfikatów**  
+Atakujący zwykle stara się to ukryć, ale czasami początkowy **TLS/SSL Handshake** może się nie powieść albo może pojawić się **self-signed certificate**, jeśli używa bardziej bezpośredniego proxy.
+
+---
+## Analiza ruchu sieciowego
+#### Zawężenie do ruchu SSL/TLS
+
+Ponieważ interesuje nas **HTTPS**, zaczynamy od wyizolowania ruchu SSL/TLS:
+
+`tls || ssl`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/72-image.png)
+
+Ten filtr pokazuje cały ruch związany z **SSL/TLS**.
+#### Analiza ruchu SSL naszego serwera
+
+Następnie należy zastosować filtr pokazujący ustanowione handshaki TLS do naszego serwera. To potwierdza, że strona normalnie używa **TLS** do komunikacji.
+
+`tls.handshake.type == 1 && tls.handshake.extensions_server_name == "corp-login.acme-corp.local"`
+
+Jedną z najważniejszych obserwacji jest tutaj potwierdzenie, że analizowana domena rzeczywiście korzysta z **TLS**.
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/73-image.png)
+
+#### Pokazanie przekierowania DNS poprzedzającego stripping
+
+Hipoteza jest taka, że **SSL stripping** został wykonany dopiero po skutecznym **DNS spoofingu**, który skierował ofiarę na adres IP atakującego. W poprzednim zadaniu został już zidentyfikowany adres IP atakującego odpowiedzialnego za DNS spoofing. Teraz należy wyizolować odpowiedzi DNS pochodzące od atakującego, aby pokazać, że ofiara została skierowana właśnie na jego adres.
+
+`dns.flags.response == 1 && ip.src == 192.168.10.55 && dns.qry.name == "corp-login.acme-corp.local"`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/74-image.png)
+
+Wynik pokazuje dwa przypadki, w których adres IP atakującego wysłał sfałszowane odpowiedzi DNS dla interesującej nas domeny.
+#### Potwierdzenie, że TLS znika
+
+Jednym z głównych wskaźników **SSL stripping** jest to, że po spoofingu domena przestaje wykonywać handshaki TLS do prawdziwego serwera. To potwierdza brak ruchu TLS od ofiary do legalnego serwera. Należy więc sprawdzić ruch HTTP pomiędzy ofiarą a atakującym:
+
+`http && ip.src == 192.168.10.10 && ip.dst == 192.168.10.55`
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/75-image.png)
+
+Widać wyraźnie, że ofiara połączyła się z serwerem po wykonaniu SSL stripping i **zalogowała się**.
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/76-image.png)
+
+W ruchu można również odnaleźć **poświadczenia użytkownika przesyłane jawnym tekstem**, co potwierdza, że atakujący zdołał przechwycić dane logowania ofiary.
+
+W tym scenariuszu można by szukać także innych oznak SSL stripping, ale tutaj zaobserwowano przede wszystkim jeden kluczowy wskaźnik:  
+**ruch HTTPS do portalu został sprowadzony do HTTP**.
+#### Podsumowanie analizy
+
+Poniżej znajduje się podsumowanie incydentu wraz z osią czasu ataku:
+
+**ARP Spoofing (cache poisoning)**  
+Atakujący rozpoczął zatruwanie ARP, wysyłając niezamówione odpowiedzi **ARP is-at**, podszywając się pod adres IP bramy.
+
+**DNS Spoofing (forged DNS responses)**  
+Ofiara wysłała zapytanie DNS o `corp-login.acme-corp.local`.  
+Atakujący odesłał sfałszowaną odpowiedź DNS, wskazując tę domenę na adres **192.168.10.55**.
+
+**SSL Stripping (TLS downgrade / credential capture)**  
+Ofiara rozpoczęła połączenie do rozwiązanego adresu IP i trafiła na **HTTP do atakującego**.  
+Zaobserwowano przesłanie poświadczeń metodą **POST** w **jawnym tekście**.
+
+## Zadania
+
+**Jak dużo zapytań POST zostało zaobserwowane na naszej domenie corp-login.acme-corp.local?**
+
+**http && ip.src == 192.168.10.10 && ip.dst == 192.168.10.55**
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/77-image.png)
+
+**Odp. 1**
+
+**Jakie jest hasło ofiary które zostało znalezione jako plaintext po udanym attaku SSL Stripping?**
+
+Wchodzimy w zapytanie POST, następnie Hypertext Transfer Protocol -> HTML Form URL Encoded:
+
+![alt](courses/tryhackme/soc-l1/networking/network-security-monitoring/Attachments/78-image.png)
+
+**Odp. Secret123!**
