@@ -105,3 +105,34 @@ Zapewnia bardziej elastyczne i kompletne wykrywanie zagrożeń niż podejście o
 **IDS sygnaturowy** dobrze sprawdza się przy mniejszej powierzchni zagrożeń i wtedy, gdy ważne jest szybkie wykrywanie znanych ataków.
 
 **IDS anomaliowy** i **IDS hybrydowy** są szczególnie przydatne w wykrywaniu nowoczesnych zagrożeń, w tym **ataków zero-day**, które pojawiają się coraz częściej i mogą powodować bardzo duże szkody w organizacjach
+
+# Snort
+
+**Snort** to jedno z najczęściej używanych rozwiązań **open-source IDS**, opracowane w **1998 roku**. Wykorzystuje **detekcję sygnaturową** oraz **detekcję anomalii** do identyfikowania znanych zagrożeń. Mechanizmy te są definiowane w **plikach reguł** narzędzia Snort.
+
+W pakiecie Snorta znajduje się kilka **wbudowanych plików reguł**, które zawierają różne znane wzorce ataków. Dzięki temu wbudowane reguły Snorta potrafią wykrywać wiele rodzajów złośliwego ruchu od razu po instalacji.
+
+Jednocześnie Snort można dostosować tak, aby wykrywał **konkretne typy ruchu sieciowego**, które nie są objęte domyślnymi regułami. Można więc:
+
+- tworzyć **własne reguły**
+- wyłączać wybrane **reguły wbudowane**, jeśli nie odnoszą się do zagrożeń istotnych dla danego systemu lub sieci
+- definiować **własne reguły detekcyjne** zgodnie z wymaganiami środowiska
+
+## Tryby pracy Snorta
+
+## Różnica między:
+
+- **Packet Sniffer mode**
+- **Packet Logging mode**
+- **NIDS mode**
+
+| Tryb pracy                                  | Opis                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Użycie                                                                                                                                                                                                               |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Packet sniffer mode**                     | Ten tryb odczytuje i wyświetla pakiety sieciowe bez wykonywania ich analizy. Tryb sniffera pakietów w Snorcie nie jest bezpośrednio związany z funkcją IDS, ale może być przydatny w monitorowaniu sieci i rozwiązywaniu problemów. W niektórych przypadkach administratorzy systemów muszą jedynie odczytać przepływ ruchu bez uruchamiania detekcji, aby zdiagnozować konkretny problem. Wtedy mogą użyć trybu packet sniffer. Tryb ten pozwala wyświetlać ruch sieciowy w konsoli albo zapisywać go do pliku.                                                           | Zespół sieciowy obserwuje problemy z wydajnością sieci. Aby je zdiagnozować, potrzebuje szczegółowego wglądu w ruch. W tym celu może wykorzystać tryb **packet sniffer** Snorta.                                     |
+| **Packet logging mode**                     | Snort wykonuje detekcję ruchu sieciowego w czasie rzeczywistym i wyświetla wykrycia jako alerty w konsoli, aby administratorzy bezpieczeństwa mogli podjąć działania. W niektórych przypadkach ruch sieciowy musi jednak zostać zapisany do późniejszej analizy. Tryb **packet logging** pozwala logować ruch do pliku **PCAP** (standardowy format przechwytywania pakietów). Obejmuje to cały ruch sieciowy oraz wykrycia z nim związane. Tego typu logi mogą być później używane przez analityków śledczych do wykonania **root cause analysis** wcześniejszych ataków. | Zespół bezpieczeństwa musi rozpocząć dochodzenie po ataku sieciowym. Potrzebuje logów ruchu do przeprowadzenia **analizy przyczyny źródłowej**. Ruch zapisany przez tryb **packet logging** Snorta może w tym pomóc. |
+| **Network Intrusion Detection System mode** | Tryb **NIDS** jest podstawowym trybem działania Snorta. Monitoruje on ruch sieciowy w czasie rzeczywistym i stosuje pliki reguł, aby wykrywać dopasowania do znanych wzorców ataków zapisanych jako sygnatury. Jeśli zostanie wykryte dopasowanie, generowany jest alert. To właśnie ten tryb zapewnia główną funkcjonalność systemu IDS.                                                                                                                                                                                                                                  | Zespół bezpieczeństwa musi aktywnie monitorować sieć lub systemy w celu wykrywania potencjalnych zagrożeń. Może wykorzystać do tego **tryb NIDS** Snorta.                                                            |
+
+### Najważniejszy tryb z perspektywy IDS
+
+Najbardziej istotne wykorzystanie Snorta jako **IDS** pochodzi z jego trybu **NIDS**.  
+Mimo to Snort może pracować w każdym z opisanych wyżej trybów — zależnie od potrzeb operacyjnych, diagnostycznych albo śledczych.
