@@ -70,6 +70,7 @@ Odp. **jodytravel.com**
 
 1. **Czy dana wiadomość jest według ciebie phishingiem czy bezpieczna wiadomością?
 ![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/12-image.png)
+
 ![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/13-image.png)
 
 **Odp.** Wiadomość jest phishingiem.
@@ -99,6 +100,8 @@ e) Nadawca podszywa się pod **chg.com** ale technicznie pochodzi z hostów w AW
 - **DMARC=temperror** (tak jak wyżej)  
 - **DKIM=none**  (odbiorca nie może potwierdzic że została autentycznie wysłana przez domenę nadawcy)
 
+![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/18-image.png)
+
 **b. Czy wiadomość jest zespoofowana, jeżeli tak to dlaczego i która technika spoofingu została zastosowana?**
 
 Nie jestesmy w stanie przeanalizować pod kątem bezpieczeństwa SPF/DMARC=temperror, możliwe, że DNS tego IP był zespoofowany.
@@ -118,19 +121,13 @@ c. Jaki było oryginalny adres IP z którego wysłano wiadomość?
 
 **b. Jakie techniki phishingowe stosuje załącznik?**  
 
-Podszywanie się pod Microsoft  SSO - automatyczne uzupełnianie adresu mailowego + skopiowane grafiki i pliki CSS bezpośrednio z serwera Microsoft 
+Podszywanie się pod Microsoft  SSO - automatyczne uzupełnianie adresu mailowego = wykradanie poświadczeń.
 
-![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/19-image.png)
+![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/34-image.png)
 
 **c. Do jakiej domeny wysyłane są poświadczenia (login i hasło)?**
 
 **makivoice.online**
-
-![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/17-image.png)
-
-W dodatku do potwierdzenia sprawdzony SPF record - manualnie:  
-
-![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/18-image.png)
 
 ## Próbka: Roehl Voicemail  
 
@@ -181,10 +178,12 @@ c. Jaki było oryginalny adres IP z którego wysłano wiadomość?
 
 **b. Jakie techniki phishingowe stosuje załącznik?**
 
-Podobnie jak poprzednio, podszywanie się pod jakąś formę logowania, nie widać dokładnie jaką (kampania wygasła/źle wczytane pliki?).
+Podszywanie się pod Microsoft  SSO - automatyczne uzupełnianie adresu mailowego = wykradanie poświadczeń.
 
-  ![[courses/szkola-security/phishing/zadania-szkola/Attachments/28-image.png]]
+![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/32-image.png)
 
 c. Do jakiej domeny wysyłane są poświadczenia (login i hasło)?
 
-Skonfigurować poprawnie... Inetsim? -> Do zrobienia
+Odp. **mariob.online**
+
+![alt](courses/szkola-security/phishing/zadania-szkola/Attachments/33-image.png)
