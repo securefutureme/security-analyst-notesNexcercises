@@ -8,7 +8,7 @@ https://www.geeksforgeeks.org/ethical-hacking/caesar-cipher-in-cryptography/
 Wykonujemy prosty operację w Cyberchefie -> **"ROT13"**
 Jak widzimy, musieliśmy manualnie przeszukać ile "znaków" odszyfruje nam kod, który będzie miał sens.
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-15.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-15.png)
 Możemy też użyć internetowego toola: https://cryptii.com/pipes/caesar-cipher/
 
 **SAKP{salatka_cezara_jest_pyszna}**
@@ -22,19 +22,19 @@ XOR porównuje bity dwóch danych - klucz miesza dane. Ten sam klucz je odwraca.
 
 Tutaj widzimy że mamy jakiś Base64. Musimy go więc najpierw odszyfrować.
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-16.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-16.png)
 
 Następnie bierzemy funkcję XOR Brute Force i odszyfrowujemy ją. Tutaj też mamy **crib** - **znany fragment tekstu**, którego CyberChef szuka w wyniku odszyfrowania. Pomaga odsiać "złe" klucze.
 W skrócie - próbuje wielu kluczy i pokaże wyniki, w których pojawia się ten tekst.
 
 Ustawiamy sobie sample lenght na 40, żeby zawęzić wyniki.
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-17.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-17.png)
 
 Po przeszukaniu wyników, widzimy że najsensowniejszą odpowiedzią jest klucz c2.
 Możemy też użyć criba (wiemy, że z poprzednich zadań powtarzają się odpowiedzi z SAKP).
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-18.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-18.png)
 
 **Odp. SAKP{jednobajtowy_xor_jest_bezpieczny}**
 
@@ -42,11 +42,11 @@ Możemy też użyć criba (wiemy, że z poprzednich zadań powtarzają się odpo
 
 Ponownie rozpoczynamy z tą samą metodą. 
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-19.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-19.png)
 
 Jak widzimy, nie mamy żadnej zwrotki, także musimy zmienić key lenght na większy. Key length określa, **jak długi ma być klucz XOR, który CyberChef będzie próbował.** To zawęża brute force, bo CyberChef będzie wiedział, jakiego rozmiaru klucza szukać.
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-20.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-20.png)
 
 Odp. Key = c2a1: **SAKP{dwubitowy_xor_jest_bezpieczniejszy}**
 
@@ -54,14 +54,14 @@ Odp. Key = c2a1: **SAKP{dwubitowy_xor_jest_bezpieczniejszy}**
 
 Do zadań dostaliśmy pliki do rozwiązania. Otwieramy je sobie w CyberChefie:
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-21.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-21.png)
 
 Widzimy, że coś możemy rozczytać z początku. Musimy wyciągnąć pierwsze bajty klucza. Najlepiej je podejrzeć potem w Hex Editorze (jak użyłem **[https://hexed.it/](https://hexed.it/)**), można użyć programu HxD.
 
 Standardowy plik BMP zaczyna się od sygnatury **`BM`**, czyli od dwóch bajtów `42 4D` w hexie. 
 To jest jakiś punkt zaczepienia - podejrzewamy, że ten plik to zaszyfrowany BMP, więc  początek oryginalnego pliku powinien wyglądać właśnie jak na poniższym obrazku:
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-22.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-22.png)
 
 Wiedząc, że **dwa pierwsze bajty zaszyfrowanego pliku** to BM, robimy na nich operację **XOR**. Dzięki temu można sprawdzić, jakie znaki klucza musiały tam zostać użyte. 
 

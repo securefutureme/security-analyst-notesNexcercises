@@ -6,23 +6,23 @@ cABvAHcAZQByAHMAaABlAGwAbAAgAC0AZQBuAGMAIABjAEEAQgB2AEEASABjAEEAWgBRAEIAeQBBAEgA
 Zidentyfikuj, co robi tajemnicza komenda. Postaraj się ułożyć recepturę dekodowania za pomocą cyberchefa i zapisać ją do pliku. Następnie otwórz cyberchefa w nowej karcie przyklej komendę kolejny raz i załaduj zapisaną recepturę dekodującą.
 
 - najpierw wklejamy do CyberChefa. Widzimy tutaj encoding Base64.
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-56.png)
+![alt](image-56.png)
 
 - nastepnie zapisujemy do pliku (najpierw usuwamy początek "powershell -enc")
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-58.png)
+![alt](image-58.png)
 
 - otwieramy plik w nowej karcie, i tak samo ucinamy końcówkę (albo używamy Regural expressions).
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-57.png)
+![alt](image-57.png)
 
 - kontynuujemy "zapętlanie" aż wyskoczy nam wynik (sekwencja tutaj się powtarza)
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-59.png)
+![alt](image-59.png)
 
 **Odp. whoami > iam.tmp; more iam.tmp**
 
 2. Wykonaj 3 wybrane przez siebie przykłady z repozytorium [https://github.com/mattnotmax/cyberchef-recipes](https://github.com/mattnotmax/cyberchef-recipes)
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-60.png)
+![alt](image-60.png)
 
 **a) przykład 1.**
 
@@ -30,7 +30,7 @@ Zidentyfikuj, co robi tajemnicza komenda. Postaraj się ułożyć recepturę dek
 
 W tej recepcje możemy użyć prostego zestawu operacji, aby zamienić 38-cyfrowy numer seryjny X509SerialNumber na jego odpowiednik szesnastkowy jako numer seryjny certyfikatu X.509. 
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/1-image.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/1-image.png)
 
 Skrótowo opis: normalizacja numerów seryjnych certyfikatów między różnymi formatami
 Przkłady użycia: analiza phishingu albo malware z własnym certyfikatem - z pcapa albo logów, gdy wyciągamy numer seryjny certyfikatu, ale np. format się nam nie zgadza z tym, co pokazuje sandbox albo narzędzie do analizy, ta recepta pozwala nam szybko ujednolicić format i połączyć fakty.
@@ -46,7 +46,7 @@ Passphrase number: 33
 Passphrase words: 5
 Passphrase max lenght: 22
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/2-image.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/2-image.png)
 
 
 **c) przykład 3.**
@@ -60,7 +60,7 @@ Dobry przykład do szybkiego wyciągania najważniejszych wskaźników kompromit
 - ścieżkę endpointu
 - URL do exfiltracji
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/3-image.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/3-image.png)
 
 ## Inne przykłady
 

@@ -12,7 +12,7 @@ i tak dalej...
 
 **Inna metoda to CyberChef.** O wiele przyjemniejsza :)
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image.png)
 
 **Odp. SAKP{binary2Text}**
 
@@ -27,7 +27,7 @@ i tak dalej...
 
 **Albo używając dekodera online/CyberChefa.** 
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-2.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-2.png)
 
 **Odp. Flag{HexForestHex}**
 
@@ -50,19 +50,19 @@ Przypomina to kodowanie Hex. Pierwotny ciąg znaków zawiera wyłącznie znaki 0
 
 By to rozwiązać, **zaczynijmy od "From Hex":**
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-4.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-4.png)
 
 jak widzimy, tutaj Hex  zostało zmienione na... Hex. Możemy oczywiście szukać dalej, i próbować odkodować dalej, ale w CyberChef mamy fajną funkcję, nazywa się **Magic**, która pozwala szybciej odszukiwać kilkukrotnie zakodowane informacje:
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-5.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-5.png)
 
 Dalej to nie wystarcza. Zmieniamy zatem **Depth**, tak długo, aż nie odkryjemy czegoś sensownego. 
 Na podanym przykładzie udało się znaleźć informacje na **Depth: 6**
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-6.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-6.png)
 
 **I tak mamy Hex -> Hex -> Base64 -> Base64 -> Hex -> Base64**
 
-![[courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania - szkoła/Attachments/image-7.png]]
+![[courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-7.png]]
 
 **Odp. Flag{Encoding_Combo_x32}**
 
@@ -70,7 +70,7 @@ Na podanym przykładzie udało się znaleźć informacje na **Depth: 6**
 
 Wykonujemy prosty trik w Cyberchef **"Unescape Unicode Charcters"**
 
-![[courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania - szkoła/Attachments/image-8.png]]
+![[courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-8.png]]
 
 Odp. 未来の平和は戦って勝ちとるんだ！?
 A jak sobie przetłumaczymy to: _We'll fight and win to bring peace to the future_! (DRAGONBALL FTW!)
@@ -78,11 +78,11 @@ A jak sobie przetłumaczymy to: _We'll fight and win to bring peace to the futur
 6. Jakie emoji posiada codename U+1F6E1?
 
 Możmy to sprawdzić online poprzez stronę: https://www.compart.com/en/unicode/
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-11.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-11.png)
 
 Albo przez CyberChefa:
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-12.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-12.png)
 
 **Odp. Ὦ**
 
@@ -90,13 +90,13 @@ Albo przez CyberChefa:
 
 Zastosujemy do tego **"From Punycode"** w Cyberchefie - https://pl.wikipedia.org/wiki/Punycode
 
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-13.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-13.png)
 
 **Odp. sеcurityanalyst.com**
 
 8. Rozpoznaj zastosowany w adresie znak użyty w celu zmylenia odbiorcy. Jaki jest kod unicode dla zastosowanego znaku?
 
 Tutaj po prostu wklejamy "przekonwertowany" link na unicode:
-![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania%20-%20szkoła/Attachments/image-14.png)
+![alt](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/image-14.png)
 
 **Odp. \u0435**
