@@ -1,0 +1,235 @@
+{
+  "main": {
+    "id": "4eb6bf77eb042798",
+    "type": "split",
+    "children": [
+      {
+        "id": "4160942218dadac3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81d62fcbc2101012",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "resources/cheatsheets/http-response-codes-and-requests.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "http-response-codes-and-requests"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "661e22ef0be5f675",
+    "type": "split",
+    "children": [
+      {
+        "id": "57d708b8c98bb40c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34589f072c113a56",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "49cc71a68c7a65f1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "df81a416e1cfbcbc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 541.5
+  },
+  "right": {
+    "id": "672782e94adc990b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6ee0b63ae78a0ba6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7004218471ced195",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "courses/szkola-security/sieć/powtorka-z-sieci/zadania/Skany/training/Pastedimage20260331143228.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Pastedimage20260331143228"
+            }
+          },
+          {
+            "id": "57305914a92bcaf9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "courses/szkola-security/sieć/powtorka-z-sieci/zadania/Skany/training/Pastedimage20260331143228.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Pastedimage20260331143228"
+            }
+          },
+          {
+            "id": "5f3ce283b143d35f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a6652012cbc9bbbb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f56d0daabcb49869",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "courses/szkola-security/sieć/powtorka-z-sieci/zadania/Skany/training/Pastedimage20260331143228.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Pastedimage20260331143228"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "81d62fcbc2101012",
+  "lastOpenFiles": [
+    "README.md",
+    "resources/cheatsheets/http-response-codes-and-requests.md",
+    "courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/kodowanie-cwiczenia.md",
+    "courses/szkola-security/incident-response/notatki/plan-reagowania-na-incydenty.md",
+    "courses/szkola-security/incident-response/notatki/Faza-2.md",
+    "courses/szkola-security/incident-response/notatki/Faza-5.md",
+    "courses/szkola-security/incident-response/notatki/Faza-4.md",
+    "courses/szkola-security/incident-response/notatki/Faza-3.md",
+    "courses/szkola-security/incident-response/notatki/Faza-1.md",
+    "resources/cheatsheets/liunx-security-tips.md",
+    "courses/szkola-security/analiza-malware/README.md",
+    "courses/security+",
+    "courses/Untitled.md",
+    "courses/Google-Cybersecurity-Professional-Certificate",
+    "courses/szkola-security/incident-response/README.md",
+    "courses/szkola-security/incident-response/ćwiczenia/casestudy-phishing-cwiczenie.md",
+    "courses/szkola-security/incident-response/ćwiczenia/casestudy-contaminationplan-cwiczenie.md",
+    "courses/szkola-security/analiza-malware/cwiczenia-wlasne/malware-1.md",
+    "courses/szkola-security/analiza-malware/zadania-szkola/analizamalware-cwiczenia.md",
+    "courses/tryhackme/soc-l1/networking/README.md",
+    "courses/tryhackme/soc-l1/networking/network-security-monitoring/README.md",
+    "courses/tryhackme/soc-l1/networking/network-security-monitoring/NSM-Snort.md",
+    "courses/tryhackme/soc-l1/networking/network-security-monitoring/NSM-Podstawy.md",
+    "courses/tryhackme/soc-l1/networking/network-security-monitoring/NSM-Podstawy-IDS-(Intrusion-Detection-System).md",
+    "courses/tryhackme/soc-l1/networking/network-security-monitoring/NSM-Przykladowa-analiza-incydentu.md",
+    "courses/tryhackme/soc-l1/networking/network-security-monitoring/NSM-Data-Exfiltration-Detection.md",
+    "courses/tryhackme/soc-l1/core-soc-solutions/README.md",
+    "courses/tryhackme/soc-l1/README.md",
+    "resources/cheatsheets/Attachments/2-image.png",
+    "resources/cheatsheets/Attachments/1-image.png",
+    "resources/cheatsheets/Attachments",
+    "courses/szkola-security/siem/other-siem-cwiczenia/zeek",
+    "courses/szkola-security/sieć/analiza-malware",
+    "courses/szkola-security/siec/siem",
+    "courses/szkola-security/siec",
+    "courses/szkola-security/incident-response/notatki/Attachments/2-image.png",
+    "courses/szkola-security/incident-response/notatki/Attachments/1-image.png",
+    "courses/szkola-security/incident-response/notatki/Attachments",
+    "courses/szkola-security/kodowanie-hashowanie-szyfrowanie/zadania-szkola/Attachments/1-image.png",
+    "courses/szkola-security/incident-response/ćwiczenia",
+    "courses/szkola-security/analiza-malware/zadania-szkola/Attachments/24-image.png",
+    "courses/szkola-security/analiza-malware/zadania-szkola/Attachments/23-image.png",
+    "courses/szkola-security/analiza-malware/zadania-szkola/Attachments/5-image.png",
+    "(courses/szkola-security/analiza-malware",
+    "courses/szkola-security/analiza-malware/zadania-szkola/Attachments/22-image.png",
+    "courses/szkola-security/analiza-malware/zadania-szkola/Attachments/21-image.png"
+  ]
+}
