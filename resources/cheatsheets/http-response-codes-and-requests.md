@@ -4,7 +4,7 @@ Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowi
 
 ## Spis treści
  
-- [Najczęściej używane metody HTTP](#najczesciej-uzywane-metody-http)
+- [Najczęściej używane metody HTTP](#najczęściej-używane-metody-HTTP)
 - [[#Pozostałe metody HTTP]]
 - [[#Porównanie metod HTTP]]
 - [[#Kody odpowiedzi HTTP]]
@@ -14,7 +14,7 @@ Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowi
 - [[#Uwagi bezpieczeństwa]]
 ---
 
-# najczesciej-uzywane-metody-http
+# Najczęściej używane metody HTTP
 
 ## GET
 
