@@ -1,8 +1,6 @@
 
 Szybka ściąga dotycząca podstawowego zabezpieczania systemów Linux, kontroli dostępu, SSH, zapory sieciowej, audytu, monitoringu oraz kopii zapasowych.
 
-> UWAGA: Polecenia administracyjne wykonuj ostrożnie. Nieprawidłowa konfiguracja SSH, zapory sieciowej lub uprawnień może spowodować utratę dostępu do systemu.
-
 ---
 
 ## Spis treści
