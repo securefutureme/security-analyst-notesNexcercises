@@ -3,8 +3,8 @@
 Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowiedzi oraz podstawowe pola nagłówków.
 
 ## Spis treści
-
-- [Najczęściej używane metody HTTP](https://github.com/securefutureme/security-analyst-notesNexcercises/edit/main/resources/cheatsheets/http-response-codes-and-requests.md#najcz%C4%99%C5%9Bciej-u%C5%BCywane-metody-http)
+ 
+- [Najczęściej używane metody HTTP](#najczesciej-uzywane-metody-http)
 - [[#Pozostałe metody HTTP]]
 - [[#Porównanie metod HTTP]]
 - [[#Kody odpowiedzi HTTP]]
@@ -14,7 +14,7 @@ Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowi
 - [[#Uwagi bezpieczeństwa]]
 ---
 
-# Najczęściej używane metody HTTP
+# najczesciej-uzywane-metody-http
 
 ## GET
 
