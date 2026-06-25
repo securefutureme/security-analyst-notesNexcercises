@@ -1,10 +1,9 @@
 # Co to ćwiczenie ma pokazać
 
-Przeprowadzenie podstawowej analizy podejrzanej wiadomości oraz przygotowanie działań ograniczających skutki incydentu phishingowego.
-
+Moją wiedzę z zakresu Incident Response w trakcie phishingu, i jego przedstawienie praktyczne w postaci ćwiczenia.
 ## Scenariusz
 
-Użytkownik zgłosił wiadomość zawierającą podejrzany link lub załącznik. Istnieje ryzyko wyłudzenia danych logowania albo uruchomienia złośliwego pliku.
+Użytkownik zgłosił wiadomość zawierającą podejrzany link. Istnieje ryzyko wyłudzenia danych logowania albo uruchomienia złośliwego pliku.
 
 ## Zadania
 

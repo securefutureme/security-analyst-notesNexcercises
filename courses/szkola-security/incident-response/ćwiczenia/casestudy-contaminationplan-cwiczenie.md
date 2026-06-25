@@ -1,7 +1,6 @@
 # Co to ćwiczenie ma pokazać
 
-Przygotowanie planu działań, które mają zatrzymać rozwój incydentu i ograniczyć jego wpływ na organizację.
-
+Moją wiedzę na temat fazy trzeciej Incident Response, i przedstawienie praktyczne ćwiczenia.
 ## Scenariusz
 
 Na stacji roboczej wykryto podejrzany plik, który komunikuje się z zewnętrzną domeną i może umożliwiać zdalny dostęp do systemu.

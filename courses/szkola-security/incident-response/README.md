@@ -1,4 +1,38 @@
-## Incident Response (IR)
+# Incident Response
+
+Sekcja zawiera notatki oraz krótkie ćwiczenia praktyczne dotyczące procesu reagowania na incydenty bezpieczeństwa.
+
+Materiały przedstawiają kolejne etapy obsługi incydentu — od przygotowania organizacji, przez analizę i ograniczenie zagrożenia, aż po przywrócenie działania oraz wyciągnięcie wniosków.
+## Notatki
+
+| Etap | Materiał                                                                                                       | Zakres                                                                                              |
+| ---: | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+|    — | [Plan reagowania na incydenty](courses/szkola-security/incident-response/notatki/plan-reagowania-na-incydenty) | Ogólny przebieg procesu Incident Response, role zespołu oraz podstawowe zasady eskalacji.           |
+|    1 | [Przygotowanie](courses/szkola-security/incident-response/notatki/Faza-1)                                      | Procedury, narzędzia, komunikacja, kopie zapasowe oraz przygotowanie zespołu do obsługi incydentów. |
+|    2 | [Identyfikacja, wykrywanie i analiza](courses/szkola-security/incident-response/notatki/Faza-2)                | Weryfikacja alertu, klasyfikacja incydentu, ustalenie zakresu, wpływu oraz przygotowanie timeline.  |
+|    3 | [Ograniczenie zagrożenia — Containment](courses/szkola-security/incident-response/notatki/Faza-3)              | Izolacja zagrożonych hostów, blokowanie IOC oraz ograniczanie dalszego rozwoju incydentu.           |
+|    4 | [Likwidacja i powrót do działania operacyjnego](courses/szkola-security/incident-response/notatki/Faza-4)      | Usunięcie przyczyny incydentu, przywrócenie systemów oraz monitoring po odtworzeniu.                |
+|    5 | [Wnioski po incydencie](courses/szkola-security/incident-response/notatki/Faza-5)                              | Raport końcowy, analiza przyczyn źródłowych oraz rekomendacje usprawniające proces bezpieczeństwa.  |
+## Ćwiczenia praktyczne
+
+| Ćwiczenie                                                                                                                   | Opis |
+| --------------------------------------------------------------------------------------------------------------------------- | ---- |
+| [Containment Plan — Case Study](courses/szkola-security/incident-response/ćwiczenia/casestudy-contaminationplan-cwiczenie)  | TBD  |
+| [Phishing Incident Response — Case Study](courses/szkola-security/incident-response/ćwiczenia/casestudy-phishing-cwiczenie) | TBD  |
+## Zakres sekcji
+
+- przygotowanie organizacji do obsługi incydentów,
+- triage i walidacja alertów,
+- klasyfikacja oraz priorytetyzacja incydentów,
+- zabezpieczanie dowodów,
+- tworzenie osi czasu zdarzeń,
+- identyfikacja wskaźników kompromitacji,
+- containment, eradication i recovery,
+- raportowanie oraz lessons learned.
+## Cel
+
+Celem sekcji jest pokazanie praktycznego zrozumienia procesu Incident Response oraz sposobu dokumentowania decyzji podejmowanych przez analityka SOC na kolejnych etapach obsługi incydentu.
+# Incident Response (IR) - pojęcie
 
 to ustrukturyzowany proces reagowania na incydenty bezpieczeństwa – od ich wykrycia, przez opanowanie sytuacji, usunięcie skutków, aż po wyciągnięcie wniosków i wzmocnienie zabezpieczeń na przyszłość. Celem IR jest szybkie ograniczenie wpływu incydentu, przywrócenie normalnego działania oraz stałe doskonalenie obrony.
 

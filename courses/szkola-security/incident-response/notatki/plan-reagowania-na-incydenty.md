@@ -15,48 +15,25 @@ NIST SP 800-61r2 to przewodnik opisujący jak zbudować i prowadzić zdolność 
 #### Detection & Analysis (Detekcja i analiza)
 
 - Opis wektorów ataku, typowych objawów incydentu (signs),
-    
 - Źródła danych: logi systemowe, aplikacyjne, sieciowe, alerty z IDS/IPS, AV, EDR, informacje z zewnątrz (np. CERT-y).
-    
 - Jak prowadzić triage i analizę:
-    
-
-- korelacja wskaźników (precursors, indicators),
-    
-- dokumentowanie ustaleń (kto, co, kiedy, gdzie, jak),
-    
-- priorytetyzacja incydentów wg wpływu na biznes i łatwości odzyskania (impact & recoverability),
-    
-- zasady notyfikacji – kogo, kiedy, jak informować (wewnętrznie i zewnętrznie).  
-      
-    
-
+	a) korelacja wskaźników (precursors, indicators),
+	b) dokumentowanie ustaleń (kto, co, kiedy, gdzie, jak),
+	c) priorytetyzacja incydentów wg wpływu na biznes i łatwości odzyskania (impact & recoverability),
+	d) zasady notyfikacji – kogo, kiedy, jak informować (wewnętrznie i zewnętrznie).  
 #### Containment, Eradication & Recovery (Ograniczenie, usunięcie i odtworzenie)
 
-- Containment – wybór strategii ograniczania skutków (krótko- vs długoterminowej), np.:
-    
+- **Containment** – wybór strategii ograniczania skutków (krótko- vs długoterminowej), np.
+	a) izolacja hostów,
+	b) blokada kont, IP, domen, protokołów,
+	c) zminimalizowanie wpływu na produkcję przy jednoczesnej kontroli incydentu.  
 
-- izolacja hostów,
-    
-- blokada kont, IP, domen, protokołów,
-    
-- zminimalizowanie wpływu na produkcję przy jednoczesnej kontroli incydentu.  
-      
-    
-
-- Evidence handling – zbieranie i zabezpieczanie dowodów (logi, obrazy dysków, zrzuty pamięci) w sposób akceptowalny z punktu widzenia ewentualnych postępowań prawnych.
-    
-- Eradication – usuwanie przyczyny (malware, backdoory, podatności, złe konfiguracje).
-    
-- Recovery – bezpieczny powrót do normalnej pracy:
-    
-
-- przywracanie z backupów,
-    
-- patchowanie,
-    
-- monitoring post-incydentowy w celu wykrycia ponownej kompromitacji.
-    
+- **Evidence handling** – zbieranie i zabezpieczanie dowodów (logi, obrazy dysków, zrzuty pamięci) w sposób akceptowalny z punktu widzenia ewentualnych postępowań prawnych.
+- **Eradication** – usuwanie przyczyny (malware, backdoory, podatności, złe konfiguracje).
+- **Recovery** – bezpieczny powrót do normalnej pracy:
+	a) przywracanie z backupów,
+	b) patchowanie,
+	c) monitoring post-incydentowy w celu wykrycia ponownej kompromitacji.
 
 #### Post-Incident Activity (Działania po incydencie)
 
