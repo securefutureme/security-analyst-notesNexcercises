@@ -83,3 +83,32 @@ Loguje wszystkie pakiety IP — przychodzące i wychodzące — które pojawiaj�
 
 **NIDS / NIPS Mode**  
 Loguje lub odrzuca pakiety uznane za złośliwe zgodnie z regułami zdefiniowanymi przez użytkownika.
+
+# Pytania z działu
+
+Który typ IDS lub IPS może pomóc zatrzymać zagrożenia na lokalnej maszynie?
+
+**HIPS**
+
+Który typ IDS lub IPS może pomóc wykrywać zagrożenia w sieci lokalnej?
+
+**NIDS**
+
+Który typ IDS lub IPS może pomóc wykrywać zagrożenia na lokalnej maszynie?
+
+**HIDS**
+
+Który typ IDS lub IPS może pomóc zatrzymywać zagrożenia w sieci lokalnej?
+
+**NIPS**
+
+Które z opisanych rozwiązań działa poprzez wykrywanie anomalii w sieci?
+
+**NBA**
+
+Zgodnie z oficjalnym opisem Snorta, jakiego rodzaju NIPS-em on jest?
+
+
+Okres uczenia NBA jest również znany jako ...
+
+"baselining"
