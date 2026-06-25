@@ -1,4 +1,4 @@
-![[resources/cheatsheets/Attachments/1-image.png]]
+![alt](/resources/cheatsheets/Attachments/1-image.png)
 
 Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowiedzi oraz podstawowe pola nagłówków.
 
