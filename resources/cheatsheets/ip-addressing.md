@@ -1,6 +1,6 @@
 # Subnetting - shortcut
 
-![[resources/cheatsheets/Attachments/2-image.png]]
+![alt](/resources/cheatsheets/Attachments/2-image.png)
 
 https://pbxbook.com/other/ipcheat.html
 https://www.aelius.com/njh/subnet_sheet.html
