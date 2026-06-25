@@ -5,13 +5,13 @@ Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowi
 ## Spis treści
  
 - [Najczęściej używane metody HTTP](#najczęściej-używane-metody-HTTP)
-- [[#Pozostałe metody HTTP]]
-- [[#Porównanie metod HTTP]]
-- [[#Kody odpowiedzi HTTP]]
-- [[#Kategorie kodów HTTP]]
-- [[#Budowa żądania HTTP]]
-- [[#Najważniejsze nagłówki HTTP]]
-- [[#Uwagi bezpieczeństwa]]
+- [Pozostałe metody HTTP](#Pozostałe-metody-HTTP)
+- [Porównanie metod HTTP](#Porównanie-metod-HTTP)
+- [Kody odpowiedzi HTTP](#Kody-odpowiedzi-HTTP)
+- [Kategorie kodów HTTP](#Kategorie-kodów-HTTP)
+- [Budowa żądania HTTP](#Budowa-żądania-HTTP)
+- [Najważniejsze nagłówki HTTP](#Najważniejsze-nagłówki-HTTP)
+- [Uwagi bezpieczeństwa](#Uwagi-bezpieczeństwa)
 ---
 
 # Najczęściej używane metody HTTP
