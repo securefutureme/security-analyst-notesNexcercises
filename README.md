@@ -27,17 +27,17 @@ To repozytorium pomaga mi w:
 | SOC-L1                             | Link do README                                             |
 | ---------------------------------- | ---------------------------------------------------------- |
 | Intro                              | [`README`](/courses/tryhackme/soc-l1/intro/README)         |
-| Podstawy rozwiązań SOC             | [`README`](courses/szkola-security/analiza-malware/README) |
-| Podstawowe mechanizmy zespołów SOC | [`README`](courses/szkola-security/analiza-malware/README) |
+| Podstawy rozwiązań SOC             | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Podstawowe mechanizmy zespołów SOC | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
 | Bezpieczeństwo sieci               | [`README`](courses/tryhackme/soc-l1/networking/README)     |
-| Monitoring Zagrożeń Windows        | [`README`](courses/szkola-security/analiza-malware/README) |
-| Monitoring zagrożeń systemów Linux | [`README`](courses/szkola-security/analiza-malware/README) |
-| Frameworki Cyberbezpieczeństwa     | [`README`](courses/szkola-security/analiza-malware/README) |
-| Triage SIEM dla SOC                | [`README`](courses/szkola-security/analiza-malware/README) |
-| Analiza Phishingu                  | [`README`](courses/szkola-security/analiza-malware/README) |
-| Analiza Malware                    | [`README`](courses/szkola-security/analiza-malware/README) |
-| Analiza zagrożeń - narzędzia       | [`README`](courses/szkola-security/analiza-malware/README) |
-| SOC Level 1 Capstone Challenges    | [`README`](courses/szkola-security/analiza-malware/README) |
+| Monitoring Zagrożeń Windows        | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Monitoring zagrożeń systemów Linux | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Frameworki Cyberbezpieczeństwa     | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Triage SIEM dla SOC                | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Analiza Phishingu                  | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Analiza Malware                    | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| Analiza zagrożeń - narzędzia       | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
+| SOC Level 1 Capstone Challenges    | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md) |
 ___
 
 | Cybersecurity 101 | Link do README |
@@ -53,12 +53,12 @@ ___
 
 | Temat                                     | Link do README                                                              |
 | ----------------------------------------- | --------------------------------------------------------------------------- |
-| Sekcja Analiza Malware                    | [`README`](courses/szkola-security/analiza-malware/README)                  |
-| Sekcja Kodowanie, Hashowanie, Szyfrowanie | [`README`](courses/szkola-security/kodowanie-hashowanie-szyfrowanie/README) |
-| Sekcja Phishing                           | [`README`](courses/szkola-security/phishing/README)                         |
-| Sekcja Sieć                               | [`README`](courses/szkola-security/sieć/README)                             |
-| Sekcja SIEM                               | [`README`](courses/szkola-security/siem/README)                             |
-| Add-on - Sekcja Windows                   | [`README`](courses/szkola-security/windows/README)                          |
+| Sekcja Analiza Malware                    | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md)                  |
+| Sekcja Kodowanie, Hashowanie, Szyfrowanie | [`README`](courses/szkola-security/secuirty-analyst/kodowanie-hashowanie-szyfrowanie/README.md) |
+| Sekcja Phishing                           | [`README`](courses/szkola-security/secuirty-analyst/phishing/README.md)                         |
+| Sekcja Sieć                               | [`README`](courses/szkola-security/secuirty-analyst/sieć/README.md)                             |
+| Sekcja SIEM                               | [`README`](courses/szkola-security/secuirty-analyst/siem/README.md)                             |
+| Add-on - Sekcja Windows                   | [`README`](courses/szkola-security/secuirty-analyst/windows/README.md)                          |
 ## Cheatsheets
 
 | Temat                            | Link                                                                      |     |
