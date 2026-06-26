@@ -36,6 +36,6 @@ Najczęściej stosowane metody ochrony przed DDoS:
 | Zadanie | Link |
 |---|---|
 | Training | [Link](./training/training.pcap-analysis.md) | 
-| Zadanie 1 | [Link](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/DDoS/1/1.pcap-analysis.md) | 
-| Zadanie 2 | [Link](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/DDoS/2/2.pcap-analysis.md) | 
-| Zadanie 3 | [Link](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/DDoS/3/3.pcap-analysis.md) |
+| Zadanie 1 | [Link](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/ćwiczenia%20-%20własne/DDoS/1/1.pcap-analysis.md) | 
+| Zadanie 2 | [Link](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/ćwiczenia%20-%20własne/DDoS/2/2.pcap-analysis.md) | 
+| Zadanie 3 | [Link](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/ćwiczenia%20-%20własne/DDoS/3/3.pcap-analysis.md) |
