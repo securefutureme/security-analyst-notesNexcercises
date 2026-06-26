@@ -23,9 +23,9 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 | Ćwiczenie                                                                                       | Opis                                                                      |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [Analiza DDoS](./powtorka-z-sieci/zadania-szkola/DDoS/training/ddos_training.pcap-analysis.md)  | Analiza ruchu i identyfikacja oznak ataku DDoS.                           |
-| [Analiza MiTM](./powtorka-z-sieci/zadania-szkola/MiTM/training/mitm-traning.md)                 | Analiza ruchu i identyfikacja oznak ataku MiTM                          |
-| [Skany](./powtorka-z-sieci/zadania-szkola/Skany/training/scan.pcap-analysis.md)                  | Analiza ruchu i identyfikacja oznak skanowania sieci.                       |
-| [Wireshark](./powtorka-z-sieci/zadania-szkola/wireshark/wireshark-podstawy/wireshark-pcapng-analysis.md)       | Pratyczny przykład ćwiczeń w Wiresharku                |
+| [Analiza MiTM](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/MiTM/training/mitm-training.md)                 | Analiza ruchu i identyfikacja oznak ataku MiTM                          |
+| [Skany](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/Skany/scan.pcap-analysis.md)                  | Analiza ruchu i identyfikacja oznak skanowania sieci.                       |
+| [Wireshark](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/wireshark/wireshark-podstawy/wireshark.pcapng-analysis.md)       | Pratyczny przykład ćwiczeń w Wiresharku                |
 
 ## Powtórka z Sieci - ćwiczenia własne
 
