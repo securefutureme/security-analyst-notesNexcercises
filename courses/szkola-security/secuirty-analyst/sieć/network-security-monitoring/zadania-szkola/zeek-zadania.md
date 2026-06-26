@@ -3,8 +3,9 @@
 
 Wpisujemy komendę **zeek -r (nazwapliku)**. Mozemy potem to przenieść do osobnego folderu "tsv" dla porządku - "mv *.log tsv"
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/1-image.png)
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/2-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/1-image.png)
+
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/2-image.png)
 
 2. Jaki UID posiada log w pliku werid.log i czego dotyczy oraz kiedy dokładnie zdarzenie to miało miejsce? 
 
@@ -12,9 +13,11 @@ Wpisujemy komendę **zeek -r (nazwapliku)**. Mozemy potem to przenieść do osob
 b) HTTP_version_mismatch   - klient i serwer mają mismatch w wersji HTTP
 c) GMT: Sunday, January 16, 2022 9:10:01.279 AM**
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/6-image.png)
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/4-image.png)
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/5-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/6-image.png)
+
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/4-image.png)
+
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/5-image.png)
 
 3. Sformatuj komendę, która z pliku conn.log pozwoli na wyświetlanie danych 5-tuple. 
 [https://jumpcloud.com/it-index/understanding-the-5-tuple-in-network-communication](https://jumpcloud.com/it-index/understanding-the-5-tuple-in-network-communication) 
@@ -31,7 +34,7 @@ c) GMT: Sunday, January 16, 2022 9:10:01.279 AM**
 
 **proto (enum**)  - Protokół transportowy: tcp, udp, icmp itd. - Protocol
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/7-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/7-image.png)
 
 4. **Na podstawie wyniku zadania 3. Jaki procent komunikacji to pakiety TCP?** 
 
@@ -39,17 +42,17 @@ c) GMT: Sunday, January 16, 2022 9:10:01.279 AM**
 
 Odp. 2315
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/8-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/8-image.png)
 
 5. **Do komendy z zadania 3 dodaj pole service. Przeanalizuj zidentyfikowane przez Zeeka usługi. Czy narzędzie zidentyfikowało usługi wszystkich przesyłanych pakietów?** 
 
 Musimy przefiltrować wszystkie "puste" pola z kolumny service. cat conn.log | zeek-cut id.orig_h id.orig_p id.resp_h id.resp_p proto service | grep "-"
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/10-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/10-image.png)
 
 Albo odejmując separatorem verbose te, gdzie nie ma wyrażenia "http".** cat conn.log | zeek-cut id.orig_h id.orig_p id.resp_h id.resp_p proto service | grep "-"
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/9-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/9-image.png)
 
 Odpowiedź: narzędzie nie zidentyfikowało usług wszystkich przesyłanych pakietów.
 
@@ -58,7 +61,7 @@ Odpowiedź: narzędzie nie zidentyfikowało usług wszystkich przesyłanych paki
 Sortujemy sobie wszystkie id.orig_h które są w logach.
 cat conn.log | zeek-cut id.orig_h | sort | uniq -c
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/11-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/11-image.png)
 
 **3.13.3.8**, **2.0.2.2**, **2.0.2.2**
 
@@ -67,7 +70,7 @@ cat conn.log | zeek-cut id.orig_h | sort | uniq -c
 Tak jak wyżej, sortujemy wszystkie pozycje "user-agent"
 cat http.log | zeek-cut  user_agent | sort | uniq -c
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/12-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/12-image.png)
 
 **238** Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 YaBrowser/21.11.0 Yowser/2.5 Safari/537.36
 **230** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
@@ -80,7 +83,7 @@ cat http.log | zeek-cut  user_agent | sort | uniq -c
 Przeanalizujmy zatem user-agentów z podejrzaną nazwą - abolutnie_nie_hakierzy.
 cat http.log | grep "absolutnie_nie_hakierzy"
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/13-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/network-security-monitoring/zadania-szkola/Attachments/13-image.png)
 
 Możemy tutaj zobserwować jak atakujący otwiera webshella, który już jest na serwerze (/wp-content/uploads/2022/01/absolutnie_nie_webshell.php?cmd=pwd).
 
