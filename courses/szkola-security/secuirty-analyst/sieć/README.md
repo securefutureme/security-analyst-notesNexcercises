@@ -16,7 +16,7 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 
 | Materiał                                                                                     | Zakres                                                            |
 | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [Snort — ćwiczenia](./network-security-monitoring/ćwiczenia-własne/SNORT%20-%20ćwiczenia.md) | Praktyczne tworzenie i testowanie reguł detekcji.                 |
+| [Snort — ćwiczenia](./network-security-monitoring/cwiczenia-wlasne/SNORT-cwiczenia.md) | Praktyczne tworzenie i testowanie reguł detekcji.                 |
 | [Zeek — zadania](./network-security-monitoring/zadania-szkola/zeek-zadania.md)               | Analiza logów sieciowych generowanych przez Zeeka.                |
 
 ## Analiza ataków DDoS
@@ -52,7 +52,7 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 | Materiał                                                            | Opis                                                                                |
 | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | [Zbiorcze notatki sieciowe](./powtorka-z-sieci/notatki/ALLNOTES.md) | Podstawowe pojęcia, protokoły, adresacja, porty oraz analiza komunikacji sieciowej. |
-| [Snort — notatki](./network-security-monitoring/ćwiczenia-własne/SNORT%20-%20notatki.md)     | Podstawy działania Snorta, reguły IDS oraz interpretacja alertów. |
+| [Snort — notatki](./network-security-monitoring/cwiczenia-wlasne/SNORT-notatki.md)     | Podstawy działania Snorta, reguły IDS oraz interpretacja alertów. |
 
 ## Zakres materiału
 
