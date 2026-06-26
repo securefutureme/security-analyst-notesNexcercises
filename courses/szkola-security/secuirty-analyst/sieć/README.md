@@ -9,7 +9,7 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 | Sekcja                                                                 | Opis                                                                                             |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | [Network Security Monitoring](./network-security-monitoring/README.md) | Monitorowanie ruchu sieciowego, systemy IDS, Snort, Zeek oraz wykrywanie podejrzanej aktywności. |
-| [Powtórka z sieci](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/ALLNOTES.md)                       | Notatki, ćwiczenia i analizy ruchu dotyczące podstaw sieci oraz najczęstszych ataków.            |
+| [Powtórka z sieci](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/ALLNOTES.md)                       | Notatki, ćwiczenia i analizy ruchu dotyczące podstaw sieci oraz najczęstszych ataków.            |
 
 ## Network Security Monitoring
 
