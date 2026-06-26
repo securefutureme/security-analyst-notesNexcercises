@@ -3,6 +3,15 @@
 Sekcja zawiera notatki oraz krótkie ćwiczenia praktyczne dotyczące procesu reagowania na incydenty bezpieczeństwa.
 
 Materiały przedstawiają kolejne etapy obsługi incydentu — od przygotowania organizacji, przez analizę i ograniczenie zagrożenia, aż po przywrócenie działania oraz wyciągnięcie wniosków.
+
+## Ćwiczenia praktyczne
+
+| Ćwiczenie                                                                                                                   | Opis |
+| --------------------------------------------------------------------------------------------------------------------------- | ---- |
+| [Containment Plan — Case Study](/courses/szkola-security/secuirty-analyst/incident-response/ćwiczenia/casestudy-contaminationplan-cwiczenie.md)  | TBD  |
+| [Phishing Incident Response — Case Study](/courses/szkola-security/secuirty-analyst/incident-response/ćwiczenia/casestudy-phishing-cwiczenie.md) | TBD  |
+
+
 ## Notatki
 
 | Etap | Materiał                                                                                                       | Zakres                                                                                              |
@@ -13,12 +22,6 @@ Materiały przedstawiają kolejne etapy obsługi incydentu — od przygotowania 
 |    3 | [Ograniczenie zagrożenia — Containment](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=3.md)              | Izolacja zagrożonych hostów, blokowanie IOC oraz ograniczanie dalszego rozwoju incydentu.           |
 |    4 | [Likwidacja i powrót do działania operacyjnego](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=4.md)      | Usunięcie przyczyny incydentu, przywrócenie systemów oraz monitoring po odtworzeniu.                |
 |    5 | [Wnioski po incydencie](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=5.md)                              | Raport końcowy, analiza przyczyn źródłowych oraz rekomendacje usprawniające proces bezpieczeństwa.  |
-## Ćwiczenia praktyczne
-
-| Ćwiczenie                                                                                                                   | Opis |
-| --------------------------------------------------------------------------------------------------------------------------- | ---- |
-| [Containment Plan — Case Study](/courses/szkola-security/secuirty-analyst/incident-response/ćwiczenia/casestudy-contaminationplan-cwiczenie.md)  | TBD  |
-| [Phishing Incident Response — Case Study](/courses/szkola-security/secuirty-analyst/incident-response/ćwiczenia/casestudy-phishing-cwiczenie.md) | TBD  |
 
 ## Zakres sekcji
 
