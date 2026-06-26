@@ -18,33 +18,18 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 | [Snort — ćwiczenia](./network-security-monitoring/cwiczenia-wlasne/SNORT-cwiczenia.md)       | TBD |
 | [Zeek — zadania](./network-security-monitoring/zadania-szkola/zeek-zadania.md)               | Zadania z kursu                                                   |
 
-## Analiza ataków DDoS
+## Powtórka z Sieci - zadania z kursu
 
 | Ćwiczenie                                                                                       | Opis                                                                      |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [Analiza DDoS — przypadek 1](./powtorka-z-sieci/zadania%20-%20szkola/DDoS/1/1.pcap-analysis.md) | Analiza ruchu i identyfikacja oznak ataku DDoS.                           |
-| [Analiza DDoS — przypadek 2](./powtorka-z-sieci/zadania%20-%20szkola/DDoS/2/2.pcap-analysis.md) | Identyfikacja źródeł, protokołów i wzorców generowanego ruchu.            |
-| [Analiza DDoS — przypadek 3](./powtorka-z-sieci/zadania%20-%20szkola/DDoS/3/3.pcap-analysis.md) | Ocena skali ataku oraz wskazanie możliwych metod ograniczenia zagrożenia. |
+| [Analiza DDoS](./powtorka-z-sieci/zadania-szkola/DDoS/training/ddos_training.pcap-analysis.md)  | Analiza ruchu i identyfikacja oznak ataku DDoS.                           |
+| [Analiza MiTM](./powtorka-z-sieci/zadania-szkola/DDoS/training/mitm-traning.md)                 | Analiza ruchu i identyfikacja oznak ataku MiTM                          |
+| [Skany](./powtorka-z-sieci/zadania-szkola/DDoS/training/scan.pcap-analysis.md)                  | Analiza ruchu i identyfikacja oznak skanowania sieci.                       |
+| [Wireshark](./powtorka-z-sieci/zadania-szkola/DDoS/training/wireshark-pcapng-analysis.md)       | Pratyczny przykład ćwiczeń w Wiresharku                |
 
-## Analiza ataków Man-in-the-Middle
+## Powtórka z Sieci - ćwiczenia własne
 
-| Ćwiczenie                                                                                             | Opis                                                               |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [Analiza MitM — przypadek 1](./powtorka-z-sieci/zadania%20-%20szkola/MiTM/1/1.pcap-analysis.md)       | Wykrywanie podejrzanej komunikacji pomiędzy hostami.               |
-| [Analiza MitM — przypadek 2](./powtorka-z-sieci/zadania%20-%20szkola/MiTM/2/2.pcap-analysis.md)       | Analiza zmian w ruchu i potencjalnego przechwytywania komunikacji. |
-| [Analiza MitM — przypadek 3](./powtorka-z-sieci/zadania%20-%20szkola/MiTM/3/3.pcap-analysis.md)       | Identyfikacja wskaźników ataku Man-in-the-Middle.                  |
-
-## Analiza skanowania sieci
-
-| Materiał                                                                                         | Opis                                                    |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| [Analiza skanowania](./powtorka-z-sieci/zadania%20-%20szkola/Skany/scan.pcap-analysis.md)        | Rozpoznawanie skanów portów i prób identyfikacji usług. |
-
-## Ćwiczenia z Wiresharka
-
-| Materiał                                                                                         | Opis                                                    |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| [Analiza skanowania](./powtorka-z-sieci/zadania%20-%20szkola/wiresshark/README.md)        | Rozpoznawanie skanów portów i prób identyfikacji usług. |
+**TBD**
 
 ## Notatki
 
