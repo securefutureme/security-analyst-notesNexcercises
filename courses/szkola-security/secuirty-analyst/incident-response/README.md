@@ -7,18 +7,19 @@ Materiały przedstawiają kolejne etapy obsługi incydentu — od przygotowania 
 
 | Etap | Materiał                                                                                                       | Zakres                                                                                              |
 | ---: | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-|    — | [Plan reagowania na incydenty](plan-reagowania-na-incydenty.md) | Ogólny przebieg procesu Incident Response, role zespołu oraz podstawowe zasady eskalacji.           |
-|    1 | [Przygotowanie](Faza-1.md)                                      | Procedury, narzędzia, komunikacja, kopie zapasowe oraz przygotowanie zespołu do obsługi incydentów. |
-|    2 | [Identyfikacja, wykrywanie i analiza](Faza-2.md)                | Weryfikacja alertu, klasyfikacja incydentu, ustalenie zakresu, wpływu oraz przygotowanie timeline.  |
-|    3 | [Ograniczenie zagrożenia — Containment](Faza-3.md)              | Izolacja zagrożonych hostów, blokowanie IOC oraz ograniczanie dalszego rozwoju incydentu.           |
-|    4 | [Likwidacja i powrót do działania operacyjnego](Faza-4.md)      | Usunięcie przyczyny incydentu, przywrócenie systemów oraz monitoring po odtworzeniu.                |
-|    5 | [Wnioski po incydencie](Faza-5.md)                              | Raport końcowy, analiza przyczyn źródłowych oraz rekomendacje usprawniające proces bezpieczeństwa.  |
+|    — | [Plan reagowania na incydenty](/courses/szkola-security/secuirty-analyst/incident-response/notatki/plan-reagowania-na-incydenty.md) | Ogólny przebieg procesu Incident Response, role zespołu oraz podstawowe zasady eskalacji.           |
+|    1 | [Przygotowanie](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=1.md)                                      | Procedury, narzędzia, komunikacja, kopie zapasowe oraz przygotowanie zespołu do obsługi incydentów. |
+|    2 | [Identyfikacja, wykrywanie i analiza](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=2.md)                | Weryfikacja alertu, klasyfikacja incydentu, ustalenie zakresu, wpływu oraz przygotowanie timeline.  |
+|    3 | [Ograniczenie zagrożenia — Containment](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=3.md)              | Izolacja zagrożonych hostów, blokowanie IOC oraz ograniczanie dalszego rozwoju incydentu.           |
+|    4 | [Likwidacja i powrót do działania operacyjnego](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=4.md)      | Usunięcie przyczyny incydentu, przywrócenie systemów oraz monitoring po odtworzeniu.                |
+|    5 | [Wnioski po incydencie](/courses/szkola-security/secuirty-analyst/incident-response/notatki/Faza=5.md)                              | Raport końcowy, analiza przyczyn źródłowych oraz rekomendacje usprawniające proces bezpieczeństwa.  |
 ## Ćwiczenia praktyczne
 
 | Ćwiczenie                                                                                                                   | Opis |
 | --------------------------------------------------------------------------------------------------------------------------- | ---- |
-| [Containment Plan — Case Study](casestudy-contaminationplan-cwiczenie.md)  | TBD  |
-| [Phishing Incident Response — Case Study](casestudy-phishing-cwiczenie.md) | TBD  |
+| [Containment Plan — Case Study](/courses/szkola-security/secuirty-analyst/incident-response/ćwiczenia/casestudy-contaminationplan-cwiczenie.md)  | TBD  |
+| [Phishing Incident Response — Case Study](/courses/szkola-security/secuirty-analyst/incident-response/ćwiczenia/casestudy-phishing-cwiczenie.md) | TBD  |
+
 ## Zakres sekcji
 
 - przygotowanie organizacji do obsługi incydentów,
@@ -29,9 +30,11 @@ Materiały przedstawiają kolejne etapy obsługi incydentu — od przygotowania 
 - identyfikacja wskaźników kompromitacji,
 - containment, eradication i recovery,
 - raportowanie oraz lessons learned.
+- 
 ## Cel
 
 Celem sekcji jest pokazanie praktycznego zrozumienia procesu Incident Response oraz sposobu dokumentowania decyzji podejmowanych przez analityka SOC na kolejnych etapach obsługi incydentu.
+
 # Incident Response (IR) - pojęcie
 
 to ustrukturyzowany proces reagowania na incydenty bezpieczeństwa – od ich wykrycia, przez opanowanie sytuacji, usunięcie skutków, aż po wyciągnięcie wniosków i wzmocnienie zabezpieczeń na przyszłość. Celem IR jest szybkie ograniczenie wpływu incydentu, przywrócenie normalnego działania oraz stałe doskonalenie obrony.
