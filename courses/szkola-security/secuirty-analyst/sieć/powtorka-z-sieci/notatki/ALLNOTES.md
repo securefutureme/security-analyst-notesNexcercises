@@ -175,8 +175,8 @@ Zarządza przesyłaniem danych między aplikacjami. Odpowiada za dzielenie danyc
 - Handshake dotyczy TCP; UDP nie ma tego etapu.**
 
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image.png)
-![alt](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-1.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-1.png)
 
 ### **Warstwa 5 - Sesji (Aplikacji)**
 
@@ -315,6 +315,7 @@ Ofiara w logach i plikach pcap widzi tylko adresy losowych serwerów DNS!
 
 Cechy charakterystyczne w telemetrii:  
 mnóstwo odpowiedzi DNS z wielu serwerów świata do jednego IP ofiary; ofiara nie wysłała odpowiadających zapytań (bo źródło było sfałszowane). 
+
 ###### Inne ataki DDoS: 
 
 UDP flood - zalew setkami tysięcy pakietów UDP na losowe porty.
@@ -384,7 +385,7 @@ Jak to poznać: dużo półotwartych żądań HTTP, niskie Mbps, a wysoki „con
 
 **ip.addr == (IP ATAKUJĄCEGO) && ip.addr == (IP OFIARY)**
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-2.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-2.png)
 ######  TSHARK TIPS:
 
 Zaletą tsharka jest szybkie przetwarzanie plików pcap.  
@@ -398,7 +399,7 @@ Tak jak w Wiresharku, możemy wyświetlać Statystyki jak Endpointy (IP,TCP etc)
 **NFDUMP:**
 
 ![alt](/courses/szkola-security/sieć/powtorka-z-sieci/notatki/Attachments/image-5.png|697)
-![[courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-6.png]]
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-6.png)
 
 By zrobić graf jak w Wiresharku, należy weksportować nfdumpa do pliku .csv poleceniem  
 
@@ -406,6 +407,7 @@ By zrobić graf jak w Wiresharku, należy weksportować nfdumpa do pliku .csv po
 ##### Atak MITM (Man-in-the-Middle)
 
 [MitM Explained](https://www.imperva.com/learn/application-security/man-in-the-middle-attack-mitm/)
+
 ###### FAKE DNS
 
 1. Alicja wpisuje janiepawle.pl. Jej urządzenie pyta DNS „jaki jest adres IP tej domeny?”. W otwartej sieci (McD Wi-Fi) ruch nie jest chroniony, więc „zły” może wtrącić swoją odpowiedź.
@@ -466,19 +468,21 @@ Protokół QUIC to nowy szyfrowany protokół sieciowy warstwy transportowej. QU
 
 1. Filtrujemy HTTP (filter -> http)
 2. **Szukamy nietypowych rzeczy (na podstawie mitm4.pcapng**
-![alt](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-7.png)
-3. Host: szkolasecurity.pl, a Destination IP = 10.0.0.137 
+
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-7.png)
+
+5. Host: szkolasecurity.pl, a Destination IP = 10.0.0.137 
 	(jest to adres z “naszej” sieci). To pachnie fałszywym DNS/„rogue proxy” – publiczna domena nie powinna rozwiązywać się na lokalne 10.x.x.x.
 	
 	Można sprawdzić w pcapie - w DNS -> odpowiedź A dla tej domeny (TTL niski?).
-4. Żądanie GET /calc.exe do 8.8.8.8:8080 i odpowiedź 200 OK (x-msdos-program). Google DNS (!!!) nie serwuje EXE, a port 8080 to zwykle port przechwytującego proxy.
+6. Żądanie GET /calc.exe do 8.8.8.8:8080 i odpowiedź 200 OK (x-msdos-program). Google DNS (!!!) nie serwuje EXE, a port 8080 to zwykle port przechwytującego proxy.
 	→ To artefakt numer 1: File → Export Objects → HTTP→ calc.exe do analizy.
-5. Wiele GET do szkolasecurity.pl, ale do 10.0.0.137. Legalny serwis powinien iść do publicznego IP (nie 10.x).
+7. Wiele GET do szkolasecurity.pl, ale do 10.0.0.137. Legalny serwis powinien iść do publicznego IP (nie 10.x).
 	→ do zanotowania: IP 10.0.0.137 jako podejrzany węzeł MiTM.
-6. Wnioski z Source/Destination:  
+8. Wnioski z Source/Destination:  
     10.0.0.137 / 00:0c:29:b9:01:a9 pełni rolę rogue proxy/web-serwera i/lub DNS-podmieniacza.  
     Ofiara wysyła HTTP do lokalnego IP (nie do prawdziwego publicznego adresu), a pośrednik serwuje treść i pliki (w tym calc.exe). Brama 00:50:56:… nie „widzi” tych rozmów – dzieją się lokalnie w LAN.
-7. użycie filtrów arp i dns pozwalają nam zobaczyć:  
+9. użycie filtrów arp i dns pozwalają nam zobaczyć:  
     - W kółko lecą ogłoszenia „10.0.0.1 is at 00:0c:29:b9:01:a9” wysyłane przez 00:0c:29:b9:01:a9 do ofiary 00:0c:29:5c:2f:a2. To klasyczne trucie ARP: napastnik podszywa się pod bramę 10.0.0.1.
     - Pojawiają się też „Who has 10.0.0.100? Tell 10.0.0.137” oraz „10.0.0.137 is at 00:0c:29:b9:01:a9” — napastnik (10.0.0.137) ogłasza swój MAC i „zaciąga” ruch do siebie.
     - Efekt: host ofiary zapisze w ARP, że brama 10.0.0.1 ma MAC napastnika 00:0c:29:b9:01:a9 → cały ruch idzie przez atakującego (MiTM) albo w ogóle „ginie” (DoS).
@@ -487,8 +491,10 @@ Protokół QUIC to nowy szyfrowany protokół sieciowy warstwy transportowej. QU
 **Analiza wniosków:**
 
 1. Ktoś zrobił atak ARP spoofing, przekierował cały ruch na siebie, po czym “zaspoofował” adres 8.8.8.8 na swojej maszynie lokalnej, i zaczął serwować odpowiedzi DNS tak jakby z adresu 8.8.8.8
-2. Po wyeksportowaniu plików (Export Objects - > HTTP) i po otworzeniu pliku HTMLowego, widać, że użytkownik musiał kliknąć na podrobioną stronę internetową:  
-![[courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-8.png]]
+2. Po wyeksportowaniu plików (Export Objects - > HTTP) i po otworzeniu pliku HTMLowego, widać, że użytkownik musiał kliknąć na podrobioną stronę internetową:
+
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-8.png)
+
 3. Udowodniliśmy że pracownik kliknął i ściągnął ten plik binarny
 4. Atakującemu atak się udał (ARP spoofing / MiTM)
 
@@ -556,15 +562,17 @@ TIP - flaga RST - Reset, nieudane połączenie. Zapamiętać przy analizowaniu s
   
 Najlepiej taki skan przeanalizować w taki sposób:  
 1. Statistics - > Conversation -> TCP  
-2. Port B -> sortujemy. Tutaj możemy zaobserować, czy skan “leciał” po wszystkich portach:  
-![alt](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-9.png)
-3. Następnie patrzymy Packets A->B i Packets B->A. Tutaj, jeżeli widzimy pakiety o wielkości 1 bajta, po obu stronach, możemy wywnioskować, że to były pakiety SYN -> RST . Jeżeli w Packets A->B będzie 2 bajty, a w Packets B->A, daje to na 3-way handshake, i w ten sposób “ktoś” dowiedział się o istnieniu otwartego portu.
-4. Możemy to też sprawdzić aplikując kolumnę Destination Port do “Column Preferences”.
-5. Filtrem (ip.src == 10.0.0.20) && !(tcp.flags == 0x0014) możemy sprawdzić jakie porty są dla atakującego otwarte.
+2. Port B -> sortujemy. Tutaj możemy zaobserować, czy skan “leciał” po wszystkich portach:
+
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-9.png)
+
+4. Następnie patrzymy Packets A->B i Packets B->A. Tutaj, jeżeli widzimy pakiety o wielkości 1 bajta, po obu stronach, możemy wywnioskować, że to były pakiety SYN -> RST . Jeżeli w Packets A->B będzie 2 bajty, a w Packets B->A, daje to na 3-way handshake, i w ten sposób “ktoś” dowiedział się o istnieniu otwartego portu.
+5. Możemy to też sprawdzić aplikując kolumnę Destination Port do “Column Preferences”.
+6. Filtrem (ip.src == 10.0.0.20) && !(tcp.flags == 0x0014) możemy sprawdzić jakie porty są dla atakującego otwarte.
   
 **Porty filtrowane:**  
 
-![alt](courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-10.png)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/notatki/Attachments/image-10.png)
 
 1. Statistics - > Conversation -> TCP  
 2. Tutaj widzimy w pakietach B->A zero bajtów. To nam pokazuje, że porty były filtrowane i nie odesłały żadnej odpowiedzi.
