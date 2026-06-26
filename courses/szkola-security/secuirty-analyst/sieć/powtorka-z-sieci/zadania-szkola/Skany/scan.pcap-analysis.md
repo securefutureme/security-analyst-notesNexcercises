@@ -43,7 +43,7 @@ By ustalić które porty były odfiltrowane, sprawdzamy na które próby połąc
 
 Następnie filtrujemy tak jak w ataku DDoS - > Pakiety B do A  
 
-![alt](image.jpg)
+![alt](/courses/szkola-security/secuirty-analyst/sieć/powtorka-z-sieci/zadania-szkola/Skany/training/image.png)
 
 **Odp. 1337 i 7337  
 NOTE:** Niektóre porty pojawiają się w skanie więcej niż raz. Jest to naturalne, bo gdy skaner nie dostaje odpowiedzi to często ponawia próbę. Robi to po to zeby „upewnić się” że brak odpowiedzi rzeczywiście wynika z filtrowania a nie z chwilowego problemu z transmisją.
