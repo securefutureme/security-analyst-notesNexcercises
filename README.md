@@ -35,6 +35,13 @@ ___
 | Add-on - Sekcja Windows                   | [`README`](courses/szkola-security/secuirty-analyst/windows/README.md)                          |
 | Security Starter                          | TBD                                                                                             |
 
+
+# Szkoła Security - Security Analyst - notatki
+
+| Temat                                     | Link do notatek                                                                                 |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Ataki na systemy Linux                    | [`Enter`](/courses/szkola-security/secuirty-analyst/linux/ataki-linux.md)                       |
+
 ##  TryHackMe 
 ***
 
