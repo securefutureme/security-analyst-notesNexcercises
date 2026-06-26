@@ -3,7 +3,7 @@ Dla każdego z 3 załączników odpowiedz na następujące pytania:
 
 ## **Próbka: Mail NEW ORDER FOR krain**
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/1-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/1-image.png)
 
 1. **Czy dana wiadomość jest według ciebie phishingiem, czy bezpieczną wiadomością?** 
 
@@ -26,23 +26,24 @@ a. Jaki był wynik testu SPF, DKIM i DMARC?
 - **DMARC** -fail, 
 - **DKIM** - fail
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/2-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/2-image.png)
 
 b. Czy wiadomość jest zespoofowana, jeżeli tak to dlaczego i która technika spoofingu została zastosowana? 
 
 Odp. Tak, wiadomość najprawdopodobniej jest spoofowana. Nagłówki pokazują 
 **spf=softfail, dkim=fail i dmarc=fail**, więc wiadomość podszywa się pod domenę **fisrtgreen.com,** ale nie przechodzi mechanizmów potwierdzających, że została wysłana z autoryzowanego źródła. Zastosowana technika to najpewniej spoofing domeny nadawcy, obejmujący podszycie się pod adres **w** **polu From oraz Return-Path.**
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/3-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/3-image.png)
 
 c. Jaki było oryginalny adres IP, z którego wysłano wiadomość?
 Odp. **194[.]104[.]136[.]232**
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/4-image.png)
+
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/4-image.png)
 
 4. Przeanalizuj załącznik wiadomości: 
    a. Jaka jest suma kontrolna MD5 i SHA-256 z załącznika?
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/9-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/9-image.png)
  
  Odp.
 - MD5 - 3E26BC4D17DF91A5ABAE5F13B5F44C26
@@ -50,7 +51,7 @@ Odp. **194[.]104[.]136[.]232**
 
 b. Jakie techniki phishingowe stosuje załącznik? 
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/10-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/10-image.png)
 
 Odp. 
 - Załącznik udaje stronę **Microsoft SharePoint,** żeby wyglądać wiarygodnie. 
@@ -64,14 +65,15 @@ Odp.
 
 Odp. **jodytravel.com**
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/11-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/11-image.png)
 
 ## Próbka: **phish_alert_iocp**
 
 1. **Czy dana wiadomość jest według ciebie phishingiem czy bezpieczna wiadomością?
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/12-image.png)
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/13-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/12-image.png)
+
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/13-image.png)
 
 **Odp.** Wiadomość jest phishingiem.
 
@@ -83,11 +85,11 @@ b) Invoice Payment który trafia do spamu? (mamy napisane [SPAM] w treści)
 
 c) Bardzo dziwny received-from (127.0.0.1 - loopback?)  
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/14-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/14-image.png)
 
 d) Wygląda to jakby nadawca i odbiorca były takie same (FROM "kkolarik" TO "kelli kolarik")  
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/21-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/21-image.png)
 
 e) Nadawca podszywa się pod **chg.com** ale technicznie pochodzi z hostów w AWS i z domeny znlc.jp, a nie z rzeczywistej infrastruktury firmowej chg.com.
 
@@ -100,7 +102,7 @@ e) Nadawca podszywa się pod **chg.com** ale technicznie pochodzi z hostów w AW
 - **DMARC=temperror** (tak jak wyżej)  
 - **DKIM=none**  (odbiorca nie może potwierdzic że została autentycznie wysłana przez domenę nadawcy)
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/18-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/18-image.png)
 
 **b. Czy wiadomość jest zespoofowana, jeżeli tak to dlaczego i która technika spoofingu została zastosowana?**
 
@@ -111,19 +113,19 @@ c. Jaki było oryginalny adres IP z którego wysłano wiadomość?
 
 **164[.]46[.]112[.]91**  
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/15-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/15-image.png)
 
 4. **Przeanalizuj załącznik wiadomości:
 
 **a. Jaka jest suma kontrolna MD5 i SHA-256 z załącznika?**  
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/16-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/16-image.png)
 
 **b. Jakie techniki phishingowe stosuje załącznik?**  
 
 Podszywanie się pod Microsoft  SSO - automatyczne uzupełnianie adresu mailowego = wykradanie poświadczeń.
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/34-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/34-image.png)
 
 **c. Do jakiej domeny wysyłane są poświadczenia (login i hasło)?**
 
@@ -135,7 +137,7 @@ Podszywanie się pod Microsoft  SSO - automatyczne uzupełnianie adresu mailowe
 
 **Odp.** Wiadomość jest phishingiem.
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/22-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/22-image.png)
 
 2. **Wymień wszystkie wskazówki, które wskazują według ciebie na to, że wiadomość jest phishingiem**  
 
@@ -145,7 +147,7 @@ c) VOICE-NO_REPLY@Roehl[.]com < tashina.weigel@roehl[.]net> - niespójność nad
 d) sam temat jest w sobie podejrzany (SILENTCODERSTIMEZONE - po wygooglowaniu do niczego nie prowadzi)
 e) zwykle voicemail wygląda tak:
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/23-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/23-image.png)
 
 2. **Przeanalizuj nagłówki wiadomości:**
 
@@ -155,7 +157,7 @@ e) zwykle voicemail wygląda tak:
 - **DMARC** = fail; 
 - **DKIM** = none, bo wiadomość nie jest podpisana
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/25-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/25-image.png)
 
 **b. Czy wiadomość jest zespoofowana, jeżeli tak to dlaczego i która technika spoofingu została zastosowana?**
 
@@ -166,7 +168,7 @@ From i Recived są takie same: tashina.weigel@roehl[.]net
 
 c. Jaki było oryginalny adres IP z którego wysłano wiadomość?
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/24-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/24-image.png)
 
 **203[.]183[.]42[.]114**  
 
@@ -174,16 +176,16 @@ c. Jaki było oryginalny adres IP z którego wysłano wiadomość?
 
 **a. Jaka jest suma kontrolna MD5 i SHA-256 z załącznika?**
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/26-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/26-image.png)
 
 **b. Jakie techniki phishingowe stosuje załącznik?**
 
 Podszywanie się pod Microsoft  SSO - automatyczne uzupełnianie adresu mailowego = wykradanie poświadczeń.
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/32-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/32-image.png)
 
 c. Do jakiej domeny wysyłane są poświadczenia (login i hasło)?
 
 Odp. **mariob.online**
 
-![alt](courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/33-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/phishing/zadania-szkola/Attachments/33-image.png)
