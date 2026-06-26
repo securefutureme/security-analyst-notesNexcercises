@@ -21,6 +21,20 @@ To repozytorium pomaga mi w:
 - przechowywaniu zadań i ćwiczeń,
 - budowaniu własnej bazy wiedzy z cyberbezpieczeństwa,
 - tworzeniu materiałów do powtórek i przygotowaniu do pracy w SOC.
+
+___
+# Szkoła Security - Security Analyst - zadania
+
+| Temat                                     | Link do README                                                                                  |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Sekcja Analiza Malware                    | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md)                  |
+| Sekcja Kodowanie, Hashowanie, Szyfrowanie | [`README`](courses/szkola-security/secuirty-analyst/kodowanie-hashowanie-szyfrowanie/README.md) |
+| Sekcja Phishing                           | [`README`](courses/szkola-security/secuirty-analyst/phishing/README.md)                         |
+| Sekcja Sieć                               | [`README`](courses/szkola-security/secuirty-analyst/sieć/README.md)                             |
+| Sekcja SIEM                               | [`README`](courses/szkola-security/secuirty-analyst/siem/README.md)                             |
+| Add-on - Sekcja Windows                   | [`README`](courses/szkola-security/secuirty-analyst/windows/README.md)                          |
+| Security Starter                          | TBD                                                                                             |
+
 ##  TryHackMe 
 ***
 
@@ -49,17 +63,7 @@ ___
 | ----------------- | -------------- |
 **TBD**
 ___
-##  Szkoła Security - Security Analyst - zadania
-
-| Temat                                     | Link do README                                                              |
-| ----------------------------------------- | --------------------------------------------------------------------------- |
-| Sekcja Analiza Malware                    | [`README`](courses/szkola-security/secuirty-analyst/analiza-malware/README.md)                  |
-| Sekcja Kodowanie, Hashowanie, Szyfrowanie | [`README`](courses/szkola-security/secuirty-analyst/kodowanie-hashowanie-szyfrowanie/README.md) |
-| Sekcja Phishing                           | [`README`](courses/szkola-security/secuirty-analyst/phishing/README.md)                         |
-| Sekcja Sieć                               | [`README`](courses/szkola-security/secuirty-analyst/sieć/README.md)                             |
-| Sekcja SIEM                               | [`README`](courses/szkola-security/secuirty-analyst/siem/README.md)                             |
-| Add-on - Sekcja Windows                   | [`README`](courses/szkola-security/secuirty-analyst/windows/README.md)                          |
-## Cheatsheets
+##  ## Cheatsheets
 
 | Temat                            | Link                                                                      |     |
 | -------------------------------- | ------------------------------------------------------------------------- | --- |
