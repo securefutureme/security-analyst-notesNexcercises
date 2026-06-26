@@ -45,7 +45,7 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 
 | Materiał                                                                                         | Opis                                                    |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| [Analiza skanowania](./powtorka-z-sieci/zadania%20-%20szkola/wiresshark/wireshark.pcapng-analiza.md)        | Rozpoznawanie skanów portów i prób identyfikacji usług. |
+| [Analiza skanowania](./powtorka-z-sieci/zadania%20-%20szkola/wiresshark/README.md)        | Rozpoznawanie skanów portów i prób identyfikacji usług. |
 
 ## Notatki
 
