@@ -51,7 +51,6 @@ Materiały koncentrują się na umiejętnościach przydatnych w pracy analityka 
 
 | Materiał                                                            | Opis                                                                                |
 | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Zbiorcze notatki sieciowe](./powtorka-z-sieci/notatki/ALLNOTES.md) | Podstawowe pojęcia, protokoły, adresacja, porty oraz analiza komunikacji sieciowej. |
 | [Snort — notatki](./network-security-monitoring/cwiczenia-wlasne/SNORT-notatki.md)     | Podstawy działania Snorta, reguły IDS oraz interpretacja alertów. |
 
 ## Zakres materiału
