@@ -4,6 +4,7 @@ Zbiór przydatnych stron, narzędzi, pojęć oraz krótkich notatek pomocnych w 
 
 ## Spis treści
 
+* [Materiały do nauki](#materiały-do-nauki)
 * [Źródła informacji security](#źródła-informacji-security)
 * [Malware analysis i threat intelligence](#malware-analysis-i-threat-intelligence)
 * [OSINT](#osint)
@@ -14,8 +15,43 @@ Zbiór przydatnych stron, narzędzi, pojęć oraz krótkich notatek pomocnych w 
 * [SIEM, Splunk i ELK](#siem-splunk-i-elk)
 * [Szybkie akronimy](#szybkie-akronimy)
 * [Przydatne tipy — phishing](#przydatne-tipy--phishing)
-* [Materiały do nauki](#materiały-do-nauki)
 * [Artykuły](#artykuły)
+
+
+---
+
+# Materiały do nauki
+
+## Other — to familiarize
+
+| Materiał              | Opis                                                                                              |
+| --------------------- | ------------------------------------------------------------------------------------------------- |
+| SOC Training Workbook | https://www.scribd.com/document/874669370/SOC-Training-Workbook-15-Simulated-Alerts-With-Analysis |
+| All ports Cheat sheet | Ściąga z portów i protokołów sieciowych.                                                          |
+
+---
+
+# Artykuły
+
+| Temat         | Link                                       |
+| ------------- | ------------------------------------------ |
+| What is OSINT | https://www.varonis.com/blog/what-is-osint |
+
+---
+
+# TryHackMe / lab resources
+
+| Materiał                       | Link                                                | Opis                                                                                                        |
+| ------------------------------ | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| TryHackMe — APT28 Eviction Lab | https://static-labs.tryhackme.cloud/sites/eviction/ | Strona-lab z kontekstem i artefaktami kampanii APT28, przydatna do ćwiczeń analitycznych i budowy detekcji. |
+
+## Best TryHackMe - SOC - rooms
+
+* OSI Model Game
+* OSI Model Game - Pro
+* OSI Model - Quiz
+* TCP Handshake - Practice
+* Pyramid of Pain Practice
 
 ---
 
@@ -32,14 +68,6 @@ Zbiór przydatnych stron, narzędzi, pojęć oraz krótkich notatek pomocnych w 
 | CheckPoint Live Cyber Threat Map        | https://threatmap.checkpoint.com/                            | Interaktywna mapa pokazująca przykładową wizualizację globalnych cyberataków i trendów zagrożeń.                                                   |
 
 ---
-
-## Best TryHackMe - SOC - rooms
-
-* OSI Model Game
-* OSI Model Game - Pro
-* OSI Model - Quiz
-* TCP Handshake - Practice
-* Pyramid of Pain Practice
 
 # Malware analysis i threat intelligence
 
@@ -670,34 +698,6 @@ Warto szukać:
 * ścieżek do paneli phishingowych,
 * ukrytych formularzy.
 
----
-
-# Materiały do nauki
-
-## Other — to familiarize
-
-| Materiał              | Opis                                                                                              |
-| --------------------- | ------------------------------------------------------------------------------------------------- |
-| SOC Training Workbook | https://www.scribd.com/document/874669370/SOC-Training-Workbook-15-Simulated-Alerts-With-Analysis |
-| All ports Cheat sheet | Ściąga z portów i protokołów sieciowych.                                                          |
-
----
-
-# Artykuły
-
-| Temat         | Link                                       |
-| ------------- | ------------------------------------------ |
-| What is OSINT | https://www.varonis.com/blog/what-is-osint |
-
----
-
-# TryHackMe / lab resources
-
-| Materiał                       | Link                                                | Opis                                                                                                        |
-| ------------------------------ | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| TryHackMe — APT28 Eviction Lab | https://static-labs.tryhackme.cloud/sites/eviction/ | Strona-lab z kontekstem i artefaktami kampanii APT28, przydatna do ćwiczeń analitycznych i budowy detekcji. |
-
----
 
 # Dodatkowe linki techniczne
 
