@@ -32,7 +32,7 @@ ___
 | Sekcja Phishing                           | [`README`](courses/szkola-security/secuirty-analyst/phishing/README.md)                         |
 | Sekcja Sieć                               | [`README`](courses/szkola-security/secuirty-analyst/sieć/README.md)                             |
 | Sekcja SIEM                               | [`README`](courses/szkola-security/secuirty-analyst/siem/README.md)                             |
-| Add-on - Sekcja Windows                   | [`README`](courses/szkola-security/secuirty-analyst/windows/README.md)                          |
+| Add-on - Sekcja Windows                   | TBD                                                                                             |
 | Security Starter                          | TBD                                                                                             |
 
 
