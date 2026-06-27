@@ -15,7 +15,7 @@ Sekcja zawiera notatki oraz ćwiczenia z kursu Szkoła Security - związane z an
 
 | Sekcja                                                                                  | Opis                                                                                                             |
 | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| [Ataki na serwery WWW](/courses/szkola-security/secuirty-analyst/siem/ataki-webserwer/) | Notatki dotyczące rozpoznawania ataków webowych na podstawie logów serwera i ruchu HTTP.                         |
+| [Ataki na serwery WWW](/courses/szkola-security/secuirty-analyst/siem/ataki-webserwer/) | TBD               |
 | [EDR i IDS](/courses/szkola-security/secuirty-analyst/siem/edr-i-ids/README.md)                  | Podstawowe informacje o systemach EDR i IDS, generowanych alertach oraz ich roli w monitorowaniu bezpieczeństwa. |
 
 ## Ćwiczenia własne
