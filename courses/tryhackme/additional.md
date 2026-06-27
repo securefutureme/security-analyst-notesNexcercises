@@ -33,6 +33,14 @@ Zbiór przydatnych stron, narzędzi, pojęć oraz krótkich notatek pomocnych w 
 
 ---
 
+## Best TryHackMe - SOC - rooms
+
+* OSI Model Game
+* OSI Model Game - Pro
+* OSI Model - Quiz
+* TCP Handshake - Practice
+* Pyramid of Pain Practice
+
 # Malware analysis i threat intelligence
 
 | Narzędzie / źródło                     | Link                                               | Opis                                                                                                                                                                                     |
@@ -672,14 +680,6 @@ Warto szukać:
 | --------------------- | ------------------------------------------------------------------------------------------------- |
 | SOC Training Workbook | https://www.scribd.com/document/874669370/SOC-Training-Workbook-15-Simulated-Alerts-With-Analysis |
 | All ports Cheat sheet | Ściąga z portów i protokołów sieciowych.                                                          |
-
-## Best rooms
-
-* OSI Model Game
-* OSI Model Game - Pro
-* OSI Model - Quiz
-* TCP Handshake - Practice
-* Pyramid of Pain Practice
 
 ---
 
