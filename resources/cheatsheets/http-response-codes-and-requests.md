@@ -12,6 +12,7 @@ Szybka ściąga przedstawiająca najczęściej używane metody HTTP, kody odpowi
 - [Budowa żądania HTTP](#Budowa-żądania-HTTP)
 - [Najważniejsze nagłówki HTTP](#Najważniejsze-nagłówki-HTTP)
 - [Uwagi bezpieczeństwa](#Uwagi-bezpieczeństwa)
+
 ---
 
 # Najczęściej używane metody HTTP
@@ -221,8 +222,6 @@ Jeżeli nie jest potrzebna, powinna zostać wyłączona w konfiguracji serwera.
 |`OPTIONS`|Sprawdzenie dostępnych metod|Opcjonalnie|Tak|Tak|Zwykle nie|
 |`CONNECT`|Utworzenie tunelu|Zależy|Nie|Nie|Nie|
 |`TRACE`|Diagnostyka żądania|Zwykle nie|Tak|Tak|Nie|
-
-### Znaczenie pojęć
 
 - **Bezpieczna metoda** — nie powinna zmieniać stanu zasobu.
 - **Idempotentna metoda** — wielokrotne wykonanie tego samego żądania powinno mieć taki sam efekt jak wykonanie go jeden raz.
