@@ -70,13 +70,13 @@ ___
 | ----------------- | -------------- |
 **TBD**
 ___
-##  ## Cheatsheets
+## Cheatsheets
 
 | Temat                            | Link                                                                      |     |
 | -------------------------------- | ------------------------------------------------------------------------- | --- |
-| HTTP response Codes and requests | [`Cheatsheet`](resources/cheatsheets/http-response-codes-and-requests.md) |     |
+| HTTP response Codes and requests | [`Cheatsheet`](/resources/cheatsheets/http-response-codes-and-requests.md) |     |
 | IP Addressing                    | [`Cheatsheet`](/resources/cheatsheets/ip-addressing)                      |     |
 | Linux Security Tips              | [`Cheatsheet`](/resources/cheatsheets/liunx-security-tips)                |     |
 | Protocol List                    | [`Cheatsheet`](/resources/cheatsheets/protocols-list)                     |     |
 | Windows Event Logs               | [`Cheatsheet`](/resources/cheatsheets/windows-event-logs)                 |     |
-| Windows Security Logs            | [`Cheatsheet`](resources/cheatsheets/windows-security-tips)               |     |
+| Windows Security Logs            | [`Cheatsheet`](/resources/cheatsheets/windows-security-tips)               |     |
