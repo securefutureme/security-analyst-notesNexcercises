@@ -22,6 +22,9 @@ To repozytorium pomaga mi w:
 - budowaniu własnej bazy wiedzy z cyberbezpieczeństwa,
 - tworzeniu materiałów do powtórek i przygotowaniu do pracy w SOC.
 
+
+****NOTE - Notatki są zawarte w prawie każdej sekcji, link do niej zawiera się w README.md do sekcji****
+
 ___
 # Szkoła Security - Security Analyst - zadania
 
@@ -32,15 +35,15 @@ ___
 | Sekcja Phishing                           | [`README`](courses/szkola-security/secuirty-analyst/phishing/README.md)                         |
 | Sekcja Sieć                               | [`README`](courses/szkola-security/secuirty-analyst/sieć/README.md)                             |
 | Sekcja SIEM                               | [`README`](courses/szkola-security/secuirty-analyst/siem/README.md)                             |
-| Add-on - Sekcja Windows                   | TBD                                                                                             |
 | Security Starter                          | TBD                                                                                             |
 
 
-# Szkoła Security - Security Analyst - notatki
+# Inne
 
 | Temat                                     | Link do notatek                                                                                 |
 | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Ataki na systemy Linux                    | [`Enter`](/courses/szkola-security/secuirty-analyst/linux/ataki-linux.md)                       |
+| Ataki na systemy Linux                    | TBD                                                                                             |
+| Add-on - Sekcja Windows                   | TBD                                                                                             |
 
 ##  TryHackMe 
 ***
