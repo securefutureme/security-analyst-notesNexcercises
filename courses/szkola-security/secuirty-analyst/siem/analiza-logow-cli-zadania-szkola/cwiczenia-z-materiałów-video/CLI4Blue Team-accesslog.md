@@ -4,7 +4,7 @@
 
 Sprawdzamy to standardową komendą ls -lrth.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/14-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/14-image.png)
 
 Odp. 12 Kb
 
@@ -12,7 +12,7 @@ Odp. 12 Kb
 
 Łączymy dwie komendy, tail i head by sprawdzić pierwszy i ostatni zapis w logu.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/15-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/15-image.png)
 
 **Odp. 24/May/2022:09:42:42 +0200 UTC do 24/May/2022:09:52:03 +0200 UTC**
 
@@ -28,7 +28,7 @@ Odp. Tak jak w screenshootach powyżej, można zaobserwować, że są to logi w 
 
 Użyjmy najpierw **cat access.log | cut -d" " -f2 | sort | uniq -c** do przefiltrowania sobie wszystkich adresów IP z access.log.
 
-![alt](courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/16-image.png)
+![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/cwiczenia-z-materiałów-video/Attachments/16-image.png)
 
 Odp. 24/May/2022:09:42:42 +0200 UTC
 
@@ -40,8 +40,9 @@ Jako że to jest bardzo okrojony log, prawdopodobnie wycinek. Można odpowiedzie
 
 **Odp. 30.13.3.7**
 
+___
 
-**Przydatne komendy:**
+**Przydatne komendy z kursu**
 
 **ls** – pokazuje listę plików w katalogu (sprawdzasz czy jest np. access.log).
 
